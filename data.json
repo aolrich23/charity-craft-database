@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Knitted Scarf",
+    "materialType": "Yarn",
+    "estimatedTime": "5 hours",
+    "recipient": "Homeless Shelter",
+    "description": "A warm wool scarf for winter donations."
+  },
+  {
+    "id": 2,
+    "title": "Wooden Birdhouse",
+    "materialType": "Wood",
+    "estimatedTime": "3 hours",
+    "recipient": "Community Garden",
+    "description": "Cedar birdhouse to attract local birds."
+  },
+  {
+    "id": 3,
+    "title": "Canvas Tote Bag",
+    "materialType": "Fabric",
+    "estimatedTime": "2 hours",
+    "recipient": "School Fundraiser",
+    "description": "Hand-painted canvas bags for the auction."
+  },
+  {
+    "id": 4,
+    "title": "Crochet Blanket",
+    "materialType": "Yarn",
+    "estimatedTime": "20 hours",
+    "recipient": "Hospital",
+    "description": "Colorful granny square blanket for pediatrics."
+  },
+  {
+    "id": 5,
+    "title": "Origami Cranes",
+    "materialType": "Paper",
+    "estimatedTime": "1 hour",
+    "recipient": "Art Installation",
+    "description": "100 paper cranes for the peace exhibit."
+  },
+  {
+    "id": 6,
+    "title": "Bookshelf Restoration",
+    "materialType": "Wood",
+    "estimatedTime": "10 hours",
+    "recipient": "Library",
+    "description": "Refinishing an old oak bookshelf."
+  }
+]
