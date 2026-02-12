@@ -43,13 +43,15 @@ header h1 {
 }
 
 .content-wrapper {
-    display: flex;
+    display: grid;
+    grid-template-columns: 250px 1fr;
     gap: 30px;
-    align-items: flex-start;
+    align-items: start;
 }
 
 .sidebar {
-    flex: 0 0 250px;
+    grid-column: 1;
+    grid-row: 2;
     background: var(--card-bg);
     padding: 20px;
     border-radius: 8px;
@@ -85,11 +87,14 @@ input, select {
 }
 
 /* Grid Layout */
-.results-column {
-    flex: 1;
+.search-section {
+    grid-column: 2;
+    grid-row: 1;
 }
 
 .grid-container {
+    grid-column: 2;
+    grid-row: 2;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
@@ -206,10 +211,11 @@ input, select {
 /* Responsive */
 @media (max-width: 768px) {
     .content-wrapper {
-        flex-direction: column-reverse;
+        display: flex;
+        flex-direction: column;
     }
-    .sidebar {
-        width: 100%;
-        flex: none;
-    }
+    
+    .search-section { order: 1; align-items: stretch; }
+    .grid-container { order: 2; }
+    .sidebar { order: 3; width: 100%; }
 }
