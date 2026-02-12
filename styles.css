@@ -34,7 +34,7 @@ header h1 {
     margin-bottom: 30px;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
 }
 
 #search {
@@ -43,15 +43,13 @@ header h1 {
 }
 
 .content-wrapper {
-    display: grid;
-    grid-template-columns: 250px 1fr;
+    display: flex;
     gap: 30px;
-    align-items: start;
+    align-items: flex-start;
 }
 
 .sidebar {
-    grid-column: 1;
-    grid-row: 2;
+    flex: 0 0 250px;
     background: var(--card-bg);
     padding: 20px;
     border-radius: 8px;
@@ -87,14 +85,8 @@ input, select {
 }
 
 /* Grid Layout */
-.search-section {
-    grid-column: 2;
-    grid-row: 1;
-}
-
 .grid-container {
-    grid-column: 2;
-    grid-row: 2;
+    flex: 1;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
@@ -215,7 +207,6 @@ input, select {
         flex-direction: column;
     }
     
-    .search-section { order: 1; align-items: stretch; }
-    .grid-container { order: 2; }
-    .sidebar { order: 3; width: 100%; }
+    .sidebar { width: 100%; order: 2; }
+    .grid-container { order: 1; }
 }
