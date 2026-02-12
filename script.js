@@ -29,12 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
             materialSelect.appendChild(option);
         });
 
-        // Get unique recipients
-        const recipients = [...new Set(data.map(item => item.recipient))].sort();
-        recipients.forEach(rec => {
+        // Get unique categories (formerly recipients)
+        const categories = [...new Set(data.map(item => item.category))].sort();
+        categories.forEach(cat => {
             const option = document.createElement('option');
-            option.value = rec;
-            option.textContent = rec;
+            option.value = cat;
+            option.textContent = cat;
             recipientSelect.appendChild(option);
         });
     }
@@ -55,13 +55,25 @@ document.addEventListener('DOMContentLoaded', () => {
             card.className = 'card';
             
             card.innerHTML = `
-                <h3>${project.title}</h3>
-                <div class="card-meta">
-                    <span><strong>Material:</strong> <span class="tag">${project.materialType}</span></span>
-                    <span><strong>Time:</strong> ${project.estimatedTime}</span>
-                    <span><strong>For:</strong> ${project.recipient}</span>
+                ${project.image ? `<img src="${project.image}" alt="${project.title}" class="card-image">` : ''}
+                <div class="card-header">
+                    <h3>${project.title}</h3>
+                    <span class="tag need-${project.need.toLowerCase()}">Need: ${project.need}</span>
                 </div>
-                <p>${project.description}</p>
+                <p class="organiser"><strong>Organiser:</strong> <a href="${project.organiser.url}" target="_blank">${project.organiser.name}</a></p>
+                <div class="card-meta">
+                    <span><strong>Category:</strong> ${project.category}</span>
+                    <span><strong>Craft:</strong> ${project.craft}</span>
+                    <span><strong>Material:</strong> <span class="tag">${project.materialType}</span></span>
+                    <span><strong>Amount:</strong> ${project.materialAmount}</span>
+                    <span><strong>Time:</strong> ${project.approximateTime}</span>
+                    <span><strong>Deadline:</strong> ${project.deadline}</span>
+                </div>
+                <p class="description">${project.description || ''}</p>
+                <div class="card-footer">
+                    <a href="${project.pattern.url}" target="_blank" class="pattern-link">📄 ${project.pattern.text}</a>
+                    <small>Updated: ${new Date(project.lastUpdated).toLocaleDateString()}</small>
+                </div>
             `;
             grid.appendChild(card);
         });
@@ -82,18 +94,18 @@ document.addEventListener('DOMContentLoaded', () => {
             // Material Filter
             const matchesMaterial = materialValue === '' || project.materialType === materialValue;
 
-            // Recipient Filter
-            const matchesRecipient = recipientValue === '' || project.recipient === recipientValue;
+            // Category Filter (mapped to recipient select)
+            const matchesCategory = recipientValue === '' || project.category === recipientValue;
 
             // Time Filter (Parsing logic)
             // Assumes format "X hours" or similar. 
-            const hours = parseInt(project.estimatedTime); 
+            const hours = parseInt(project.approximateTime); 
             let matchesTime = true;
             if (timeValue === 'short') matchesTime = hours < 3;
             else if (timeValue === 'medium') matchesTime = hours >= 3 && hours <= 10;
             else if (timeValue === 'long') matchesTime = hours > 10;
 
-            return matchesSearch && matchesMaterial && matchesRecipient && matchesTime;
+            return matchesSearch && matchesMaterial && matchesCategory && matchesTime;
         });
 
         renderProjects(filtered);

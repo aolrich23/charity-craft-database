@@ -1,50 +1,434 @@
 [
   {
     "id": 1,
-    "title": "Knitted Scarf",
-    "materialType": "Yarn",
-    "estimatedTime": "5 hours",
-    "recipient": "Homeless Shelter",
-    "description": "A warm wool scarf for winter donations."
+    "title": "Wildlife Pouches",
+    "description": "Sewn pouches for orphaned joeys and possums.",
+    "organiser": {
+      "name": "WIRES",
+      "url": "https://www.wires.org.au/"
+    },
+    "category": "Animal Welfare",
+    "craft": "Sewing",
+    "equipment": "Sewing Machine",
+    "materialType": "100% Cotton / Flannelette",
+    "materialAmount": "Various sizes",
+    "approximateTime": "1-2 hours",
+    "need": "High",
+    "lastUpdated": "2023-10-01",
+    "pattern": {
+      "text": "Pouch Instructions",
+      "url": "https://www.wires.org.au/wildlife-info/wildlife-factsheets/making-possum-pouches"
+    },
+    "donationDestination": "WIRES Head Office",
+    "deadline": "Ongoing",
+    "image": null
   },
   {
     "id": 2,
-    "title": "Wooden Birdhouse",
-    "materialType": "Wood",
-    "estimatedTime": "3 hours",
-    "recipient": "Community Garden",
-    "description": "Cedar birdhouse to attract local birds."
+    "title": "Winter Beanies",
+    "description": "Warm beanies for rough sleepers.",
+    "organiser": {
+      "name": "Mission Australia",
+      "url": "https://www.missionaustralia.com.au/"
+    },
+    "category": "Homeless",
+    "craft": "Knitting",
+    "equipment": "4mm Needles",
+    "materialType": "8 ply Acrylic",
+    "materialAmount": "1 ball (100g)",
+    "approximateTime": "3-5 hours",
+    "need": "Medium",
+    "lastUpdated": "2023-09-15",
+    "pattern": {
+      "text": "Basic Beanie PDF",
+      "url": "#"
+    },
+    "donationDestination": "Local Community Centre",
+    "deadline": "June 2024",
+    "image": null
   },
   {
     "id": 3,
-    "title": "Canvas Tote Bag",
-    "materialType": "Fabric",
-    "estimatedTime": "2 hours",
-    "recipient": "School Fundraiser",
-    "description": "Hand-painted canvas bags for the auction."
+    "title": "Trauma Teddies",
+    "description": "Comfort bears for children in crisis.",
+    "organiser": {
+      "name": "Red Cross",
+      "url": "https://www.redcross.org.au/"
+    },
+    "category": "Emergency Response",
+    "craft": "Knitting",
+    "equipment": "3.25mm Needles",
+    "materialType": "8 ply Wool/Acrylic",
+    "materialAmount": "Scraps",
+    "approximateTime": "5-8 hours",
+    "need": "Low",
+    "lastUpdated": "2023-01-20",
+    "pattern": {
+      "text": "Teddy Pattern",
+      "url": "https://www.redcross.org.au/"
+    },
+    "donationDestination": "Red Cross Branches",
+    "deadline": "Ongoing",
+    "image": null
   },
   {
     "id": 4,
-    "title": "Crochet Blanket",
-    "materialType": "Yarn",
-    "estimatedTime": "20 hours",
-    "recipient": "Hospital",
-    "description": "Colorful granny square blanket for pediatrics."
+    "title": "Baby Wraps (Sewn)",
+    "description": "Wraps for babies in need.",
+    "organiser": {
+      "name": "Sewing for Charity Australia",
+      "url": "https://sewingforcharity.com/"
+    },
+    "category": "Family Services",
+    "craft": "Sewing",
+    "equipment": "Sewing Machine",
+    "materialType": "Fabric",
+    "materialAmount": "See pattern",
+    "approximateTime": "Varies",
+    "need": "Low",
+    "lastUpdated": "2026-02-12",
+    "pattern": {
+      "text": "Download PDF",
+      "url": "https://sewingforcharity.com/wp-content/uploads/2026/01/SFCA-Project-Sheet-BABY-WRAPS.pdf"
+    },
+    "donationDestination": "Sewing for Charity Australia",
+    "deadline": "Ongoing",
+    "image": "https://sewingforcharity.com/wp-content/uploads/2026/01/Heart-of-pastel-cloths-600x600.png"
   },
   {
     "id": 5,
-    "title": "Origami Cranes",
-    "materialType": "Paper",
-    "estimatedTime": "1 hour",
-    "recipient": "Art Installation",
-    "description": "100 paper cranes for the peace exhibit."
+    "title": "Savvy Shoppers",
+    "description": "Reusable shopping bags to reduce plastic waste.",
+    "organiser": {
+      "name": "Sewing for Charity Australia",
+      "url": "https://sewingforcharity.com/"
+    },
+    "category": "Environment & Conservation",
+    "craft": "Sewing",
+    "equipment": "Sewing Machine",
+    "materialType": "Fabric",
+    "materialAmount": "See pattern",
+    "approximateTime": "Varies",
+    "need": "Low",
+    "lastUpdated": "2026-02-12",
+    "pattern": {
+      "text": "Download PDF",
+      "url": "https://sewingforcharity.com/wp-content/uploads/2026/01/SFCA-Fact-Sheet-SAVVY-SHOPPERS.pdf"
+    },
+    "donationDestination": "Sewing for Charity Australia",
+    "deadline": "Ongoing",
+    "image": "https://sewingforcharity.com/wp-content/uploads/2026/01/100-bags-600x600.jpg"
   },
   {
     "id": 6,
-    "title": "Bookshelf Restoration",
-    "materialType": "Wood",
-    "estimatedTime": "10 hours",
-    "recipient": "Library",
-    "description": "Refinishing an old oak bookshelf."
+    "title": "Worry Worms",
+    "description": "Small comfort items for mental health support.",
+    "organiser": {
+      "name": "Sewing for Charity Australia",
+      "url": "https://sewingforcharity.com/"
+    },
+    "category": "Mental Health",
+    "craft": "Sewing",
+    "equipment": "Sewing Machine",
+    "materialType": "Fabric/Yarn",
+    "materialAmount": "See pattern",
+    "approximateTime": "Varies",
+    "need": "Low",
+    "lastUpdated": "2026-02-12",
+    "pattern": {
+      "text": "Download PDF",
+      "url": "https://sewingforcharity.com/wp-content/uploads/2026/01/SFCA-Project-WORRY-WORMS-Ver-2.0.pdf"
+    },
+    "donationDestination": "Sewing for Charity Australia",
+    "deadline": "Ongoing",
+    "image": "https://sewingforcharity.com/wp-content/uploads/2026/01/Worry-Worms-e1768801731644-600x600.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Heart String Hearts",
+    "description": "Comfort hearts for patients.",
+    "organiser": {
+      "name": "Sewing for Charity Australia",
+      "url": "https://sewingforcharity.com/"
+    },
+    "category": "Health",
+    "craft": "Sewing",
+    "equipment": "Sewing Machine",
+    "materialType": "Fabric",
+    "materialAmount": "See pattern",
+    "approximateTime": "Varies",
+    "need": "Medium",
+    "lastUpdated": "2026-02-12",
+    "pattern": {
+      "text": "Download PDF",
+      "url": "https://sewingforcharity.com/wp-content/uploads/2026/01/SFCA-Project-Sheet-Heart-Strings-Hearts.pdf"
+    },
+    "donationDestination": "Sewing for Charity Australia",
+    "deadline": "Ongoing",
+    "image": "https://sewingforcharity.com/wp-content/uploads/2026/01/ChatGPT-Image-Jan-19-2026-05_22_09-PM-e1768807439241-600x600.png"
+  },
+  {
+    "id": 8,
+    "title": "Reusable Face Wipes",
+    "description": "Eco-friendly face wipes.",
+    "organiser": {
+      "name": "Sewing for Charity Australia",
+      "url": "https://sewingforcharity.com/"
+    },
+    "category": "Environment & Conservation",
+    "craft": "Sewing",
+    "equipment": "Sewing Machine",
+    "materialType": "Fabric",
+    "materialAmount": "See pattern",
+    "approximateTime": "Varies",
+    "need": "Medium",
+    "lastUpdated": "2026-02-12",
+    "pattern": {
+      "text": "Download PDF",
+      "url": "https://sewingforcharity.com/wp-content/uploads/2026/01/SFCA-Project-Sheet-REUSABLE-FACE-WIPES-Ver-2.0.pdf"
+    },
+    "donationDestination": "Sewing for Charity Australia",
+    "deadline": "Ongoing",
+    "image": "https://sewingforcharity.com/wp-content/uploads/2026/01/Face-Wipes-600x600.jpg"
+  },
+  {
+    "id": 9,
+    "title": "Quilts",
+    "description": "Warm quilts for those in need.",
+    "organiser": {
+      "name": "Sewing for Charity Australia",
+      "url": "https://sewingforcharity.com/"
+    },
+    "category": "Community Services",
+    "craft": "Sewing",
+    "equipment": "Sewing Machine",
+    "materialType": "Fabric",
+    "materialAmount": "See pattern",
+    "approximateTime": "Varies",
+    "need": "Medium",
+    "lastUpdated": "2026-02-12",
+    "pattern": {
+      "text": "Download PDF",
+      "url": "https://sewingforcharity.com/wp-content/uploads/2025/09/SFCA-Project-Sheet-QUILTS-Ver-2.0.pdf"
+    },
+    "donationDestination": "Sewing for Charity Australia",
+    "deadline": "Ongoing",
+    "image": "https://sewingforcharity.com/wp-content/uploads/2025/09/Quilt-600x600.jpg"
+  },
+  {
+    "id": 10,
+    "title": "Marble Maze",
+    "description": "Sensory toys for children.",
+    "organiser": {
+      "name": "Sewing for Charity Australia",
+      "url": "https://sewingforcharity.com/"
+    },
+    "category": "Disability Services",
+    "craft": "Sewing",
+    "equipment": "Sewing Machine",
+    "materialType": "Fabric",
+    "materialAmount": "See pattern",
+    "approximateTime": "Varies",
+    "need": "Medium",
+    "lastUpdated": "2026-02-12",
+    "pattern": {
+      "text": "Download PDF",
+      "url": "https://sewingforcharity.com/wp-content/uploads/2025/09/SFCA-Project-Sheet-MARBLE-MAZE-Ver-2.0.pdf"
+    },
+    "donationDestination": "Sewing for Charity Australia",
+    "deadline": "Ongoing",
+    "image": "https://sewingforcharity.com/wp-content/uploads/2025/09/Marble-Maze-526x600.jpg"
+  },
+  {
+    "id": 11,
+    "title": "Scent Hearts",
+    "description": "Hearts to bond parents and premature babies.",
+    "organiser": {
+      "name": "Sewing for Charity Australia",
+      "url": "https://sewingforcharity.com/"
+    },
+    "category": "Health",
+    "craft": "Sewing",
+    "equipment": "Sewing Machine",
+    "materialType": "Fabric",
+    "materialAmount": "See pattern",
+    "approximateTime": "Varies",
+    "need": "High",
+    "lastUpdated": "2026-02-12",
+    "pattern": {
+      "text": "Download PDF",
+      "url": "https://sewingforcharity.com/wp-content/uploads/2025/09/SFCA-Project-Sheet-SCENT-HEARTS-Ver-2.0.pdf.pdf"
+    },
+    "donationDestination": "Sewing for Charity Australia",
+    "deadline": "Ongoing",
+    "image": "https://sewingforcharity.com/wp-content/uploads/2025/09/Scent-Hearts-600x600.jpg"
+  },
+  {
+    "id": 12,
+    "title": "Softies",
+    "description": "Soft toys for children.",
+    "organiser": {
+      "name": "Sewing for Charity Australia",
+      "url": "https://sewingforcharity.com/"
+    },
+    "category": "Young People",
+    "craft": "Sewing",
+    "equipment": "Sewing Machine",
+    "materialType": "Fabric",
+    "materialAmount": "See pattern",
+    "approximateTime": "Varies",
+    "need": "Medium",
+    "lastUpdated": "2026-02-12",
+    "pattern": {
+      "text": "Download PDF",
+      "url": "https://sewingforcharity.com/wp-content/uploads/2025/09/SFCA-Project-Sheet-SOFTIES-Ver-2.0.pdf"
+    },
+    "donationDestination": "Sewing for Charity Australia",
+    "deadline": "Ongoing",
+    "image": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3C/svg%3E"
+  },
+  {
+    "id": 13,
+    "title": "Burp Cloths",
+    "description": "Cloths for new parents.",
+    "organiser": {
+      "name": "Sewing for Charity Australia",
+      "url": "https://sewingforcharity.com/"
+    },
+    "category": "Family Services",
+    "craft": "Sewing",
+    "equipment": "Sewing Machine",
+    "materialType": "Fabric",
+    "materialAmount": "See pattern",
+    "approximateTime": "Varies",
+    "need": "Medium",
+    "lastUpdated": "2026-02-12",
+    "pattern": {
+      "text": "Download PDF",
+      "url": "https://sewingforcharity.com/wp-content/uploads/2025/09/SFCA-Project-Sheet-BURP-CLOTHS-Ver-3.0.pdf"
+    },
+    "donationDestination": "Sewing for Charity Australia",
+    "deadline": "Ongoing",
+    "image": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20540'%3E%3C/svg%3E"
+  },
+  {
+    "id": 14,
+    "title": "Sensory Taggie",
+    "description": "Sensory stimulation for babies and children.",
+    "organiser": {
+      "name": "Sewing for Charity Australia",
+      "url": "https://sewingforcharity.com/"
+    },
+    "category": "Disability Services",
+    "craft": "Sewing",
+    "equipment": "Sewing Machine",
+    "materialType": "Fabric",
+    "materialAmount": "See pattern",
+    "approximateTime": "Varies",
+    "need": "Medium",
+    "lastUpdated": "2026-02-12",
+    "pattern": {
+      "text": "Download PDF",
+      "url": "https://sewingforcharity.com/wp-content/uploads/2025/09/SFCA-Project-Sheet-SENSORY-TAGGIE-Ver-2.0.pdf"
+    },
+    "donationDestination": "Sewing for Charity Australia",
+    "deadline": "Ongoing",
+    "image": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20540'%3E%3C/svg%3E"
+  },
+  {
+    "id": 15,
+    "title": "Kids Clothing",
+    "description": "Clothing for children in need.",
+    "organiser": {
+      "name": "Sewing for Charity Australia",
+      "url": "https://sewingforcharity.com/"
+    },
+    "category": "Family Services",
+    "craft": "Sewing",
+    "equipment": "Sewing Machine",
+    "materialType": "Fabric",
+    "materialAmount": "See pattern",
+    "approximateTime": "Varies",
+    "need": "Low",
+    "lastUpdated": "2026-02-12",
+    "pattern": {
+      "text": "Download PDF",
+      "url": "https://sewingforcharity.com/wp-content/uploads/2025/09/SFCA-Project-Sheet-KIDS-CLOTHING-Ver-2.0.pdf"
+    },
+    "donationDestination": "Sewing for Charity Australia",
+    "deadline": "Ongoing",
+    "image": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3C/svg%3E"
+  },
+  {
+    "id": 16,
+    "title": "Reusable Nursing Pads",
+    "description": "Washable nursing pads for new mothers.",
+    "organiser": {
+      "name": "Sewing for Charity Australia",
+      "url": "https://sewingforcharity.com/"
+    },
+    "category": "Family Services",
+    "craft": "Sewing",
+    "equipment": "Sewing Machine",
+    "materialType": "Fabric",
+    "materialAmount": "See pattern",
+    "approximateTime": "Varies",
+    "need": "Medium",
+    "lastUpdated": "2026-02-12",
+    "pattern": {
+      "text": "Download PDF",
+      "url": "https://sewingforcharity.com/wp-content/uploads/2025/09/SFCA-Project-Sheet-REUSABLE-NURSING-PADS-Ver-2.0.pdf"
+    },
+    "donationDestination": "Sewing for Charity Australia",
+    "deadline": "Ongoing",
+    "image": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3C/svg%3E"
+  },
+  {
+    "id": 17,
+    "title": "Pocket Tissue Cover",
+    "description": "Covers for pocket tissue packs.",
+    "organiser": {
+      "name": "Sewing for Charity Australia",
+      "url": "https://sewingforcharity.com/"
+    },
+    "category": "Community Services",
+    "craft": "Sewing",
+    "equipment": "Sewing Machine",
+    "materialType": "Fabric",
+    "materialAmount": "See pattern",
+    "approximateTime": "Varies",
+    "need": "Medium",
+    "lastUpdated": "2026-02-12",
+    "pattern": {
+      "text": "Download PDF",
+      "url": "https://sewingforcharity.com/wp-content/uploads/2025/09/SFCA-Project-Sheet-POCKET-TISSUE-COVERS-Ver-2.0.pdf"
+    },
+    "donationDestination": "Sewing for Charity Australia",
+    "deadline": "Ongoing",
+    "image": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20501%20600'%3E%3C/svg%3E"
+  },
+  {
+    "id": 18,
+    "title": "Drawstring Bags",
+    "description": "Versatile bags for various uses.",
+    "organiser": {
+      "name": "Sewing for Charity Australia",
+      "url": "https://sewingforcharity.com/"
+    },
+    "category": "Community Services",
+    "craft": "Sewing",
+    "equipment": "Sewing Machine",
+    "materialType": "Fabric",
+    "materialAmount": "See pattern",
+    "approximateTime": "Varies",
+    "need": "Medium",
+    "lastUpdated": "2026-02-12",
+    "pattern": {
+      "text": "Download PDF",
+      "url": "https://sewingforcharity.com/wp-content/uploads/2025/09/SFCA-Project-Sheet-DRAWSTRING-BAGS-Ver-2.0.pdf"
+    },
+    "donationDestination": "Sewing for Charity Australia",
+    "deadline": "Ongoing",
+    "image": "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3C/svg%3E"
   }
 ]
