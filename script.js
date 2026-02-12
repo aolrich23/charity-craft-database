@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.getElementById('projectGrid');
     const searchInput = document.getElementById('search');
+    const craftSelect = document.getElementById('craftFilter');
     const materialSelect = document.getElementById('materialFilter');
     const timeSelect = document.getElementById('timeFilter');
     const recipientSelect = document.getElementById('recipientFilter');
@@ -20,6 +21,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Populate Dynamic Dropdowns (Material & Recipient)
     function populateDropdowns(data) {
+        // Get unique crafts
+        const crafts = [...new Set(data.map(item => item.craft))].sort();
+        crafts.forEach(craft => {
+            const option = document.createElement('option');
+            option.value = craft;
+            option.textContent = craft;
+            craftSelect.appendChild(option);
+        });
+
         // Get unique materials
         const materials = [...new Set(data.map(item => item.materialType))].sort();
         materials.forEach(mat => {
@@ -82,6 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. Filter Logic
     function filterProjects() {
         const searchTerm = searchInput.value.toLowerCase();
+        const craftValue = craftSelect.value;
         const materialValue = materialSelect.value;
         const timeValue = timeSelect.value;
         const recipientValue = recipientSelect.value;
@@ -90,6 +101,9 @@ document.addEventListener('DOMContentLoaded', () => {
             // Search Text (Title or Description)
             const matchesSearch = project.title.toLowerCase().includes(searchTerm) || 
                                   project.description.toLowerCase().includes(searchTerm);
+
+            // Craft Filter
+            const matchesCraft = craftValue === '' || project.craft === craftValue;
 
             // Material Filter
             const matchesMaterial = materialValue === '' || project.materialType === materialValue;
@@ -105,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
             else if (timeValue === 'medium') matchesTime = hours >= 3 && hours <= 10;
             else if (timeValue === 'long') matchesTime = hours > 10;
 
-            return matchesSearch && matchesMaterial && matchesCategory && matchesTime;
+            return matchesSearch && matchesCraft && matchesMaterial && matchesCategory && matchesTime;
         });
 
         renderProjects(filtered);
@@ -113,6 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 5. Event Listeners
     searchInput.addEventListener('input', filterProjects);
+    craftSelect.addEventListener('change', filterProjects);
     materialSelect.addEventListener('change', filterProjects);
     timeSelect.addEventListener('change', filterProjects);
     recipientSelect.addEventListener('change', filterProjects);

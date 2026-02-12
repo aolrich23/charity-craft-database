@@ -9,19 +9,35 @@
 <body>
 
     <header>
-        <h1>Community Project Tracker</h1>
-        <p>Browse and filter ongoing projects.</p>
+        <h1>Make It Matter – Charity Craft Project Finder</h1>
+        <p>A searchable directory of craft projects supporting charities across Australia. Filter by the material, skills, or time you have, or find local causes, or ones that matter to you. Every bit helps.</p>
     </header>
 
     <main>
-        <!-- Controls Section -->
-        <section class="controls">
-            <div class="search-box">
-                <label for="search">Search</label>
-                <input type="text" id="search" placeholder="Search projects...">
-            </div>
+        <!-- Top Search Bar -->
+        <div class="search-section">
+            <label for="search">Search Projects</label>
+            <input type="text" id="search" placeholder="e.g. Beanies, WIRES...">
+        </div>
 
-            <div class="filters">
+        <div class="content-wrapper">
+            <!-- Results Grid -->
+            <section id="projectGrid" class="grid-container">
+                <!-- Cards injected here -->
+            </section>
+
+            <!-- Sidebar Filters -->
+            <aside class="sidebar">
+                <h3>Filters</h3>
+                
+                <div class="filter-group">
+                    <label for="craftFilter">Craft Type</label>
+                    <select id="craftFilter">
+                        <option value="">All Crafts</option>
+                        <!-- Options populated by JS -->
+                    </select>
+                </div>
+
                 <div class="filter-group">
                     <label for="materialFilter">Material</label>
                     <select id="materialFilter">
@@ -47,13 +63,8 @@
                         <!-- Options populated by JS -->
                     </select>
                 </div>
-            </div>
-        </section>
-
-        <!-- Results Grid -->
-        <section id="projectGrid" class="grid-container">
-            <!-- Cards injected here -->
-        </section>
+            </aside>
+        </div>
         
         <p id="noResults" class="hidden">No projects found matching your criteria.</p>
     </main>
