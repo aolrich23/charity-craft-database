@@ -287,6 +287,10 @@ select:focus {
         flex-direction: column;
     }
     
-    .sidebar { width: 100%; order: 1; }
-    .grid-container { order: 2; }
+    .sidebar { 
+        width: 100%; 
+        position: static;
+        flex: none;
+        margin-bottom: 20px;
+    }
 }
