@@ -287,6 +287,6 @@ select:focus {
         flex-direction: column;
     }
     
-    .sidebar { width: 100%; order: 2; }
-    .grid-container { order: 1; }
+    .sidebar { width: 100%; order: 1; }
+    .grid-container { order: 2; }
 }
