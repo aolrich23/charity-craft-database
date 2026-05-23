@@ -115,20 +115,43 @@ label {
     letter-spacing: 0.05em;
 }
 
-input, select {
-    padding: 12px;
+input[type="text"] {
+    padding: 12px 20px;
     border: 1px solid var(--border-color);
     border-radius: 8px;
     font-size: 0.95rem;
     width: 100%;
-    background-color: white;
-    color: var(--primary-color);
-    transition: border-color 0.2s;
 }
 
-select:focus {
-    outline: none;
-    border-color: var(--accent-color);
+.checkbox-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: white;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.checkbox-list label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: none;
+    letter-spacing: normal;
+    font-weight: 400;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    color: var(--text-color);
+}
+
+.checkbox-list input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
 }
 
 /* Grid Layout */
@@ -136,8 +159,8 @@ select:focus {
     flex: 1;
     min-width: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
 }
 
 /* Card Styling */
@@ -151,6 +174,7 @@ select:focus {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .card:hover {
@@ -161,9 +185,10 @@ select:focus {
 
 .card-image {
     width: 100%;
-    height: 200px;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     border-bottom: 1px solid var(--border-color);
+    background-color: #f1f5f9; /* Placeholder color */
 }
 
 .card-header {
@@ -200,27 +225,20 @@ select:focus {
     padding: 0 20px;
     font-size: 0.8rem;
     color: var(--secondary-color);
-    margin-bottom: 15px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-}
-
-.card-meta span {
+    margin-bottom: 8px;
     display: flex;
-    flex-direction: column;
-    margin-bottom: 0;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
 }
 
-.card-meta span strong {
-    color: var(--primary-color);
-    font-weight: 600;
-    font-size: 0.75rem;
+.card-meta:last-of-type {
+    margin-bottom: 20px; /* Maintains the 20px padding at the bottom of the card */
 }
 
 .tag {
     display: inline-block;
-    background-color: #e0e7ff;
+    background-color: #f1f5f9; /* Slate 100 - muted background for higher contrast */
     padding: 2px 8px;
     border-radius: 999px;
     font-weight: 500;
@@ -228,11 +246,6 @@ select:focus {
     font-size: 0.75rem;
     width: fit-content;
 }
-
-/* Need Badges */
-.need-high { background-color: #fee2e2; color: #ef4444; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; white-space: nowrap; }
-.need-medium { background-color: #ffedd5; color: #f97316; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; white-space: nowrap; }
-.need-low { background-color: #dcfce7; color: #22c55e; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; white-space: nowrap; }
 
 .description {
     padding: 0 20px;

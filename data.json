@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "title": "Wrap Square",
+    "title": "Wrap square",
     "description": "",
     "organiser": {
       "name": "Wrap With Love",
@@ -24,19 +24,16 @@
       }
     ],
     "approximateTime": "2-4 hours",
-    "need": "Medium",
-    "lastUpdated": "",
     "pattern": {
       "text": "Browse example patterns",
       "url": "https://wrapwithlove.org/patterns/"
     },
     "donationDestination": "Spotlight stores; Post to Rosebery",
-    "deadline": "Ongoing",
-    "image": null
+    "image": "https://wrapwithlove.org/wp-content/uploads/2024/08/crocheted-granny-square-wrap-with-love-750.jpg"
   },
   {
     "id": 2,
-    "title": "Completed Wrap",
+    "title": "Completed wrap",
     "description": "",
     "organiser": {
       "name": "Wrap With Love",
@@ -59,19 +56,16 @@
       }
     ],
     "approximateTime": "More than 10 hours",
-    "need": "Medium",
-    "lastUpdated": "",
     "pattern": {
       "text": "Browse example patterns",
       "url": "https://wrapwithlove.org/patterns/"
     },
     "donationDestination": "Spotlight stores; Post to Rosebery",
-    "deadline": "Ongoing",
-    "image": null
+    "image": "https://wrapwithlove.org/wp-content/uploads/2024/08/wrap-with-love-wrap1.jpg"
   },
   {
     "id": 3,
-    "title": "3D Hanging Bag",
+    "title": "3D hanging bag",
     "description": "",
     "organiser": {
       "name": "Animal Rescue Cooperative",
@@ -85,21 +79,27 @@
       "Sewing"
     ],
     "equipment": "Sewing machine, Scissors, Iron",
-    "materials": [],
+    "materials": [
+      {
+        "type": "cotton drill",
+        "amount": ""
+      },
+      {
+        "type": "cotton quilting fabric",
+        "amount": ""
+      }
+    ],
     "approximateTime": "1-2 hours",
-    "need": "High",
-    "lastUpdated": "",
     "pattern": {
       "text": "Download PDF",
       "url": "https://craftguild.org.au/wp-content/uploads/2020/05/Sew-ARCCG-3D-Hanging-Bag.pdf"
     },
     "donationDestination": "Complete form to find local drop-off or post address",
-    "deadline": "Ongoing",
-    "image": null
+    "image": "https://craftguild.org.au/wp-content/uploads/2020/05/IMG_1623.jpeg"
   },
   {
     "id": 4,
-    "title": "Joey Pouch Set",
+    "title": "Joey pouch set",
     "description": "",
     "organiser": {
       "name": "Animal Rescue Cooperative",
@@ -113,21 +113,27 @@
       "Sewing"
     ],
     "equipment": "Sewing machine, Scissors, Iron, Printer for pattern",
-    "materials": [],
+    "materials": [
+      {
+        "type": "cotton quilting fabric",
+        "amount": ""
+      },
+      {
+        "type": "cotton flannellette",
+        "amount": ""
+      }
+    ],
     "approximateTime": "1-2 hours",
-    "need": "High",
-    "lastUpdated": "",
     "pattern": {
       "text": "Read tutorial",
       "url": "https://craftguild.org.au/2020/05/04/joey-pouches/"
     },
     "donationDestination": "Complete form to find local drop-off or post address",
-    "deadline": "Ongoing",
-    "image": null
+    "image": "https://craftguild.org.au/wp-content/uploads/2020/05/83401059_2725680794191373_1820492587866259456_n.jpg"
   },
   {
     "id": 5,
-    "title": "Bat Wrap",
+    "title": "Bat wrap",
     "description": "",
     "organiser": {
       "name": "Animal Rescue Cooperative",
@@ -141,21 +147,23 @@
       "Sewing"
     ],
     "equipment": "Sewing machine, Scissors, Iron",
-    "materials": [],
+    "materials": [
+      {
+        "type": "cotton flannellette",
+        "amount": ""
+      }
+    ],
     "approximateTime": "Less than one hour",
-    "need": "High",
-    "lastUpdated": "",
     "pattern": {
       "text": "Download PDF",
       "url": "https://www.facebook.com/download/549295092331678/Sew-ARCCG%20Bat%20Wraps%20Sewing%20Pattern%20-%20Revision%201.pdf"
     },
     "donationDestination": "Complete form to find local drop-off or post address",
-    "deadline": "Ongoing",
-    "image": null
+    "image": "https://www.sewmucheasier.com/assets/images/blog/stories/f0c0710a-050c-4874-b1a5-a9abad38e69d.jpg"
   },
   {
     "id": 6,
-    "title": "Trauma Teddy",
+    "title": "Trauma teddy",
     "description": "",
     "organiser": {
       "name": "Australian Red Cross",
@@ -181,19 +189,16 @@
       }
     ],
     "approximateTime": "4-10 hours",
-    "need": "Medium",
-    "lastUpdated": "",
     "pattern": {
       "text": "View pattern",
       "url": "https://www.redcross.org.au/act/knitting-for-charity-trauma-teddies/trauma-teddy-questions/#patterns"
     },
     "donationDestination": "Complete form to find local drop-off or post address",
-    "deadline": "Ongoing",
-    "image": null
+    "image": "https://www.redcross.org.au/contentassets/8a9d8d5351d141d097be9e0360acfece/trauma-teddy-2.jpg"
   },
   {
     "id": 7,
-    "title": "Cat Toys",
+    "title": "Cat toys",
     "description": "",
     "organiser": {
       "name": "Knit 4 Charities Inc",
@@ -214,14 +219,11 @@
       }
     ],
     "approximateTime": "Less than one hour",
-    "need": "Medium",
-    "lastUpdated": "",
     "pattern": {
       "text": "Download PDF",
       "url": "patterns/cat_toys.pdf"
     },
     "donationDestination": "Deliver to the Cat Protection Society",
-    "deadline": "Ongoing",
-    "image": null
+    "image": "https://catprotection.org.au/wp-content/uploads/2017/06/ViolaKnittedtoy.jpg"
   }
 ]

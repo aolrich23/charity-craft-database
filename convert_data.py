@@ -57,11 +57,8 @@ def transform_csv_to_json():
                 "equipment": row.get('Equipment', ''),
                 "materials": materials,
                 "approximateTime": row.get('approximateTime', ''),
-                "need": row.get('Need', 'Medium') or 'Medium',
-                "lastUpdated": row.get('Last updated', ''),
                 "pattern": pattern,
                 "donationDestination": row.get('donationInstructions', ''),
-                "deadline": row.get('When are they needed by', 'Ongoing'),
                 "image": row.get('image') if row.get('image') else None
             }
             projects.append(project)

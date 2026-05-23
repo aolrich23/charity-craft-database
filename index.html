@@ -13,63 +13,64 @@
 
     <header>
         <h1>Make It Matter – Charity Craft Project Finder</h1>
-        <p>A searchable directory of craft projects supporting charities across Australia. Filter by the material, skills, or time you have, or find local causes, or ones that matter to you. Every bit helps.</p>
+        <p>A searchable directory of craft projects supporting charities across Australia. Filter by the material, skills, or time you have, or find a cause that matters to you. Every bit helps.</p>
     </header>
 
     <main>
-        <!-- Top Search Bar -->
-        <div class="search-section">
-            <label for="search">Search Projects</label>
-            <input type="text" id="search" placeholder="e.g. Beanies, WIRES...">
-        </div>
+        <div id="searchView">
+            <!-- Top Search Bar -->
+            <div class="search-section">
+                <label for="search">Search Projects</label>
+                <input type="text" id="search" placeholder="e.g. blankets, toys...">
+            </div>
 
-        <div class="content-wrapper">
-            <!-- Sidebar Filters -->
-            <aside class="sidebar">
-                <h3>Filters</h3>
-                
-                <div class="filter-group">
-                    <label for="craftFilter">Craft Type</label>
-                    <select id="craftFilter">
-                        <option value="">All Crafts</option>
-                        <!-- Options populated by JS -->
-                    </select>
-                </div>
+            <div class="content-wrapper">
+                <!-- Sidebar Filters -->
+                <aside class="sidebar">
+                    <h3>Filters</h3>
+                    
+                    <div class="filter-group">
+                        <label for="craftFilter">Craft Type</label>
+                        <div id="craftFilter" class="checkbox-list">
+                            <!-- Checkboxes populated by JS -->
+                        </div>
+                    </div>
 
-                <div class="filter-group">
-                    <label for="materialFilter">Material</label>
-                    <select id="materialFilter">
-                        <option value="">All Materials</option>
-                        <!-- Options populated by JS -->
-                    </select>
-                </div>
+                    <div class="filter-group">
+                        <label for="materialFilter">Material</label>
+                        <div id="materialFilter" class="checkbox-list">
+                            <!-- Checkboxes populated by JS -->
+                        </div>
+                    </div>
 
-                <div class="filter-group">
-                    <label for="timeFilter">Time Estimate</label>
-                    <select id="timeFilter">
-                        <option value="">Any Time</option>
-                        <option value="short">Short (< 3 hours)</option>
-                        <option value="medium">Medium (3-10 hours)</option>
-                        <option value="long">Long (> 10 hours)</option>
-                    </select>
-                </div>
+                    <div class="filter-group">
+                        <label for="timeFilter">Time Estimate</label>
+                        <div id="timeFilter" class="checkbox-list">
+                            <!-- Checkboxes populated by JS -->
+                        </div>
+                    </div>
 
-                <div class="filter-group">
-                    <label for="recipientFilter">Category</label>
-                    <select id="recipientFilter">
-                        <option value="">All Categories</option>
-                        <!-- Options populated by JS -->
-                    </select>
-                </div>
-            </aside>
+                    <div class="filter-group">
+                        <label for="recipientFilter">Category</label>
+                        <div id="recipientFilter" class="checkbox-list">
+                            <!-- Checkboxes populated by JS -->
+                        </div>
+                    </div>
+                </aside>
 
-            <!-- Results Grid -->
-            <section id="projectGrid" class="grid-container">
-                <!-- Cards injected here -->
-            </section>
+                <!-- Results Grid -->
+                <section id="projectGrid" class="grid-container">
+                    <!-- Cards injected here -->
+                </section>
+            </div>
+            <p id="noResults" class="hidden">No projects found matching your criteria.</p>
         </div>
         
-        <p id="noResults" class="hidden">No projects found matching your criteria.</p>
+        <!-- Project Details View -->
+        <section id="projectDetails" class="hidden detail-view-container">
+            <button id="backToList" class="back-button">← Back to search</button>
+            <div id="detailsContent"></div>
+        </section>
     </main>
 
     <script src="script.js"></script>
