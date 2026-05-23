@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Populate Dynamic Dropdowns (Material & Recipient)
     function populateDropdowns(data) {
         // Get unique crafts
-        const crafts = [...new Set(data.map(item => item.craft))].sort();
+        const crafts = [...new Set(data.flatMap(item => item.craft))].sort();
         crafts.forEach(craft => {
             const option = document.createElement('option');
             option.value = craft;
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Get unique materials
-        const materials = [...new Set(data.map(item => item.materialType))].sort();
+        const materials = [...new Set(data.flatMap(item => item.materials.map(m => m.type)))].sort();
         materials.forEach(mat => {
             const option = document.createElement('option');
             option.value = mat;
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Get unique categories (formerly recipients)
-        const categories = [...new Set(data.map(item => item.category))].sort();
+        const categories = [...new Set(data.flatMap(item => item.category))].sort();
         categories.forEach(cat => {
             const option = document.createElement('option');
             option.value = cat;
@@ -72,10 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <p class="organiser"><strong>Organiser:</strong> <a href="${project.organiser.url}" target="_blank">${project.organiser.name}</a></p>
                 <div class="card-meta">
-                    <span><strong>Category:</strong> ${project.category}</span>
-                    <span><strong>Craft:</strong> ${project.craft}</span>
-                    <span><strong>Material:</strong> <span class="tag">${project.materialType}</span></span>
-                    <span><strong>Amount:</strong> ${project.materialAmount}</span>
+                    <span><strong>Category:</strong> ${Array.isArray(project.category) ? project.category.join(', ') : project.category}</span>
+                    <span><strong>Craft:</strong> ${Array.isArray(project.craft) ? project.craft.join(', ') : project.craft}</span>
+                    <span><strong>Materials:</strong> ${project.materials.map(m => `<span class="tag">${m.type}</span>`).join(' ')}</span>
+                    <span><strong>Amounts:</strong> ${project.materials.map(m => m.amount).filter(a => a).join(', ')}</span>
                     <span><strong>Time:</strong> ${project.approximateTime}</span>
                     <span><strong>Deadline:</strong> ${project.deadline}</span>
                 </div>
@@ -103,13 +103,13 @@ document.addEventListener('DOMContentLoaded', () => {
                                   project.description.toLowerCase().includes(searchTerm);
 
             // Craft Filter
-            const matchesCraft = craftValue === '' || project.craft === craftValue;
+            const matchesCraft = craftValue === '' || (Array.isArray(project.craft) ? project.craft.includes(craftValue) : project.craft === craftValue);
 
             // Material Filter
-            const matchesMaterial = materialValue === '' || project.materialType === materialValue;
+            const matchesMaterial = materialValue === '' || project.materials.some(m => m.type === materialValue);
 
             // Category Filter (mapped to recipient select)
-            const matchesCategory = recipientValue === '' || project.category === recipientValue;
+            const matchesCategory = recipientValue === '' || (Array.isArray(project.category) ? project.category.includes(recipientValue) : project.category === recipientValue);
 
             // Time Filter (Parsing logic)
             // Assumes format "X hours" or similar. 
