@@ -13,7 +13,7 @@
 
     <header>
         <h1>Make It Matter – Charity Craft Project Finder</h1>
-        <p>A searchable directory of craft projects supporting charities across Australia. Filter by the material, skills, or time you have, or find local causes, or ones that matter to you. Every bit helps.</p>
+        <p>A searchable directory of craft projects supporting charities across Australia. Filter by the material, skills, or time you have, or find a cause that matters to you. Every bit helps.</p>
     </header>
 
     <main>
@@ -21,7 +21,7 @@
             <!-- Top Search Bar -->
             <div class="search-section">
                 <label for="search">Search Projects</label>
-                <input type="text" id="search" placeholder="e.g. Beanies, WIRES...">
+                <input type="text" id="search" placeholder="e.g. blankets, toys...">
             </div>
 
             <div class="content-wrapper">
@@ -31,36 +31,30 @@
                     
                     <div class="filter-group">
                         <label for="craftFilter">Craft Type</label>
-                        <select id="craftFilter">
-                            <option value="">All Crafts</option>
-                            <!-- Options populated by JS -->
-                        </select>
+                        <div id="craftFilter" class="checkbox-list">
+                            <!-- Checkboxes populated by JS -->
+                        </div>
                     </div>
 
                     <div class="filter-group">
                         <label for="materialFilter">Material</label>
-                        <select id="materialFilter">
-                            <option value="">All Materials</option>
-                            <!-- Options populated by JS -->
-                        </select>
+                        <div id="materialFilter" class="checkbox-list">
+                            <!-- Checkboxes populated by JS -->
+                        </div>
                     </div>
 
                     <div class="filter-group">
                         <label for="timeFilter">Time Estimate</label>
-                        <select id="timeFilter">
-                            <option value="">Any Time</option>
-                            <option value="short">Short (< 3 hours)</option>
-                            <option value="medium">Medium (3-10 hours)</option>
-                            <option value="long">Long (> 10 hours)</option>
-                        </select>
+                        <div id="timeFilter" class="checkbox-list">
+                            <!-- Checkboxes populated by JS -->
+                        </div>
                     </div>
 
                     <div class="filter-group">
                         <label for="recipientFilter">Category</label>
-                        <select id="recipientFilter">
-                            <option value="">All Categories</option>
-                            <!-- Options populated by JS -->
-                        </select>
+                        <div id="recipientFilter" class="checkbox-list">
+                            <!-- Checkboxes populated by JS -->
+                        </div>
                     </div>
                 </aside>
 

@@ -27,32 +27,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Populate Dynamic Dropdowns (Material & Recipient)
     function populateDropdowns(data) {
+        const createCheckbox = (container, value, labelText) => {
+            const label = document.createElement('label');
+            label.innerHTML = `<input type="checkbox" value="${value}"> ${labelText}`;
+            label.querySelector('input').addEventListener('change', filterProjects);
+            container.appendChild(label);
+        };
+
         // Get unique crafts
         const crafts = [...new Set(data.flatMap(item => item.craft))].sort();
-        crafts.forEach(craft => {
-            const option = document.createElement('option');
-            option.value = craft;
-            option.textContent = craft;
-            craftSelect.appendChild(option);
-        });
+        crafts.forEach(craft => createCheckbox(craftSelect, craft, craft));
 
         // Get unique materials
         const materials = [...new Set(data.flatMap(item => item.materials.map(m => m.type)))].sort();
-        materials.forEach(mat => {
-            const option = document.createElement('option');
-            option.value = mat;
-            option.textContent = mat;
-            materialSelect.appendChild(option);
-        });
+        materials.forEach(mat => createCheckbox(materialSelect, mat, mat));
 
         // Get unique categories (formerly recipients)
         const categories = [...new Set(data.flatMap(item => item.category))].sort();
-        categories.forEach(cat => {
-            const option = document.createElement('option');
-            option.value = cat;
-            option.textContent = cat;
-            recipientSelect.appendChild(option);
+        categories.forEach(cat => createCheckbox(recipientSelect, cat, `${getCategoryEmoji(cat)} ${cat}`));
+
+        // Get unique time estimates
+        const times = [...new Set(data.map(item => item.approximateTime))].sort((a, b) => {
+            const getVal = s => {
+                if (s.toLowerCase().includes('less')) return 0;
+                if (s.toLowerCase().includes('more')) return 999;
+                return parseInt(s) || 0;
+            };
+            return getVal(a) - getVal(b);
         });
+        times.forEach(time => createCheckbox(timeSelect, time, time));
     }
 
     function getCategoryEmoji(category) {
@@ -79,7 +82,9 @@ document.addEventListener('DOMContentLoaded', () => {
             card.className = 'card';
             card.onclick = () => showProjectDetails(project.id);
             
-            const primaryCategory = Array.isArray(project.category) ? project.category[0] : project.category;
+            const categoryTags = (Array.isArray(project.category) ? project.category : [project.category])
+                .map(cat => `<span class="tag">${getCategoryEmoji(cat)} ${cat}</span>`)
+                .join('');
 
             card.innerHTML = `
                 <img src="${project.image || 'https://via.placeholder.com/400x400?text=Project+Image'}" alt="${project.title}" class="card-image">
@@ -89,8 +94,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p class="organiser">${project.organiser.name}</p>
                 <div class="card-meta">
                     <span class="tag">${Array.isArray(project.craft) ? project.craft[0] : project.craft}</span>
-                    <span class="meta-item">⏱️ ${project.approximateTime}</span>
-                    <span class="meta-item">${getCategoryEmoji(primaryCategory)} ${primaryCategory}</span>
+                    <span class="tag">⏱️ ${project.approximateTime}</span>
+                </div>
+                <div class="card-meta">
+                    ${categoryTags}
                 </div>
             `;
             grid.appendChild(card);
@@ -167,32 +174,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. Filter Logic
     function filterProjects() {
         const searchTerm = searchInput.value.toLowerCase();
-        const craftValue = craftSelect.value;
-        const materialValue = materialSelect.value;
-        const timeValue = timeSelect.value;
-        const recipientValue = recipientSelect.value;
+        const getSelected = (container) => Array.from(container.querySelectorAll('input:checked')).map(i => i.value);
+        
+        const selectedCrafts = getSelected(craftSelect);
+        const selectedMaterials = getSelected(materialSelect);
+        const selectedTimes = getSelected(timeSelect);
+        const selectedCategories = getSelected(recipientSelect);
 
         const filtered = projects.filter(project => {
-            // Search Text (Title or Description)
             const matchesSearch = project.title.toLowerCase().includes(searchTerm) || 
                                   project.description.toLowerCase().includes(searchTerm);
 
-            // Craft Filter
-            const matchesCraft = craftValue === '' || (Array.isArray(project.craft) ? project.craft.includes(craftValue) : project.craft === craftValue);
-
-            // Material Filter
-            const matchesMaterial = materialValue === '' || project.materials.some(m => m.type === materialValue);
-
-            // Category Filter (mapped to recipient select)
-            const matchesCategory = recipientValue === '' || (Array.isArray(project.category) ? project.category.includes(recipientValue) : project.category === recipientValue);
-
-            // Time Filter (Parsing logic)
-            // Assumes format "X hours" or similar. 
-            const hours = parseInt(project.approximateTime); 
-            let matchesTime = true;
-            if (timeValue === 'short') matchesTime = hours < 3;
-            else if (timeValue === 'medium') matchesTime = hours >= 3 && hours <= 10;
-            else if (timeValue === 'long') matchesTime = hours > 10;
+            const matchesCraft = selectedCrafts.length === 0 || project.craft.some(c => selectedCrafts.includes(c));
+            const matchesMaterial = selectedMaterials.length === 0 || project.materials.some(m => selectedMaterials.includes(m.type));
+            const matchesCategory = selectedCategories.length === 0 || project.category.some(c => selectedCategories.includes(c));
+            const matchesTime = selectedTimes.length === 0 || selectedTimes.includes(project.approximateTime);
 
             return matchesSearch && matchesCraft && matchesMaterial && matchesCategory && matchesTime;
         });
@@ -202,10 +198,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 5. Event Listeners
     searchInput.addEventListener('input', filterProjects);
-    craftSelect.addEventListener('change', filterProjects);
-    materialSelect.addEventListener('change', filterProjects);
-    timeSelect.addEventListener('change', filterProjects);
-    recipientSelect.addEventListener('change', filterProjects);
     backBtn.addEventListener('click', closeDetails);
     window.addEventListener('hashchange', handleRouting);
 });
