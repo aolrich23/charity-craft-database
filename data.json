@@ -24,14 +24,11 @@
       }
     ],
     "approximateTime": "2-4 hours",
-    "need": "Medium",
-    "lastUpdated": "",
     "pattern": {
       "text": "Browse example patterns",
       "url": "https://wrapwithlove.org/patterns/"
     },
     "donationDestination": "Spotlight stores; Post to Rosebery",
-    "deadline": "Ongoing",
     "image": null
   },
   {
@@ -59,14 +56,11 @@
       }
     ],
     "approximateTime": "More than 10 hours",
-    "need": "Medium",
-    "lastUpdated": "",
     "pattern": {
       "text": "Browse example patterns",
       "url": "https://wrapwithlove.org/patterns/"
     },
     "donationDestination": "Spotlight stores; Post to Rosebery",
-    "deadline": "Ongoing",
     "image": null
   },
   {
@@ -87,14 +81,11 @@
     "equipment": "Sewing machine, Scissors, Iron",
     "materials": [],
     "approximateTime": "1-2 hours",
-    "need": "High",
-    "lastUpdated": "",
     "pattern": {
       "text": "Download PDF",
       "url": "https://craftguild.org.au/wp-content/uploads/2020/05/Sew-ARCCG-3D-Hanging-Bag.pdf"
     },
     "donationDestination": "Complete form to find local drop-off or post address",
-    "deadline": "Ongoing",
     "image": null
   },
   {
@@ -115,14 +106,11 @@
     "equipment": "Sewing machine, Scissors, Iron, Printer for pattern",
     "materials": [],
     "approximateTime": "1-2 hours",
-    "need": "High",
-    "lastUpdated": "",
     "pattern": {
       "text": "Read tutorial",
       "url": "https://craftguild.org.au/2020/05/04/joey-pouches/"
     },
     "donationDestination": "Complete form to find local drop-off or post address",
-    "deadline": "Ongoing",
     "image": null
   },
   {
@@ -143,14 +131,11 @@
     "equipment": "Sewing machine, Scissors, Iron",
     "materials": [],
     "approximateTime": "Less than one hour",
-    "need": "High",
-    "lastUpdated": "",
     "pattern": {
       "text": "Download PDF",
       "url": "https://www.facebook.com/download/549295092331678/Sew-ARCCG%20Bat%20Wraps%20Sewing%20Pattern%20-%20Revision%201.pdf"
     },
     "donationDestination": "Complete form to find local drop-off or post address",
-    "deadline": "Ongoing",
     "image": null
   },
   {
@@ -181,14 +166,11 @@
       }
     ],
     "approximateTime": "4-10 hours",
-    "need": "Medium",
-    "lastUpdated": "",
     "pattern": {
       "text": "View pattern",
       "url": "https://www.redcross.org.au/act/knitting-for-charity-trauma-teddies/trauma-teddy-questions/#patterns"
     },
     "donationDestination": "Complete form to find local drop-off or post address",
-    "deadline": "Ongoing",
     "image": null
   },
   {
@@ -214,14 +196,11 @@
       }
     ],
     "approximateTime": "Less than one hour",
-    "need": "Medium",
-    "lastUpdated": "",
     "pattern": {
       "text": "Download PDF",
       "url": "patterns/cat_toys.pdf"
     },
     "donationDestination": "Deliver to the Cat Protection Society",
-    "deadline": "Ongoing",
     "image": null
   }
 ]

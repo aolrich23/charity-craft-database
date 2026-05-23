@@ -1,5 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.getElementById('projectGrid');
+    const searchView = document.getElementById('searchView');
+    const projectDetails = document.getElementById('projectDetails');
+    const detailsContent = document.getElementById('detailsContent');
+    const backBtn = document.getElementById('backToList');
+
     const searchInput = document.getElementById('search');
     const craftSelect = document.getElementById('craftFilter');
     const materialSelect = document.getElementById('materialFilter');
@@ -16,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             projects = data;
             populateDropdowns(data);
             renderProjects(projects);
+            handleRouting();
         })
         .catch(error => console.error('Error loading data:', error));
 
@@ -49,6 +55,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    function getCategoryEmoji(category) {
+        const cat = (category || "").toLowerCase();
+        if (cat.includes('animal')) return '🐾';
+        if (cat.includes('disaster') || cat.includes('emergency')) return '🆘';
+        if (cat.includes('community')) return '🤝';
+        return '❤️';
+    }
+
     // 3. Render Cards
     function renderProjects(data) {
         grid.innerHTML = '';
@@ -60,33 +74,94 @@ document.addEventListener('DOMContentLoaded', () => {
             noResultsMsg.classList.add('hidden');
         }
 
-        data.forEach(project => {
+        data.forEach((project, index) => {
             const card = document.createElement('div');
             card.className = 'card';
+            card.onclick = () => showProjectDetails(project.id);
             
+            const primaryCategory = Array.isArray(project.category) ? project.category[0] : project.category;
+
             card.innerHTML = `
-                ${project.image ? `<img src="${project.image}" alt="${project.title}" class="card-image">` : ''}
+                <img src="${project.image || 'https://via.placeholder.com/400x400?text=Project+Image'}" alt="${project.title}" class="card-image">
                 <div class="card-header">
                     <h3>${project.title}</h3>
-                    <span class="tag need-${project.need.toLowerCase()}">Need: ${project.need}</span>
                 </div>
-                <p class="organiser"><strong>Organiser:</strong> <a href="${project.organiser.url}" target="_blank">${project.organiser.name}</a></p>
+                <p class="organiser">${project.organiser.name}</p>
                 <div class="card-meta">
-                    <span><strong>Category:</strong> ${Array.isArray(project.category) ? project.category.join(', ') : project.category}</span>
-                    <span><strong>Craft:</strong> ${Array.isArray(project.craft) ? project.craft.join(', ') : project.craft}</span>
-                    <span><strong>Materials:</strong> ${project.materials.map(m => `<span class="tag">${m.type}</span>`).join(' ')}</span>
-                    <span><strong>Amounts:</strong> ${project.materials.map(m => m.amount).filter(a => a).join(', ')}</span>
-                    <span><strong>Time:</strong> ${project.approximateTime}</span>
-                    <span><strong>Deadline:</strong> ${project.deadline}</span>
-                </div>
-                <p class="description">${project.description || ''}</p>
-                <div class="card-footer">
-                    <a href="${project.pattern.url}" target="_blank" class="pattern-link">📄 ${project.pattern.text}</a>
-                    <small>Updated: ${new Date(project.lastUpdated).toLocaleDateString()}</small>
+                    <span class="tag">${Array.isArray(project.craft) ? project.craft[0] : project.craft}</span>
+                    <span class="meta-item">⏱️ ${project.approximateTime}</span>
+                    <span class="meta-item">${getCategoryEmoji(primaryCategory)} ${primaryCategory}</span>
                 </div>
             `;
             grid.appendChild(card);
         });
+    }
+
+    function showProjectDetails(id) {
+        const project = projects.find(p => p.id === id);
+        if (!project) return;
+
+        // Update URL hash for sharing/back button support
+        window.location.hash = `project-${id}`;
+
+        detailsContent.innerHTML = `
+            <div class="detail-grid">
+                <div class="detail-main">
+                    <h1>${project.title}</h1>
+                    <p class="organiser">Organised by <a href="${project.organiser.url}" target="_blank">${project.organiser.name}</a></p>
+                    
+                    <div class="description" style="padding: 0; margin-top: 20px;">
+                        <h3>About this project</h3>
+                        <p>${project.description || 'No description provided.'}</p>
+                    </div>
+
+                    <div class="detail-gallery">
+                        <img src="${project.image || 'https://via.placeholder.com/400x400?text=Image+1'}" alt="Gallery 1">
+                        <img src="https://via.placeholder.com/400x400?text=Image+2" alt="Gallery 2">
+                        <img src="https://via.placeholder.com/400x400?text=Image+3" alt="Gallery 3">
+                        <img src="https://via.placeholder.com/400x400?text=Image+4" alt="Gallery 4">
+                    </div>
+                </div>
+
+                <div class="detail-sidebar">
+                    <h4>Project Details</h4>
+                    <div class="card-meta" style="display:flex; flex-direction:column; gap:15px; padding:0;">
+                        <span><strong>Craft:</strong> ${project.craft.join(', ')}</span>
+                        <span><strong>Category:</strong> ${project.category.join(', ')}</span>
+                        <span><strong>Time:</strong> ${project.approximateTime}</span>
+                    </div>
+
+                    <h4 style="margin-top:25px;">Materials Required</h4>
+                    <ul style="list-style: none; font-size: 0.9rem;">
+                        ${project.materials.map(m => `<li>• ${m.amount} ${m.type}</li>`).join('')}
+                    </ul>
+
+                    <div style="margin-top:30px;">
+                        <a href="${project.pattern.url}" target="_blank" class="pattern-link" style="display:block; text-align:center;">Download Pattern</a>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        searchView.classList.add('hidden');
+        projectDetails.classList.remove('hidden');
+        window.scrollTo(0, 0);
+    }
+
+    function closeDetails() {
+        window.location.hash = '';
+        projectDetails.classList.add('hidden');
+        searchView.classList.remove('hidden');
+    }
+
+    function handleRouting() {
+        const hash = window.location.hash;
+        if (hash.startsWith('#project-')) {
+            const id = parseInt(hash.replace('#project-', ''));
+            showProjectDetails(id);
+        } else {
+            closeDetails();
+        }
     }
 
     // 4. Filter Logic
@@ -131,4 +206,6 @@ document.addEventListener('DOMContentLoaded', () => {
     materialSelect.addEventListener('change', filterProjects);
     timeSelect.addEventListener('change', filterProjects);
     recipientSelect.addEventListener('change', filterProjects);
+    backBtn.addEventListener('click', closeDetails);
+    window.addEventListener('hashchange', handleRouting);
 });
