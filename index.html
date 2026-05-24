@@ -12,12 +12,82 @@
 <body>
 
     <header>
-        <h1>Make It Matter – Charity Craft Project Finder</h1>
-        <p>A searchable directory of craft projects supporting charities across Australia. Filter by the material, skills, or time you have, or find a cause that matters to you. Every bit helps.</p>
+        <nav class="nav-container">
+            <h1 id="logo">Make It Matter</h1>
+        </nav>
     </header>
 
     <main>
-        <div id="searchView">
+        <!-- Home View -->
+        <section id="homeView">
+            <div class="home-hero">
+                <h1>Great projects are out there.</h1>
+                <h1>Finding them shouldn't take all day.</h1>
+                <p>Make It Matter is a growing directory of Australian charity craft projects. With real detail on skill level, time commitment, and how to get involved, you can be confident your making will matter.</p>
+                <button id="heroBrowseBtn" class="browse-btn">Browse all projects</button>
+            </div>
+
+            <div class="shortcut-section">
+                <h2>Find a cause you care about...</h2>
+                <div class="shortcut-grid" id="causeShortcuts">
+                    <div class="shortcut-card" data-filter="category" data-value="Animal Welfare">
+                        <div class="shortcut-emoji">🐾</div>
+                        <span>Animal Welfare</span>
+                    </div>
+                    <div class="shortcut-card" data-filter="category" data-value="Community Services">
+                        <div class="shortcut-emoji">🤝</div>
+                        <span>Community Services</span>
+                    </div>
+                    <div class="shortcut-card" data-filter="category" data-value="Disaster Relief">
+                        <div class="shortcut-emoji">🆘</div>
+                        <span>Disaster Relief</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shortcut-section">
+                <h2>Use your skills for good...</h2>
+                <div class="shortcut-grid" id="skillShortcuts">
+                    <div class="shortcut-card" data-filter="craft" data-value="Sewing">
+                        <div class="shortcut-emoji">🧵</div>
+                        <span>Sewing</span>
+                    </div>
+                    <div class="shortcut-card" data-filter="craft" data-value="Knitting">
+                        <div class="shortcut-emoji">🧶</div>
+                        <span>Knitting</span>
+                    </div>
+                    <div class="shortcut-card" data-filter="craft" data-value="Crochet">
+                        <div class="shortcut-emoji">🧶</div>
+                        <span>Crochet</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-browse-container">
+                <button id="bottomBrowseBtn" class="browse-btn">Browse all projects</button>
+            </div>
+
+            <section class="about-section">
+                <div class="about-container">
+                    <div class="about-profile">
+                        <img src="andie.jpg" alt="Andie" class="about-photo">
+                        <div class="about-bio">
+                            <h2>The maker behind Make It Matter</h2>
+                            <p>👋🏻 I'm Andie. I've always loved crafts of all kinds (sewing, knitting, crochet, and even recently woodworking). During some recent time off work, I wanted to find a way to keep building my craft skills while making something meaningful, rather than just creating more things to clutter my home. I learnt a lot during this time and made this tool to share what I learnt with others. I hope it helps!</p>
+                            <a href="https://www.instagram.com/andiecrafted/" target="_blank" class="instagram-link">Follow @andiecrafted on Instagram</a>
+                        </div>
+                    </div>
+                    <div class="contact-cta">
+                        <h3>Got a question, idea, or suggestion?</h3>
+                        <p>Get in touch</p>
+                        <a href="mailto:andiecrafted@gmail.com" class="browse-btn">Email me</a>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Search/Results View -->
+        <div id="searchView" class="hidden">
             <!-- Top Search Bar -->
             <div class="search-section">
                 <label for="search">Search Projects</label>
@@ -72,6 +142,36 @@
             <div id="detailsContent"></div>
         </section>
     </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2 class="footer-logo">Make It Matter</h2>
+                    <p>A searchable directory of Australian charity craft projects. Helping makers find meaningful ways to use their skills.</p>
+                </div>
+                <div class="footer-nav">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#search">Browse Projects</a></li>
+                        <li><a href="https://www.instagram.com/andiecrafted/" target="_blank">Instagram</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>Got a suggestion?</p>
+                    <a href="mailto:andiecrafted@gmail.com" class="footer-email">andiecrafted@gmail.com</a>
+                </div>
+            </div>
+            <div class="footer-acknowledgement">
+                <p>Make It Matter acknowledges the Dharawal people as the Traditional Custodians of the land on which we live and work, and pays respect to their Elders past, present and emerging. We also acknowledge the many First Nations peoples across Australia whose deep and continuing care for Country has shaped the communities and traditions that inspire the ways we craft and share with others.</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Make It Matter. Built with ❤️ by Andie.</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>

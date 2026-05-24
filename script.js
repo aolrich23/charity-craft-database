@@ -1,11 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.getElementById('projectGrid');
+    const homeView = document.getElementById('homeView');
     const searchView = document.getElementById('searchView');
     const projectDetails = document.getElementById('projectDetails');
     const detailsContent = document.getElementById('detailsContent');
     const backBtn = document.getElementById('backToList');
+    const logo = document.getElementById('logo');
 
     const searchInput = document.getElementById('search');
+    const heroBrowseBtn = document.getElementById('heroBrowseBtn');
+    const bottomBrowseBtn = document.getElementById('bottomBrowseBtn');
     const craftSelect = document.getElementById('craftFilter');
     const materialSelect = document.getElementById('materialFilter');
     const timeSelect = document.getElementById('timeFilter');
@@ -21,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             projects = data;
             populateDropdowns(data);
             renderProjects(projects);
+            initHomeShortcuts();
             handleRouting();
         })
         .catch(error => console.error('Error loading data:', error));
@@ -66,6 +71,38 @@ document.addEventListener('DOMContentLoaded', () => {
         return '❤️';
     }
 
+    function initHomeShortcuts() {
+        document.querySelectorAll('.shortcut-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const type = card.dataset.filter;
+                const value = card.dataset.value;
+                
+                clearFilters();
+                
+                // Set the specific filter
+                let container;
+                if (type === 'category') container = recipientSelect;
+                else if (type === 'craft') container = craftSelect;
+                
+                if (container) {
+                    const checkbox = container.querySelector(`input[value="${value}"]`);
+                    if (checkbox) checkbox.checked = true;
+                }
+                
+                window.location.hash = 'search';
+            });
+        });
+
+        const goToSearch = () => window.location.hash = 'search';
+        heroBrowseBtn.addEventListener('click', goToSearch);
+        bottomBrowseBtn.addEventListener('click', goToSearch);
+    }
+
+    function clearFilters() {
+        searchInput.value = '';
+        document.querySelectorAll('.checkbox-list input').forEach(i => i.checked = false);
+    }
+
     // 3. Render Cards
     function renderProjects(data) {
         grid.innerHTML = '';
@@ -86,6 +123,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 .map(cat => `<span class="tag">${getCategoryEmoji(cat)} ${cat}</span>`)
                 .join('');
 
+        const craftTags = (Array.isArray(project.craft) ? project.craft : [project.craft])
+            .map(craft => `<span class="tag">${craft}</span>`)
+            .join('');
+
             card.innerHTML = `
                 <img src="${project.image || 'https://via.placeholder.com/400x400?text=Project+Image'}" alt="${project.title}" class="card-image">
                 <div class="card-header">
@@ -93,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <p class="organiser">${project.organiser.name}</p>
                 <div class="card-meta">
-                    <span class="tag">${Array.isArray(project.craft) ? project.craft[0] : project.craft}</span>
+                ${craftTags}
                     <span class="tag">⏱️ ${project.approximateTime}</span>
                 </div>
                 <div class="card-meta">
@@ -163,11 +204,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function handleRouting() {
         const hash = window.location.hash;
+        
+        // Reset visibility
+        homeView.classList.add('hidden');
+        searchView.classList.add('hidden');
+        projectDetails.classList.add('hidden');
+
         if (hash.startsWith('#project-')) {
             const id = parseInt(hash.replace('#project-', ''));
             showProjectDetails(id);
+        } else if (hash === '#search') {
+            searchView.classList.remove('hidden');
+            filterProjects();
         } else {
-            closeDetails();
+            homeView.classList.remove('hidden');
+            window.scrollTo(0, 0);
         }
     }
 
@@ -199,5 +250,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // 5. Event Listeners
     searchInput.addEventListener('input', filterProjects);
     backBtn.addEventListener('click', closeDetails);
+    logo.addEventListener('click', () => window.location.hash = '');
     window.addEventListener('hashchange', handleRouting);
 });
