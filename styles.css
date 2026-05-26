@@ -6,6 +6,13 @@
     --card-bg: #ffffff;
     --text-color: #334155; /* Slate 700 */
     --border-color: #e2e8f0; /* Slate 200 */
+        /* Layout Tokens */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 24px;
+    --text-xs: 11px;
+    --text-sm: 13px;
+    --text-base: 16px;
 }
 
 * {
@@ -351,17 +358,8 @@ input[type="text"] {
     background-color: #f1f5f9; /* Placeholder color */
 }
 
-.card-header {
-    padding: 20px 20px 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 10px;
-    margin-bottom: 5px;
-}
-
 .card h3 {
-    margin-bottom: 0;
+    margin-bottom: 5px;
     font-size: 1.1rem;
     font-weight: 700;
     color: var(--primary-color);
@@ -369,7 +367,6 @@ input[type="text"] {
 }
 
 .organiser {
-    padding: 0 20px;
     font-size: 0.85rem;
     margin-bottom: 15px;
     color: var(--secondary-color);
@@ -382,7 +379,6 @@ input[type="text"] {
 }
 
 .card-meta {
-    padding: 0 20px;
     font-size: 0.8rem;
     color: var(--secondary-color);
     margin-bottom: 8px;
@@ -405,6 +401,21 @@ input[type="text"] {
     color: var(--accent-color);
     font-size: 0.75rem;
     width: fit-content;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-footer-time {
+    margin-top: 6px;
+    border-top: 0.5px solid var(--border-color);
+    padding-top: 6px;
+    font-size: var(--text-xs);
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .description {

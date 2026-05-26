@@ -145,22 +145,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 .map(cat => `<span class="tag">${getCategoryEmoji(cat)} ${cat}</span>`)
                 .join('');
 
-        const craftTags = (Array.isArray(project.craft) ? project.craft : [project.craft])
-            .map(craft => `<span class="tag">${craft}</span>`)
-            .join('');
+            const craftTags = (Array.isArray(project.craft) ? project.craft : [project.craft])
+                .map(craft => `<span class="tag">${craft}</span>`)
+                .join('');
 
             card.innerHTML = `
                 <img src="${project.image || 'https://via.placeholder.com/400x400?text=Project+Image'}" alt="${project.title}" class="card-image">
-                <div class="card-header">
+                <div class="card-body">
                     <h3>${project.title}</h3>
-                </div>
-                <p class="organiser">${project.organiser.name}</p>
-                <div class="card-meta">
-                ${craftTags}
-                    <span class="tag">⏱️ ${project.approximateTime}</span>
-                </div>
-                <div class="card-meta">
-                    ${categoryTags}
+                    <p class="organiser">${project.organiser.name}</p>
+                    <div class="card-meta">
+                        ${craftTags}
+                        ${categoryTags}
+                    </div>
+                    <div class="card-footer-time">
+                        <span>⏱️ ${project.approximateTime}</span>
+                    </div>
                 </div>
             `;
             grid.appendChild(card);
