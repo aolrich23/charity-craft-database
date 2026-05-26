@@ -2,12 +2,14 @@
   {
     "id": 1,
     "title": "Wrap square",
-    "description": "",
+    "whatYouMake": "A 25cm \u00d7 25cm knitted or crocheted square in any colour or pattern, using 8ply yarn. Squares are matched with others at the warehouse and joined into full wraps by volunteers.",
     "organiser": {
       "name": "Wrap With Love",
       "url": "https://wrapwithlove.org/",
-      "location": "Across Australia"
+      "location": "Across Australia",
+      "image": "https://wrapwithlove.org/wp-content/uploads/2024/12/wwl-logo.png"
     },
+    "whoTheyHelp": "Founded in 1992, Wrap with Love has delivered warmth to more than 636,000 people across Australia and around the world. Wraps reach women's refuges, nursing homes, newborn babies, people leaving prison, organisations supporting refugees, and indigenous communities \u2014 as well as communities overseas experiencing poverty, disaster, or conflict, distributed through a network of reputable aid organisations.",
     "category": [
       "Community Services",
       "Disaster Relief"
@@ -16,7 +18,7 @@
       "Crochet",
       "Knitting"
     ],
-    "equipment": "Crochet hook; Knitting needles",
+    "equipment": "4mm crochet hook; 4mm knitting needles",
     "materials": [
       {
         "type": "8 ply acrylic yarn",
@@ -28,18 +30,40 @@
       "text": "Browse example patterns",
       "url": "https://wrapwithlove.org/patterns/"
     },
-    "donationDestination": "Spotlight stores; Post to Rosebery",
-    "image": "https://wrapwithlove.org/wp-content/uploads/2024/08/crocheted-granny-square-wrap-with-love-750.jpg"
+    "image": "https://wrapwithlove.org/wp-content/uploads/2024/08/crocheted-granny-square-wrap-with-love-750.jpg",
+    "contribution": {
+      "mail": "Mail to Post Office Box 10, Roseberry NSW 1445.",
+      "inPerson": "Drop off at the warehouse at Unit 4, 4 Huntley St, Alexandria on Wednesday or Friday between 9:30am to 2:30pm",
+      "other1Text": "Via Spotlight stores",
+      "other1Value": "Drop finished squares or blankets to any Spotlight store around Australia to be posted for free",
+      "other2Text": "Personal note",
+      "other2Value": "If mailing or sending via Spotlight, include your name and email with your donation and a volunteer will notify you when it arrives at the warehouse"
+    },
+    "lastVerified": "May 2026",
+    "skillLevel": "Beginner to advanced (make any pattern you like!)",
+    "community": {
+      "facebookUrl": "https://www.facebook.com/groups/WWL.Virtual.Knitting.Club",
+      "facebookText": "Share progress, ask questions, and connect with other wrap-makers",
+      "instagramUrl": "https://www.instagram.com/wrapwithloveinc/",
+      "instagramText": "See finished blankets and behind-the-scenes at the warehouse",
+      "other1Text": "Find a knitting group near you",
+      "other1Url": "https://wrapwithlove.org/knitting-groups/",
+      "other1Format": "in-person"
+    },
+    "andieStory": "Making a wrap for Wrap with Love is the project that started my whole charity crafting journey. It all started with sharing a post from their Instagram one day asking if friends would make squares with me. The positive response was overwhelming, and before I knew it I was receiving corner-to-corner crochet squares in all colours in the mail and to my doorstep. One friend even helped me join them with ladder stitch, I added a simple border, and a beautiful rainbow wrap was made.\n\nWanting to learn more about the organisation, I also showed up at the warehouse in Alexandria one day and fell completely in love. I now volunteer there every Friday and it fills my cup to be a part of something so special.",
+    "contactUrl": "https://wrapwithlove.org/contact/"
   },
   {
     "id": 2,
     "title": "Completed wrap",
-    "description": "",
+    "whatYouMake": "A complete blanket measuring 100cm \u00d7 175cm, equivalent to 28 squares of 25cm x 25cm, arranged in 4 rows of 7. Any stitch or pattern is welcome as long as the finished dimensions are met.",
     "organiser": {
       "name": "Wrap With Love",
       "url": "https://wrapwithlove.org/",
-      "location": "Across Australia"
+      "location": "Across Australia",
+      "image": "https://wrapwithlove.org/wp-content/uploads/2024/12/wwl-logo.png"
     },
+    "whoTheyHelp": "Founded in 1992, Wrap with Love has delivered warmth to more than 636,000 people across Australia and around the world. Wraps reach women's refuges, nursing homes, newborn babies, people leaving prison, organisations supporting refugees, and indigenous communities \u2014 as well as communities overseas experiencing poverty, disaster, or conflict, distributed through a network of reputable aid organisations.",
     "category": [
       "Community Services",
       "Disaster Relief"
@@ -60,18 +84,40 @@
       "text": "Browse example patterns",
       "url": "https://wrapwithlove.org/patterns/"
     },
-    "donationDestination": "Spotlight stores; Post to Rosebery",
-    "image": "https://wrapwithlove.org/wp-content/uploads/2024/08/wrap-with-love-wrap1.jpg"
+    "image": "https://wrapwithlove.org/wp-content/uploads/2024/08/wrap-with-love-wrap1.jpg",
+    "contribution": {
+      "mail": "Mail to Post Office Box 10, Roseberry NSW 1445.",
+      "inPerson": "Drop off at the warehouse at Unit 4, 4 Huntley St, Alexandria on Wednesday or Friday between 9:30am to 2:30pm",
+      "other1Text": "Via Spotlight stores",
+      "other1Value": "Drop finished squares or blankets to any Spotlight store around Australia to be posted for free",
+      "other2Text": "Personal note",
+      "other2Value": "If mailing or sending via Spotlight, include your name and email with your donation and a volunteer will notify you when it arrives at the warehouse"
+    },
+    "lastVerified": "May 2026",
+    "skillLevel": "Beginner to advanced (make any pattern you like!)",
+    "community": {
+      "facebookUrl": "https://www.facebook.com/groups/WWL.Virtual.Knitting.Club",
+      "facebookText": "Share progress, ask questions, and connect with other wrap-makers",
+      "instagramUrl": "https://www.instagram.com/wrapwithloveinc/",
+      "instagramText": "See finished blankets and behind-the-scenes at the warehouse",
+      "other1Text": "Find a knitting group near you",
+      "other1Url": "https://wrapwithlove.org/knitting-groups/",
+      "other1Format": "in-person"
+    },
+    "andieStory": "Making a wrap for Wrap with Love is the project that started my whole charity crafting journey. It all started with sharing a post from their Instagram one day asking if friends would make squares with me. The positive response was overwhelming, and before I knew it I was receiving corner-to-corner crochet squares in all colours in the mail and to my doorstep. One friend even helped me join them with ladder stitch, I added a simple border, and a beautiful rainbow wrap was made.\n\nWanting to learn more about the organisation, I also showed up at the warehouse in Alexandria one day and fell completely in love. I now volunteer there every Friday and it fills my cup to be a part of something so special.",
+    "contactUrl": "https://wrapwithlove.org/contact/"
   },
   {
     "id": 3,
     "title": "3D hanging bag",
-    "description": "",
+    "whatYouMake": "A fabric bag with a structured, box-shaped base that hangs from a hook or branch in a wildlife carer's enclosure. It is designed for older, more active animals who are starting to explore but still need a safe den to retreat to. They give growing joeys the freedom to come and go as they please, and can be used day or night.",
     "organiser": {
       "name": "Animal Rescue Cooperative",
       "url": "https://arcsupport.org.au/",
-      "location": "Across Australia"
+      "location": "Across Australia",
+      "image": "https://craftguild.org.au/wp-content/uploads/2020/04/craftguild-web-logo.png"
     },
+    "whoTheyHelp": "The  Animal Rescue Cooperative (ARC) Craft Guild is one of the world's largest volunteer craft movements, supporting wildlife, companion animals, and the rescuers who care for them every day. Items go directly to rescue groups and vet clinics across Australia, helping injured and orphaned animals recover \u2014 from joeys and possums through to microbats, dogs, cats, and lambs. The guild became especially well known during the 2019\u201320 bushfires, when makers around the world sent pouches and nests for displaced wildlife.",
     "category": [
       "Animal Welfare"
     ],
@@ -82,11 +128,11 @@
     "materials": [
       {
         "type": "cotton drill",
-        "amount": ""
+        "amount": "depends on the size"
       },
       {
         "type": "cotton quilting fabric",
-        "amount": ""
+        "amount": "depends on the size"
       }
     ],
     "approximateTime": "1-2 hours",
@@ -94,18 +140,40 @@
       "text": "Download PDF",
       "url": "https://craftguild.org.au/wp-content/uploads/2020/05/Sew-ARCCG-3D-Hanging-Bag.pdf"
     },
-    "donationDestination": "Complete form to find local drop-off or post address",
-    "image": "https://craftguild.org.au/wp-content/uploads/2020/05/IMG_1623.jpeg"
+    "image": "https://craftguild.org.au/wp-content/uploads/2020/05/IMG_1623.jpeg",
+    "contribution": {
+      "mail": "",
+      "inPerson": "",
+      "other1Text": "Register online",
+      "other1Value": "Complete a short online form with your location and they'll send you the nearest drop-off or postage details.",
+      "other2Text": "",
+      "other2Value": ""
+    },
+    "lastVerified": "May 2026",
+    "skillLevel": "Beginner to intermediate (straight stitch, top stitch, slightly tricky construction)",
+    "community": {
+      "facebookUrl": "https://www.facebook.com/groups/arfsncrafts/",
+      "facebookText": "",
+      "instagramUrl": "https://www.instagram.com/animalrescuecraftguild/",
+      "instagramText": "",
+      "other1Text": "",
+      "other1Url": "",
+      "other1Format": ""
+    },
+    "andieStory": "",
+    "contactUrl": "https://arcsupport.org.au/feedback/"
   },
   {
     "id": 4,
     "title": "Joey pouch set",
-    "description": "",
+    "whatYouMake": "Joey pouches keep orphaned and injured marsupial young safe, warm, and secure. In Australia, any marsupial youngster is called a joey, including baby kangaroos, wallabies, wombats, possums, and bilbies. Each pouch set consists of a fabric outer and two to three cotton or flannelette liners, which are swapped out and washed frequently by carers. Sizes range from XXS right up to XXL, with free patterns and printable templates available for all sizes.",
     "organiser": {
       "name": "Animal Rescue Cooperative",
       "url": "https://arcsupport.org.au/",
-      "location": "Across Australia"
+      "location": "Across Australia",
+      "image": "https://craftguild.org.au/wp-content/uploads/2020/04/craftguild-web-logo.png"
     },
+    "whoTheyHelp": "The  Animal Rescue Cooperative (ARC) Craft Guild is one of the world's largest volunteer craft movements, supporting wildlife, companion animals, and the rescuers who care for them every day. Items go directly to rescue groups and vet clinics across Australia, helping injured and orphaned animals recover \u2014 from joeys and possums through to microbats, dogs, cats, and lambs. The guild became especially well known during the 2019\u201320 bushfires, when makers around the world sent pouches and nests for displaced wildlife.",
     "category": [
       "Animal Welfare"
     ],
@@ -116,11 +184,11 @@
     "materials": [
       {
         "type": "cotton quilting fabric",
-        "amount": ""
+        "amount": "depends on the size"
       },
       {
         "type": "cotton flannellette",
-        "amount": ""
+        "amount": "depends on the size"
       }
     ],
     "approximateTime": "1-2 hours",
@@ -128,18 +196,40 @@
       "text": "Read tutorial",
       "url": "https://craftguild.org.au/2020/05/04/joey-pouches/"
     },
-    "donationDestination": "Complete form to find local drop-off or post address",
-    "image": "https://craftguild.org.au/wp-content/uploads/2020/05/83401059_2725680794191373_1820492587866259456_n.jpg"
+    "image": "https://craftguild.org.au/wp-content/uploads/2020/05/83401059_2725680794191373_1820492587866259456_n.jpg",
+    "contribution": {
+      "mail": "",
+      "inPerson": "",
+      "other1Text": "Register online",
+      "other1Value": "Complete a short online form with your location and they'll send you the nearest drop-off or postage details.",
+      "other2Text": "",
+      "other2Value": ""
+    },
+    "lastVerified": "May 2026",
+    "skillLevel": "Beginner to intermediate (straight stitch, french seams, top stitch)",
+    "community": {
+      "facebookUrl": "https://www.facebook.com/groups/arfsncrafts/",
+      "facebookText": "",
+      "instagramUrl": "https://www.instagram.com/animalrescuecraftguild/",
+      "instagramText": "",
+      "other1Text": "",
+      "other1Url": "",
+      "other1Format": ""
+    },
+    "andieStory": "",
+    "contactUrl": "https://arcsupport.org.au/feedback/"
   },
   {
     "id": 5,
     "title": "Bat wrap",
-    "description": "",
+    "whatYouMake": "A bat wrap is essentially a rectangle of cotton flannelette fabric, with a \"pillow\" sewn and stuffed at one end. Bat wraps simulate a mothers\u2019 wings and are used by carers to wrap injured and orphaned bats so they feel safe.",
     "organiser": {
       "name": "Animal Rescue Cooperative",
       "url": "https://arcsupport.org.au/",
-      "location": "Across Australia"
+      "location": "Across Australia",
+      "image": "https://craftguild.org.au/wp-content/uploads/2020/04/craftguild-web-logo.png"
     },
+    "whoTheyHelp": "The Animal Rescue Cooperative (ARC) Craft Guild is one of the world's largest volunteer craft movements, supporting wildlife, companion animals, and the rescuers who care for them every day. Items go directly to rescue groups and vet clinics across Australia, helping injured and orphaned animals recover \u2014 from joeys and possums through to microbats, dogs, cats, and lambs. The guild became especially well known during the 2019\u201320 bushfires, when makers around the world sent pouches and nests for displaced wildlife.",
     "category": [
       "Animal Welfare"
     ],
@@ -150,6 +240,10 @@
     "materials": [
       {
         "type": "cotton flannellette",
+        "amount": "120cm x 50cm"
+      },
+      {
+        "type": "polyfill stuffing",
         "amount": ""
       }
     ],
@@ -158,18 +252,40 @@
       "text": "Download PDF",
       "url": "https://www.facebook.com/download/549295092331678/Sew-ARCCG%20Bat%20Wraps%20Sewing%20Pattern%20-%20Revision%201.pdf"
     },
-    "donationDestination": "Complete form to find local drop-off or post address",
-    "image": "https://www.sewmucheasier.com/assets/images/blog/stories/f0c0710a-050c-4874-b1a5-a9abad38e69d.jpg"
+    "image": "https://www.sewmucheasier.com/assets/images/blog/stories/f0c0710a-050c-4874-b1a5-a9abad38e69d.jpg",
+    "contribution": {
+      "mail": "",
+      "inPerson": "",
+      "other1Text": "Register online",
+      "other1Value": "Complete a short online form with your location and they'll send you the nearest drop-off or postage details.",
+      "other2Text": "",
+      "other2Value": ""
+    },
+    "lastVerified": "May 2026",
+    "skillLevel": "Beginner (straight stitch, turning corners, top stitch)",
+    "community": {
+      "facebookUrl": "https://www.facebook.com/groups/arfsncrafts/",
+      "facebookText": "",
+      "instagramUrl": "https://www.instagram.com/animalrescuecraftguild/",
+      "instagramText": "",
+      "other1Text": "",
+      "other1Url": "",
+      "other1Format": ""
+    },
+    "andieStory": "",
+    "contactUrl": "https://arcsupport.org.au/feedback/"
   },
   {
     "id": 6,
     "title": "Trauma teddy",
-    "description": "",
+    "whatYouMake": "A knitted (or crocheted) teddy bear, stuffed with clean stuffing, and a friendly face sewn on with yarn. All teddies follow the Red Cross pattern, available in both a standard (20cm) and large (28cm) size.",
     "organiser": {
       "name": "Australian Red Cross",
       "url": "https://www.redcross.org.au/teddy/",
-      "location": "Across Australia"
+      "location": "Across Australia",
+      "image": "https://www.redcross.org.au/contentassets/5aceda9df778426f82988bf64d8a2c5d/arc-logo-with-cross.svg"
     },
+    "whoTheyHelp": "Over 1 million children have cuddled a colourful, comforting Trauma Teddy since Australian Red Cross first started hand-knitting them in 1990. Teddies provide comfort to children fleeing bushfires and floods, refugee children arriving in Australia, children in ambulances and hospital, and anyone experiencing illness or distress. The program was born when a NSW paramedic noticed how much comfort a teddy bear gave a child in his ambulance \u2014 and asked his Red Cross volunteer mother to make some.",
     "category": [
       "Community Services"
     ],
@@ -177,7 +293,7 @@
       "Knitting",
       "Crochet"
     ],
-    "equipment": "",
+    "equipment": "3mm or 3.25mm knitting needles",
     "materials": [
       {
         "type": "8 ply acrylic yarn",
@@ -193,25 +309,47 @@
       "text": "View pattern",
       "url": "https://www.redcross.org.au/act/knitting-for-charity-trauma-teddies/trauma-teddy-questions/#patterns"
     },
-    "donationDestination": "Complete form to find local drop-off or post address",
-    "image": "https://www.redcross.org.au/contentassets/8a9d8d5351d141d097be9e0360acfece/trauma-teddy-2.jpg"
+    "image": "https://www.redcross.org.au/contentassets/8a9d8d5351d141d097be9e0360acfece/trauma-teddy-2.jpg",
+    "contribution": {
+      "mail": "",
+      "inPerson": "",
+      "other1Text": "Register online",
+      "other1Value": "Complete a short online form with your location and they'll send you the nearest drop-off or postage details.",
+      "other2Text": "",
+      "other2Value": ""
+    },
+    "lastVerified": "May 2026",
+    "skillLevel": "Beginner (casting on, casting off, garter stitch)",
+    "community": {
+      "facebookUrl": "https://www.facebook.com/australianredcross/",
+      "facebookText": "",
+      "instagramUrl": "https://www.instagram.com/redcrossau/",
+      "instagramText": "",
+      "other1Text": "",
+      "other1Url": "",
+      "other1Format": ""
+    },
+    "andieStory": "",
+    "contactUrl": "https://www.redcross.org.au/teddy/"
   },
   {
     "id": 7,
     "title": "Cat toys",
-    "description": "",
+    "whatYouMake": "Any kind of small toy that a cat or kitten will enjoy batting around to indulge their hunter instincts. There are any number of patterns out there so let your im-meow-gination run wild.",
     "organiser": {
       "name": "Knit 4 Charities Inc",
       "url": "https://www.knit4charities.org.au/",
-      "location": "NSW"
+      "location": "NSW",
+      "image": "https://www.knit4charities.org.au/wp-content/uploads/2021/10/512x512.png"
     },
+    "whoTheyHelp": "Knit4Charities (K4C) was started in 2004 and since then has donated over 1.1 million items since it began, with more than 152,000 donated in 2025 alone.Rather than supporting one cause, they run year-long and monthly donation drives for various causes. Members are encouraged to donate locally where possible to save on postage, and can nominate charities themselves, with no cause considered too big or too small. The Cat Protection Society of NSW has been a regular recipient, but you could just as easily contact your local vet to see if they accept donations and record these as a private donation with K4C.",
     "category": [
       "Animal Welfare"
     ],
     "craft": [
       "Crochet"
     ],
-    "equipment": "",
+    "equipment": "Crochet hook",
     "materials": [
       {
         "type": "Any yarn",
@@ -223,7 +361,27 @@
       "text": "Download PDF",
       "url": "patterns/cat_toys.pdf"
     },
-    "donationDestination": "Deliver to the Cat Protection Society",
-    "image": "https://catprotection.org.au/wp-content/uploads/2017/06/ViolaKnittedtoy.jpg"
+    "image": "https://catprotection.org.au/wp-content/uploads/2017/06/ViolaKnittedtoy.jpg",
+    "contribution": {
+      "mail": "",
+      "inPerson": "Drop to the Cat Protection Society Welfare and Education Centre at 214 Marrickville Road\nMarrickville NSW 2204",
+      "other1Text": "Register online",
+      "other1Value": "Complete a short online form to join the Knit4Charities forum and find postage details for the organiser",
+      "other2Text": "",
+      "other2Value": ""
+    },
+    "lastVerified": "May 2026",
+    "skillLevel": "Beginner to intermediate (magic circle, chain stitch, single crochet, double crochet, increase, decrease)",
+    "community": {
+      "facebookUrl": "https://www.facebook.com/groups/6952226533",
+      "facebookText": "",
+      "instagramUrl": "https://www.instagram.com/knit4charities/",
+      "instagramText": "",
+      "other1Text": "Join the online forum",
+      "other1Url": "https://knit4charities.groups.io/g/knit4charities",
+      "other1Format": "online"
+    },
+    "andieStory": "",
+    "contactUrl": "https://www.knit4charities.org.au/contact-us/"
   }
 ]
