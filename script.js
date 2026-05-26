@@ -1,41 +1,74 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const grid = document.getElementById('projectGrid');
-    const homeView = document.getElementById('homeView');
+    let projects = [];
+    const urlParams = new URLSearchParams(window.location.search);
     const searchView = document.getElementById('searchView');
     const projectDetails = document.getElementById('projectDetails');
-    const detailsContent = document.getElementById('detailsContent');
-    const backBtn = document.getElementById('backToList');
-    const logo = document.getElementById('logo');
-
-    const searchInput = document.getElementById('search');
-    const heroBrowseBtn = document.getElementById('heroBrowseBtn');
-    const bottomBrowseBtn = document.getElementById('bottomBrowseBtn');
-    const craftSelect = document.getElementById('craftFilter');
-    const materialSelect = document.getElementById('materialFilter');
-    const timeSelect = document.getElementById('timeFilter');
-    const recipientSelect = document.getElementById('recipientFilter');
-    const noResultsMsg = document.getElementById('noResults');
-
-    let projects = [];
+    const homeView = document.getElementById('homeView');
 
     // 1. Fetch Data
     fetch('./data.json')
         .then(response => response.json())
         .then(data => {
             projects = data;
-            populateDropdowns(data);
-            renderProjects(projects);
-            initHomeShortcuts();
-            handleRouting();
+            if (homeView) initHomePage();
+            if (searchView) initSearchPage();
+            if (projectDetails) initProjectPage();
         })
         .catch(error => console.error('Error loading data:', error));
 
+    function initHomePage() {
+        const heroBrowseBtn = document.getElementById('heroBrowseBtn');
+        const bottomBrowseBtn = document.getElementById('bottomBrowseBtn');
+        if (heroBrowseBtn) heroBrowseBtn.addEventListener('click', () => window.location.href = 'search.html');
+        if (bottomBrowseBtn) bottomBrowseBtn.addEventListener('click', () => window.location.href = 'search.html');
+    }
+
+    function initSearchPage() {
+        populateDropdowns(projects);
+        applyFiltersFromURL();
+        filterProjects();
+        const searchInput = document.getElementById('search');
+        if (searchInput) searchInput.addEventListener('input', () => {
+            updateURL();
+            filterProjects();
+        });
+    }
+
+    function initProjectPage() {
+        const id = parseInt(urlParams.get('id'));
+        if (id) showProjectDetails(id);
+    }
+
+    function updateURL() {
+        const searchInput = document.getElementById('search');
+        const params = new URLSearchParams();
+        if (searchInput.value) params.set('q', searchInput.value);
+        
+        const getChecked = (selector) => Array.from(document.querySelectorAll(`${selector} input:checked`)).map(i => i.value);
+        const crafts = getChecked('#craftFilter');
+        const categories = getChecked('#recipientFilter');
+        
+        if (crafts.length) params.set('craft', crafts.join(','));
+        if (categories.length) params.set('category', categories.join(','));
+        
+        const newRelativePathQuery = window.location.pathname + '?' + params.toString();
+        window.history.replaceState(null, '', newRelativePathQuery);
+    }
+
     // 2. Populate Dynamic Dropdowns (Material & Recipient)
     function populateDropdowns(data) {
+        const craftSelect = document.getElementById('craftFilter');
+        const materialSelect = document.getElementById('materialFilter');
+        const timeSelect = document.getElementById('timeFilter');
+        const recipientSelect = document.getElementById('recipientFilter');
+
         const createCheckbox = (container, value, labelText) => {
             const label = document.createElement('label');
             label.innerHTML = `<input type="checkbox" value="${value}"> ${labelText}`;
-            label.querySelector('input').addEventListener('change', filterProjects);
+            label.querySelector('input').addEventListener('change', () => {
+                updateURL();
+                filterProjects();
+            });
             container.appendChild(label);
         };
 
@@ -63,6 +96,23 @@ document.addEventListener('DOMContentLoaded', () => {
         times.forEach(time => createCheckbox(timeSelect, time, time));
     }
 
+    function applyFiltersFromURL() {
+        const searchInput = document.getElementById('search');
+        if (urlParams.has('q') && searchInput) searchInput.value = urlParams.get('q');
+        
+        const setCheckboxes = (paramKey, filterId) => {
+            if (!urlParams.has(paramKey)) return;
+            const values = urlParams.get(paramKey).split(',');
+            values.forEach(val => {
+                const cb = document.querySelector(`#${filterId} input[value="${val}"]`);
+                if (cb) cb.checked = true;
+            });
+        };
+
+        setCheckboxes('craft', 'craftFilter');
+        setCheckboxes('category', 'recipientFilter');
+    }
+
     function getCategoryEmoji(category) {
         const cat = (category || "").toLowerCase();
         if (cat.includes('animal')) return '🐾';
@@ -71,40 +121,12 @@ document.addEventListener('DOMContentLoaded', () => {
         return '❤️';
     }
 
-    function initHomeShortcuts() {
-        document.querySelectorAll('.shortcut-card').forEach(card => {
-            card.addEventListener('click', () => {
-                const type = card.dataset.filter;
-                const value = card.dataset.value;
-                
-                clearFilters();
-                
-                // Set the specific filter
-                let container;
-                if (type === 'category') container = recipientSelect;
-                else if (type === 'craft') container = craftSelect;
-                
-                if (container) {
-                    const checkbox = container.querySelector(`input[value="${value}"]`);
-                    if (checkbox) checkbox.checked = true;
-                }
-                
-                window.location.hash = 'search';
-            });
-        });
-
-        const goToSearch = () => window.location.hash = 'search';
-        heroBrowseBtn.addEventListener('click', goToSearch);
-        bottomBrowseBtn.addEventListener('click', goToSearch);
-    }
-
-    function clearFilters() {
-        searchInput.value = '';
-        document.querySelectorAll('.checkbox-list input').forEach(i => i.checked = false);
-    }
-
     // 3. Render Cards
     function renderProjects(data) {
+        const grid = document.getElementById('projectGrid');
+        const noResultsMsg = document.getElementById('noResults');
+        if (!grid) return;
+        
         grid.innerHTML = '';
         
         if (data.length === 0) {
@@ -117,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
         data.forEach((project, index) => {
             const card = document.createElement('div');
             card.className = 'card';
-            card.onclick = () => showProjectDetails(project.id);
+            card.onclick = () => window.location.href = `project.html?id=${project.id}`;
             
             const categoryTags = (Array.isArray(project.category) ? project.category : [project.category])
                 .map(cat => `<span class="tag">${getCategoryEmoji(cat)} ${cat}</span>`)
@@ -146,11 +168,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function showProjectDetails(id) {
+        const detailsContent = document.getElementById('detailsContent');
+        if (!detailsContent) return;
+        
         const project = projects.find(p => p.id === id);
         if (!project) return;
-
-        // Update URL hash for sharing/back button support
-        window.location.hash = `project-${id}`;
 
         detailsContent.innerHTML = `
             <div class="detail-grid">
@@ -190,66 +212,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>
         `;
-
-        searchView.classList.add('hidden');
-        projectDetails.classList.remove('hidden');
-        window.scrollTo(0, 0);
-    }
-
-    function closeDetails() {
-        window.location.hash = '';
-        projectDetails.classList.add('hidden');
-        searchView.classList.remove('hidden');
-    }
-
-    function handleRouting() {
-        const hash = window.location.hash;
-        
-        // Reset visibility
-        homeView.classList.add('hidden');
-        searchView.classList.add('hidden');
-        projectDetails.classList.add('hidden');
-
-        if (hash.startsWith('#project-')) {
-            const id = parseInt(hash.replace('#project-', ''));
-            showProjectDetails(id);
-        } else if (hash === '#search') {
-            searchView.classList.remove('hidden');
-            filterProjects();
-        } else {
-            homeView.classList.remove('hidden');
-            window.scrollTo(0, 0);
-        }
     }
 
     // 4. Filter Logic
     function filterProjects() {
+        const searchInput = document.getElementById('search');
+        if (!searchInput) return;
+
         const searchTerm = searchInput.value.toLowerCase();
-        const getSelected = (container) => Array.from(container.querySelectorAll('input:checked')).map(i => i.value);
+        const getCheckedValues = (id) => Array.from(document.querySelectorAll(`#${id} input:checked`)).map(i => i.value);
         
-        const selectedCrafts = getSelected(craftSelect);
-        const selectedMaterials = getSelected(materialSelect);
-        const selectedTimes = getSelected(timeSelect);
-        const selectedCategories = getSelected(recipientSelect);
+        const selectedCrafts = getCheckedValues('craftFilter');
+        const selectedMaterials = getCheckedValues('materialFilter');
+        const selectedTimes = getCheckedValues('timeFilter');
+        const selectedCategories = getCheckedValues('recipientFilter');
 
         const filtered = projects.filter(project => {
-            const matchesSearch = project.title.toLowerCase().includes(searchTerm) || 
-                                  project.description.toLowerCase().includes(searchTerm);
-
+            const matchesSearch = project.title.toLowerCase().includes(searchTerm);
             const matchesCraft = selectedCrafts.length === 0 || project.craft.some(c => selectedCrafts.includes(c));
             const matchesMaterial = selectedMaterials.length === 0 || project.materials.some(m => selectedMaterials.includes(m.type));
             const matchesCategory = selectedCategories.length === 0 || project.category.some(c => selectedCategories.includes(c));
             const matchesTime = selectedTimes.length === 0 || selectedTimes.includes(project.approximateTime);
-
             return matchesSearch && matchesCraft && matchesMaterial && matchesCategory && matchesTime;
         });
-
         renderProjects(filtered);
     }
-
-    // 5. Event Listeners
-    searchInput.addEventListener('input', filterProjects);
-    backBtn.addEventListener('click', closeDetails);
-    logo.addEventListener('click', () => window.location.hash = '');
-    window.addEventListener('hashchange', handleRouting);
 });

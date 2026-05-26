@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Projects - Make It Matter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <a href="index.html" id="logo" style="text-decoration: none;"><h1 style="margin: 0;">Make It Matter</h1></a>
+        </nav>
+    </header>
+    <main>
+        <div id="searchView">
+            <div class="search-section">
+                <label for="search">Search Projects</label>
+                <input type="text" id="search" placeholder="e.g. blankets, toys...">
+            </div>
+            <div class="content-wrapper">
+                <aside class="sidebar">
+                    <h3>Filters</h3>
+                    <div class="filter-group">
+                        <label for="craftFilter">Craft Type</label>
+                        <div id="craftFilter" class="checkbox-list"></div>
+                    </div>
+                    <div class="filter-group">
+                        <label for="recipientFilter">Category</label>
+                        <div id="recipientFilter" class="checkbox-list"></div>
+                    </div>
+                    <div class="filter-group">
+                        <label for="timeFilter">Time Estimate</label>
+                        <div id="timeFilter" class="checkbox-list"></div>
+                    </div>
+                    <div class="filter-group">
+                        <label for="materialFilter">Material</label>
+                        <div id="materialFilter" class="checkbox-list"></div>
+                    </div>
+                </aside>
+                <section id="projectGrid" class="grid-container"></section>
+            </div>
+            <p id="noResults" class="hidden">No projects found matching your criteria.</p>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2 class="footer-logo">Make It Matter</h2>
+                    <p>A searchable directory of Australian charity craft projects.</p>
+                </div>
+                <div class="footer-nav">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="search.html">Browse Projects</a></li>
+                        <li><a href="https://www.instagram.com/andiecrafted/" target="_blank">Instagram</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>Got a suggestion?</p>
+                    <a href="mailto:andiecrafted@gmail.com" class="footer-email">andiecrafted@gmail.com</a>
+                </div>
+            </div>
+            <div class="footer-acknowledgement">
+                <p>Make It Matter acknowledges the Dharawal people as the Traditional Custodians of the land on which we live and work, and pays respect to their Elders past, present and emerging. We also acknowledge the many First Nations peoples across Australia whose deep and continuing care for Country has shaped the communities and traditions that inspire the ways we craft and share with others.</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Make It Matter. Built with ❤️ by Andie.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

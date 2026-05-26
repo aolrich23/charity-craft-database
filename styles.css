@@ -94,6 +94,7 @@ main {
     cursor: pointer;
     transition: all 0.2s ease;
     box-shadow: 0 4px 6px -1px rgba(19, 168, 158, 0.2);
+    text-decoration: none;
 }
 
 .browse-btn:hover {
