@@ -158,7 +158,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <div class="card-body">
                     <div class="org-row">
-                        <img src="${project.organiser.image || ''}" class="card-org-logo" alt="">
                         <span class="org-name">${project.organiser.name}</span>
                     </div>
                     <h3>${project.title}</h3>
