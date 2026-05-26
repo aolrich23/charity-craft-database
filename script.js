@@ -113,6 +113,20 @@ document.addEventListener('DOMContentLoaded', () => {
         setCheckboxes('category', 'recipientFilter');
     }
 
+    function createCategoryTagsHtml(categories) {
+        return (Array.isArray(categories) ? categories : [categories])
+            .map(cat => `<span class="badge badge--teal">${getCategoryEmoji(cat)} ${cat}</span>`)
+            .join('');
+    }
+
+    function createCraftTagsHtml(crafts) {
+        return (Array.isArray(crafts) ? crafts : [crafts])
+            .map(c => {
+                return `<span class="badge badge--teal">${c}</span>`;
+            })
+            .join('');
+    }
+
     function getCategoryEmoji(category) {
         const cat = (category || "").toLowerCase();
         if (cat.includes('animal')) return '🐾';
@@ -142,17 +156,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = document.createElement('div');
             card.className = 'ui-card ui-card--interactive card';
             card.onclick = () => location.href = `project.html?id=${project.id}`;
-            
-            const categoriesHtml = (Array.isArray(project.category) ? project.category : [project.category])
-                .map(cat => `<span class="badge badge--teal">${getCategoryEmoji(cat)} ${cat}</span>`)
-                .join('');
-
-            const craftsHtml = (Array.isArray(project.craft) ? project.craft : [project.craft])
-                .map(c => {
-                    const iconClass = c.toLowerCase().includes('sewing') ? 'ti-scissors' : 'ti-needle-thread';
-                    return `<span class="badge badge--teal"><i class="ti ${iconClass}"></i> ${c}</span>`;
-                })
-                .join('');
 
             card.innerHTML = `
                 <div class="card-image-wrapper">
@@ -164,10 +167,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <h3>${project.title}</h3>
                     <div class="tag-row">
-                        ${categoriesHtml}
+                        ${createCraftTagsHtml(project.craft)}
                     </div>
                     <div class="tag-row">
-                        ${craftsHtml}
+                        ${createCategoryTagsHtml(project.category)}
                     </div>
                     <div class="card-footer-time">
                         <i class="ti ti-clock"></i> ${project.approximateTime}
@@ -185,14 +188,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const project = projects.find(p => p.id === id);
         if (!project) return;
 
-        const craftTags = (Array.isArray(project.craft) ? project.craft : [project.craft])
-            .map(craft => `<span class="badge badge--outline">${craft}</span>`)
-            .join('');
-            
-        const categoryTags = (Array.isArray(project.category) ? project.category : [project.category])
-            .map(cat => `<span class="badge badge--teal">${getCategoryEmoji(cat)} ${cat}</span>`)
-            .join('');
-
         const materialList = project.materials.map(m => `${m.amount} ${m.type}`).join(', ') || 'PLACEHOLDER - TBD';
 
         detailsContent.innerHTML = `
@@ -202,9 +197,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         <h1 class="detail-title">${project.title}</h1>
                         <span class="muted-badge">verified active - ${project.lastVerified}</span>
                     </div>
-                    <div class="pill-container">
-                        ${craftTags}
-                        ${categoryTags}
+                    <div class="tag-row">
+                        ${createCraftTagsHtml(project.craft)}
+                        ${createCategoryTagsHtml(project.category)}
                     </div>
                 </header>
 
