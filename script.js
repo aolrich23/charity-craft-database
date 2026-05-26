@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 <div class="detail-card-stack">
                     <!-- About the cause -->
-                    <section class="ui-card minimal-card split-card">
+                    <section class="ui-card details-card split-card">
                         <div class="card-info">
                             <span class="card-label">about the cause</span>
                             <div class="row-item"><i class="ti ti-building"></i><span class="label">organisation:</span><span class="value">${project.organiser.name}</span></div>
@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </section>
 
                     <!-- About the project -->
-                    <section class="ui-card minimal-card split-card">
+                    <section class="ui-card details-card split-card">
                         <div class="card-info">
                             <span class="card-label">about the project</span>
                             <div class="row-item"><i class="ti ti-package"></i><span class="label">what you make:</span><span class="value">${project.whatYouMake || 'PLACEHOLDER - TBD'}</span></div>
@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </section>
 
                     <!-- How to contribute -->
-                    <section class="ui-card minimal-card">
+                    <section class="ui-card details-card">
                         <span class="card-label">how to contribute</span>
                         ${project.contribution.mail ? `<div class="row-item"><i class="ti ti-mail"></i><span class="label">by post:</span><span class="value">${project.contribution.mail}</span></div>` : ''}
                         ${project.contribution.inPerson ? `<div class="row-item"><i class="ti ti-building-store"></i><span class="label">in person:</span><span class="value">${project.contribution.inPerson}</span></div>` : ''}
@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </section>
 
                     <!-- Join the community -->
-                    <section class="ui-card minimal-card">
+                    <section class="ui-card details-card">
                         <span class="card-label">join the community</span>
                         <div class="community-list">
                             ${project.community.facebookUrl ? `
@@ -278,7 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </section>
 
                     <!-- Get in touch -->
-                    <section class="ui-card minimal-card contact-section">
+                    <section class="ui-card details-card contact-section">
                         <span class="card-label">get in touch</span>
                         <p class="muted-text">Got questions about this project or organisation? Check their website or reach out to them directly.</p>
                         <div class="button-row">
