@@ -614,8 +614,6 @@ input[type="text"] {
 
 .muted-badge {
     font-size: var(--font-size-xs);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
     color: var(--secondary-color);
     opacity: 0.8;
 }
@@ -636,10 +634,10 @@ input[type="text"] {
     display: block;
     font-size: var(--font-size-xs);
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
     color: var(--secondary-color);
     margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .row-item {

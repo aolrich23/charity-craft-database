@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <header class="detail-header-section">
                     <div class="header-top">
                         <h1 class="detail-title">${project.title}</h1>
-                        <span class="muted-badge">verified active - ${project.lastVerified}</span>
+                        <span class="muted-badge">Verified active - ${project.lastVerified}</span>
                     </div>
                     <div class="tag-row">
                         ${createCraftTagsHtml(project.craft)}
@@ -207,9 +207,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     <!-- About the cause -->
                     <section class="ui-card details-card split-card">
                         <div class="card-info">
-                            <span class="card-label">about the cause</span>
-                            <div class="row-item"><i class="ti ti-building"></i><span class="label">organisation:</span><span class="value">${project.organiser.name}</span></div>
-                            <div class="row-item"><i class="ti ti-users"></i><span class="label">who they help:</span><span class="value">${project.whoTheyHelp || 'PLACEHOLDER - TBD'}</span></div>
+                            <span class="card-label">About the cause</span>
+                            <div class="row-item"><i class="ti ti-building"></i><span class="label">Organisation:</span><span class="value">${project.organiser.name}</span></div>
+                            <div class="row-item"><i class="ti ti-users"></i><span class="label">Who they help:</span><span class="value">${project.whoTheyHelp || 'PLACEHOLDER - TBD'}</span></div>
                         </div>
                         ${project.organiser.image ? `<img src="${project.organiser.image}" alt="${project.organiser.name} logo" class="card-side-image organisation-logo">` : ''}
                     </section>
@@ -217,56 +217,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     <!-- About the project -->
                     <section class="ui-card details-card split-card">
                         <div class="card-info">
-                            <span class="card-label">about the project</span>
-                            <div class="row-item"><i class="ti ti-package"></i><span class="label">what you make:</span><span class="value">${project.whatYouMake || 'PLACEHOLDER - TBD'}</span></div>
-                            <div class="row-item"><i class="ti ti-chart-bar"></i><span class="label">skill level:</span><span class="value">${project.skillLevel || 'PLACEHOLDER - TBD'}</span></div>
-                            <div class="row-item"><i class="ti ti-clock"></i><span class="label">time estimate:</span><span class="value">${project.approximateTime}</span></div>
-                            <div class="row-item"><i class="ti ti-needle"></i><span class="label">materials:</span><span class="value">${materialList}</span></div>
-                            <div class="row-item"><i class="ti ti-file-text"></i><span class="label">patterns:</span><span class="value"><a href="${project.pattern.url}" target="_blank">${project.pattern.text}</a></span></div>
+                            <span class="card-label">About the project</span>
+                            <div class="row-item"><i class="ti ti-package"></i><span class="label">What you make:</span><span class="value">${project.whatYouMake || 'PLACEHOLDER - TBD'}</span></div>
+                            <div class="row-item"><i class="ti ti-chart-bar"></i><span class="label">Skill level:</span><span class="value">${project.skillLevel || 'PLACEHOLDER - TBD'}</span></div>
+                            <div class="row-item"><i class="ti ti-clock"></i><span class="label">Time estimate:</span><span class="value">${project.approximateTime}</span></div>
+                            <div class="row-item"><i class="ti ti-needle"></i><span class="label">Materials:</span><span class="value">${materialList}</span></div>
+                            <div class="row-item"><i class="ti ti-file-text"></i><span class="label">Patterns:</span><span class="value"><a href="${project.pattern.url}" target="_blank">${project.pattern.text}</a></span></div>
                         </div>
                         ${project.image ? `<img src="${project.image}" alt="${project.title}" class="card-side-image project-image">` : ''}
-                    </section>
-
-                    <!-- How to contribute -->
-                    <section class="ui-card details-card">
-                        <span class="card-label">how to contribute</span>
-                        ${project.contribution.mail ? `<div class="row-item"><i class="ti ti-mail"></i><span class="label">by post:</span><span class="value">${project.contribution.mail}</span></div>` : ''}
-                        ${project.contribution.inPerson ? `<div class="row-item"><i class="ti ti-building-store"></i><span class="label">in person:</span><span class="value">${project.contribution.inPerson}</span></div>` : ''}
-                        ${project.contribution.other1Text ? `<div class="row-item"><i class="ti ti-info-circle"></i><span class="label">${project.contribution.other1Text.toLowerCase()}:</span><span class="value">${project.contribution.other1Value}</span></div>` : ''}
-                        ${project.contribution.other2Text ? `<div class="row-item"><i class="ti ti-info-circle"></i><span class="label">${project.contribution.other2Text.toLowerCase()}:</span><span class="value">${project.contribution.other2Value}</span></div>` : ''}
-                    </section>
-
-                    <!-- Join the community -->
-                    <section class="ui-card details-card">
-                        <span class="card-label">join the community</span>
-                        <div class="community-list">
-                            ${project.community.facebookUrl ? `
-                            <a href="${project.community.facebookUrl}" target="_blank" class="row-item community-link">
-                                <i class="ti ti-brand-facebook"></i>
-                                <div class="community-info">
-                                    <span class="value">facebook group</span>
-                                    <span class="muted-text">${project.community.facebookText || 'share progress and ask questions.'}</span>
-                                </div>
-                                <span class="badge badge--blue"><i class="ti ti-world"></i> online</span>
-                            </a>` : ''}
-                            ${project.community.instagramUrl ? `
-                            <a href="${project.community.instagramUrl}" target="_blank" class="row-item community-link">
-                                <i class="ti ti-brand-instagram"></i>
-                                <div class="community-info">
-                                    <span class="value">instagram</span>
-                                    <span class="muted-text">${project.community.instagramText || 'see finished projects.'}</span>
-                                </div>
-                                <span class="badge badge--blue"><i class="ti ti-world"></i> online</span>
-                            </a>` : ''}
-                            ${project.community.other1Url ? `
-                            <a href="${project.community.other1Url}" target="_blank" class="row-item community-link">
-                                <i class="ti ti-users"></i>
-                                <div class="community-info">
-                                    <span class="value">${project.community.other1Text.toLowerCase()}</span>
-                                </div>
-                                <span class="badge ${project.community.other1Format === 'online' ? 'badge--blue' : 'badge--green'}"><i class="ti ti-${project.community.other1Format === 'online' ? 'world' : 'map-pin'}"></i> ${project.community.other1Format || 'in person'}</span>
-                            </a>` : ''}
-                        </div>
                     </section>
 
                     ${project.andieStory ? `
@@ -277,16 +235,58 @@ document.addEventListener('DOMContentLoaded', () => {
                     </section>
                     ` : ''}
 
+                    <!-- How to contribute -->
+                    <section class="ui-card details-card">
+                        <span class="card-label">How to contribute</span>
+                        ${project.contribution.mail ? `<div class="row-item"><i class="ti ti-mail"></i><span class="label">By post:</span><span class="value">${project.contribution.mail}</span></div>` : ''}
+                        ${project.contribution.inPerson ? `<div class="row-item"><i class="ti ti-building-store"></i><span class="label">In person:</span><span class="value">${project.contribution.inPerson}</span></div>` : ''}
+                        ${project.contribution.other1Text ? `<div class="row-item"><i class="ti ti-info-circle"></i><span class="label">${project.contribution.other1Text}:</span><span class="value">${project.contribution.other1Value}</span></div>` : ''}
+                        ${project.contribution.other2Text ? `<div class="row-item"><i class="ti ti-info-circle"></i><span class="label">${project.contribution.other2Text}:</span><span class="value">${project.contribution.other2Value}</span></div>` : ''}
+                    </section>
+
+                    <!-- Join the community -->
+                    <section class="ui-card details-card">
+                        <span class="card-label">Join the community</span>
+                        <div class="community-list">
+                            ${project.community.facebookUrl ? `
+                            <a href="${project.community.facebookUrl}" target="_blank" class="row-item community-link">
+                                <i class="ti ti-brand-facebook"></i>
+                                <div class="community-info">
+                                    <span class="value">Facebook group</span>
+                                    <span class="muted-text">${project.community.facebookText || 'share progress and ask questions.'}</span>
+                                </div>
+                                <span class="badge badge--blue"><i class="ti ti-world"></i> online</span>
+                            </a>` : ''}
+                            ${project.community.instagramUrl ? `
+                            <a href="${project.community.instagramUrl}" target="_blank" class="row-item community-link">
+                                <i class="ti ti-brand-instagram"></i>
+                                <div class="community-info">
+                                    <span class="value">Instagram</span>
+                                    <span class="muted-text">${project.community.instagramText || 'see finished projects.'}</span>
+                                </div>
+                                <span class="badge badge--blue"><i class="ti ti-world"></i> online</span>
+                            </a>` : ''}
+                            ${project.community.other1Url ? `
+                            <a href="${project.community.other1Url}" target="_blank" class="row-item community-link">
+                                <i class="ti ti-users"></i>
+                                <div class="community-info">
+                                    <span class="value">${project.community.other1Text}</span>
+                                </div>
+                                <span class="badge ${project.community.other1Format === 'online' ? 'badge--blue' : 'badge--green'}"><i class="ti ti-${project.community.other1Format === 'online' ? 'world' : 'map-pin'}"></i> ${project.community.other1Format || 'In person'}</span>
+                            </a>` : ''}
+                        </div>
+                    </section>
+
                     <!-- Get in touch -->
                     <section class="ui-card details-card contact-section">
-                        <span class="card-label">get in touch</span>
+                        <span class="card-label">Get in touch</span>
                         <p class="muted-text">Got questions about this project or organisation? Check their website or reach out to them directly.</p>
                         <div class="button-row">
                             <a href="${project.organiser.url}" target="_blank" class="ui-button ui-button--secondary">
-                                <i class="ti ti-world"></i> visit website
+                                <i class="ti ti-world"></i> Visit website
                             </a>
                             <a href="${project.contactUrl}" target="_blank" class="ui-button ui-button--secondary">
-                                <i class="ti ti-mail"></i> contact form
+                                <i class="ti ti-mail"></i> Contact form
                             </a>
                         </div>
                     </section>
