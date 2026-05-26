@@ -269,13 +269,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                     </section>
 
+                    ${project.andieStory ? `
                     <!-- Andie's story -->
                     <section class="story-section">
-                        <blockquote class="story-quote">
-                            ${project.andieStory || 'PLACEHOLDER - TBD'}
-                        </blockquote>
-                        <cite class="story-attribution">andie, founder of make it matter</cite>
+                        <blockquote class="story-quote">${project.andieStory}</blockquote>
+                        <cite class="story-attribution"> - Andie, Founder of Make It Matter</cite>
                     </section>
+                    ` : ''}
 
                     <!-- Get in touch -->
                     <section class="ui-card details-card contact-section">
