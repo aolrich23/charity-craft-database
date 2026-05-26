@@ -131,9 +131,11 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (data.length === 0) {
             noResultsMsg.classList.remove('hidden');
+            grid.classList.add('hidden');
             return;
         } else {
             noResultsMsg.classList.add('hidden');
+            grid.classList.remove('hidden');
         }
 
         data.forEach((project, index) => {

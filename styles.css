@@ -23,6 +23,10 @@
     --text-base: 16px;
 }
 
+.hidden {
+    display: none !important;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-color);
@@ -727,10 +731,11 @@ input[type="text"] {
 }
 
 #noResults {
+    flex: 1;
     text-align: center;
     font-size: 1.2rem;
-    color: #777;
-    margin-top: 40px;
+    color: var(--secondary-color);
+    padding: 100px 20px;
 }
 
 /* Responsive */
