@@ -37,6 +37,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function initProjectPage() {
         const id = parseInt(urlParams.get('id'));
         if (id) showProjectDetails(id);
+
+        const backBtn = document.querySelector('.back-button');
+        if (backBtn) {
+            backBtn.addEventListener('click', () => {
+                const savedParams = localStorage.getItem('searchParams') || '';
+                window.location.href = 'search.html' + savedParams;
+            });
+        }
     }
 
     function updateURL() {
@@ -44,12 +52,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const params = new URLSearchParams();
         if (searchInput.value) params.set('q', searchInput.value);
         
-        const getChecked = (selector) => Array.from(document.querySelectorAll(`${selector} input:checked`)).map(i => i.value);
-        const crafts = getChecked('#craftFilter');
-        const categories = getChecked('#recipientFilter');
-        
-        if (crafts.length) params.set('craft', crafts.join(','));
-        if (categories.length) params.set('category', categories.join(','));
+        const setParam = (filterId, paramKey) => {
+            const checked = Array.from(document.querySelectorAll(`#${filterId} input:checked`)).map(i => i.value);
+            if (checked.length) params.set(paramKey, checked.join(','));
+        };
+
+        setParam('craftFilter', 'craft');
+        setParam('recipientFilter', 'category');
+        setParam('materialFilter', 'material');
+        setParam('timeFilter', 'time');
         
         const newRelativePathQuery = window.location.pathname + '?' + params.toString();
         window.history.replaceState(null, '', newRelativePathQuery);
@@ -111,6 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         setCheckboxes('craft', 'craftFilter');
         setCheckboxes('category', 'recipientFilter');
+        setCheckboxes('material', 'materialFilter');
+        setCheckboxes('time', 'timeFilter');
     }
 
     function createCategoryTagsHtml(categories) {
@@ -155,7 +168,10 @@ document.addEventListener('DOMContentLoaded', () => {
         data.forEach((project, index) => {
             const card = document.createElement('div');
             card.className = 'ui-card ui-card--interactive card';
-            card.onclick = () => location.href = `project.html?id=${project.id}`;
+            card.onclick = () => {
+                localStorage.setItem('searchParams', window.location.search);
+                location.href = `project.html?id=${project.id}`;
+            };
 
             card.innerHTML = `
                 <div class="card-image-wrapper">
