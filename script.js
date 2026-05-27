@@ -320,7 +320,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const selectedCategories = getCheckedValues('recipientFilter');
 
         const filtered = projects.filter(project => {
-            const matchesSearch = project.title.toLowerCase().includes(searchTerm);
+            const matchesSearch = project.title.toLowerCase().includes(searchTerm) ||
+                                  (project.whatYouMake && project.whatYouMake.toLowerCase().includes(searchTerm)) ||
+                                  (project.whoTheyHelp && project.whoTheyHelp.toLowerCase().includes(searchTerm)) ||
+                                  (project.equipment && project.equipment.toLowerCase().includes(searchTerm)) ||
+                                  (project.organiser?.name && project.organiser.name.toLowerCase().includes(searchTerm)) ||
+                                  (project.materials && project.materials.some(m => m.type && m.type.toLowerCase().includes(searchTerm)));
+
             const matchesCraft = selectedCrafts.length === 0 || project.craft.some(c => selectedCrafts.includes(c));
             const matchesCategory = selectedCategories.length === 0 || project.category.some(c => selectedCategories.includes(c));
             const matchesTime = selectedTimes.length === 0 || selectedTimes.includes(project.approximateTime);
