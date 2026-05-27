@@ -59,7 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         setParam('craftFilter', 'craft');
         setParam('recipientFilter', 'category');
-        setParam('materialFilter', 'material');
         setParam('timeFilter', 'time');
         
         const newRelativePathQuery = window.location.pathname + '?' + params.toString();
@@ -69,7 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Populate Dynamic Dropdowns (Material & Recipient)
     function populateDropdowns(data) {
         const craftSelect = document.getElementById('craftFilter');
-        const materialSelect = document.getElementById('materialFilter');
         const timeSelect = document.getElementById('timeFilter');
         const recipientSelect = document.getElementById('recipientFilter');
 
@@ -86,10 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Get unique crafts
         const crafts = [...new Set(data.flatMap(item => item.craft))].sort();
         crafts.forEach(craft => createCheckbox(craftSelect, craft, craft));
-
-        // Get unique materials
-        const materials = [...new Set(data.flatMap(item => item.materials.map(m => m.type)))].sort();
-        materials.forEach(mat => createCheckbox(materialSelect, mat, mat));
 
         // Get unique categories (formerly recipients)
         const categories = [...new Set(data.flatMap(item => item.category))].sort();
@@ -122,7 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         setCheckboxes('craft', 'craftFilter');
         setCheckboxes('category', 'recipientFilter');
-        setCheckboxes('material', 'materialFilter');
         setCheckboxes('time', 'timeFilter');
     }
 
@@ -323,17 +316,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const getCheckedValues = (id) => Array.from(document.querySelectorAll(`#${id} input:checked`)).map(i => i.value);
         
         const selectedCrafts = getCheckedValues('craftFilter');
-        const selectedMaterials = getCheckedValues('materialFilter');
         const selectedTimes = getCheckedValues('timeFilter');
         const selectedCategories = getCheckedValues('recipientFilter');
 
         const filtered = projects.filter(project => {
             const matchesSearch = project.title.toLowerCase().includes(searchTerm);
             const matchesCraft = selectedCrafts.length === 0 || project.craft.some(c => selectedCrafts.includes(c));
-            const matchesMaterial = selectedMaterials.length === 0 || project.materials.some(m => selectedMaterials.includes(m.type));
             const matchesCategory = selectedCategories.length === 0 || project.category.some(c => selectedCategories.includes(c));
             const matchesTime = selectedTimes.length === 0 || selectedTimes.includes(project.approximateTime);
-            return matchesSearch && matchesCraft && matchesMaterial && matchesCategory && matchesTime;
+            return matchesSearch && matchesCraft && matchesCategory && matchesTime;
         });
         renderProjects(filtered);
     }
