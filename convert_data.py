@@ -58,6 +58,7 @@ def transform_csv_to_json():
                 "craft": crafts,
                 "equipment": row.get('Equipment', ''),
                 "materials": materials,
+                "materialNote": row.get('materialNote', ''),
                 "approximateTime": row.get('approximateTime', ''),
                 "pattern": pattern,
                 "image": row.get('image') if row.get('image') else None,

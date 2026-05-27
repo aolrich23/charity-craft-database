@@ -727,6 +727,12 @@ input[type="text"] {
     margin-top: 38px;
 }
 
+.material-note {
+    color: var(--secondary-color);
+    font-style: italic;
+    font-weight: 400;
+}
+
 .organisation-logo {
     object-fit: contain;
 }
@@ -869,7 +875,6 @@ footer {
 .community-link {
     text-decoration: none;
     display: flex;
-    width: calc(100% + 24px);
     margin-left: -12px;
     transition: background 0.2s;
     border-radius: 8px;
@@ -891,12 +896,16 @@ footer {
     flex-direction: column;
 }
 
-.community-link .pill-tag {
+.community-link .badge {
     margin-left: auto;
     align-self: center;
     display: flex;
     align-items: center;
     gap: 4px;
+}
+
+.badge i {
+    color: inherit; /* Make icons inside badges match badge text color */
 }
 
 .community-link .value {

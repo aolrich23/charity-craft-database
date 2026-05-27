@@ -25,6 +25,7 @@
         "amount": "30-50g"
       }
     ],
+    "materialNote": "",
     "approximateTime": "2-4 hours",
     "pattern": {
       "text": "Browse example patterns",
@@ -79,6 +80,7 @@
         "amount": "1-1.5kg"
       }
     ],
+    "materialNote": "",
     "approximateTime": "More than 10 hours",
     "pattern": {
       "text": "Browse example patterns",
@@ -128,13 +130,14 @@
     "materials": [
       {
         "type": "cotton drill",
-        "amount": "depends on the size"
+        "amount": ""
       },
       {
         "type": "cotton quilting fabric",
-        "amount": "depends on the size"
+        "amount": ""
       }
     ],
+    "materialNote": "See <a href=\"https://craftguild.org.au/faqs/what-fabric-what-item/\" target=\"_blank\">the ARC website</a> for all suitable fabrics",
     "approximateTime": "1-2 hours",
     "pattern": {
       "text": "Download PDF",
@@ -184,13 +187,14 @@
     "materials": [
       {
         "type": "cotton quilting fabric",
-        "amount": "depends on the size"
+        "amount": ""
       },
       {
         "type": "cotton flannellette",
-        "amount": "depends on the size"
+        "amount": ""
       }
     ],
+    "materialNote": "See <a href=\"https://craftguild.org.au/faqs/what-fabric-what-item/\" target=\"_blank\">the ARC website</a> for all suitable fabrics",
     "approximateTime": "1-2 hours",
     "pattern": {
       "text": "Read tutorial",
@@ -247,6 +251,7 @@
         "amount": ""
       }
     ],
+    "materialNote": "See <a href=\"https://craftguild.org.au/faqs/what-fabric-what-item/\" target=\"_blank\">the ARC website</a> for all suitable fabrics",
     "approximateTime": "Less than one hour",
     "pattern": {
       "text": "Download PDF",
@@ -304,6 +309,7 @@
         "amount": ""
       }
     ],
+    "materialNote": "",
     "approximateTime": "4-10 hours",
     "pattern": {
       "text": "View pattern",
@@ -356,6 +362,7 @@
         "amount": "<30g"
       }
     ],
+    "materialNote": "",
     "approximateTime": "Less than one hour",
     "pattern": {
       "text": "Download PDF",

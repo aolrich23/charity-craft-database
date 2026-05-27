@@ -188,7 +188,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const project = projects.find(p => p.id === id);
         if (!project) return;
 
-        const materialList = project.materials.map(m => `${m.amount} ${m.type}`).join(', ') || 'PLACEHOLDER - TBD';
+        let materialsHtml = project.materials.map(m => `${m.amount} ${m.type}`).join(', ') || 'PLACEHOLDER - TBD';
+        if (project.materialNote) {
+            materialsHtml += ` <span class="material-note">Note: ${project.materialNote}</span>`;
+        }
 
         detailsContent.innerHTML = `
             <div class="project-detail-container">
@@ -221,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div class="row-item"><i class="ti ti-package"></i><span class="label">What you make:</span><span class="value">${project.whatYouMake || 'PLACEHOLDER - TBD'}</span></div>
                             <div class="row-item"><i class="ti ti-chart-bar"></i><span class="label">Skill level:</span><span class="value">${project.skillLevel || 'PLACEHOLDER - TBD'}</span></div>
                             <div class="row-item"><i class="ti ti-clock"></i><span class="label">Time estimate:</span><span class="value">${project.approximateTime}</span></div>
-                            <div class="row-item"><i class="ti ti-needle"></i><span class="label">Materials:</span><span class="value">${materialList}</span></div>
+                            <div class="row-item"><i class="ti ti-needle"></i><span class="label">Materials:</span><span class="value">${materialsHtml}</span></div>
                             <div class="row-item"><i class="ti ti-file-text"></i><span class="label">Patterns:</span><span class="value"><a href="${project.pattern.url}" target="_blank">${project.pattern.text}</a></span></div>
                         </div>
                         ${project.image ? `<img src="${project.image}" alt="${project.title}" class="card-side-image project-image">` : ''}
