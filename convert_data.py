@@ -26,7 +26,8 @@ def transform_csv_to_json():
             organiser = {
                 "name": row.get('organiser_name', ''),
                 "url": row.get('organiser_url', ''),
-                "location": row.get('organiser_location', '')
+                "location": row.get('organiser_location', ''),
+                "image": row.get('organiser_image', '')
             }
             
             # 3. Sensibly group multiple materials into an array
@@ -50,16 +51,38 @@ def transform_csv_to_json():
             project = {
                 "id": index,
                 "title": row.get('title', ''),
-                "description": row.get('description', ''),
+                "whatYouMake": row.get('what_you_make', ''),
                 "organiser": organiser,
+                "whoTheyHelp": row.get('who_they_help', ''),
                 "category": categories,
                 "craft": crafts,
                 "equipment": row.get('Equipment', ''),
                 "materials": materials,
+                "materialNote": row.get('materialNote', ''),
                 "approximateTime": row.get('approximateTime', ''),
                 "pattern": pattern,
-                "donationDestination": row.get('donationInstructions', ''),
-                "image": row.get('image') if row.get('image') else None
+                "image": row.get('image') if row.get('image') else None,
+                "contribution": {
+                    "mail": row.get('contribution_mail', ''),
+                    "inPerson": row.get('contribution_in_person', ''),
+                    "other1Text": row.get('contribution_other_1_text', ''),
+                    "other1Value": row.get('contribution_other_1_value', ''),
+                    "other2Text": row.get('contribution_other_2_text', ''),
+                    "other2Value": row.get('contribution_other_2_value', '')
+                },
+                "lastVerified": row.get('last_verified', ''),
+                "skillLevel": row.get('skill_level', ''),
+                "community": {
+                    "facebookUrl": row.get('community_facebook_url', ''),
+                    "facebookText": row.get('community_facebook_text', ''),
+                    "instagramUrl": row.get('community_instagram_url', ''),
+                    "instagramText": row.get('community_instagram_text', ''),
+                    "other1Text": row.get('community_other_1_text', ''),
+                    "other1Url": row.get('community_other_1_url', ''),
+                    "other1Format": row.get('community_other_1_format', '')
+                },
+                "andieStory": row.get('andie_story', ''),
+                "contactUrl": row.get('contact', '')
             }
             projects.append(project)
 

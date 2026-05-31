@@ -37,6 +37,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function initProjectPage() {
         const id = parseInt(urlParams.get('id'));
         if (id) showProjectDetails(id);
+
+        const backBtn = document.querySelector('.back-button');
+        if (backBtn) {
+            backBtn.addEventListener('click', () => {
+                const savedParams = localStorage.getItem('searchParams') || '';
+                window.location.href = 'search.html' + savedParams;
+            });
+        }
     }
 
     function updateURL() {
@@ -44,12 +52,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const params = new URLSearchParams();
         if (searchInput.value) params.set('q', searchInput.value);
         
-        const getChecked = (selector) => Array.from(document.querySelectorAll(`${selector} input:checked`)).map(i => i.value);
-        const crafts = getChecked('#craftFilter');
-        const categories = getChecked('#recipientFilter');
-        
-        if (crafts.length) params.set('craft', crafts.join(','));
-        if (categories.length) params.set('category', categories.join(','));
+        const setParam = (filterId, paramKey) => {
+            const checked = Array.from(document.querySelectorAll(`#${filterId} input:checked`)).map(i => i.value);
+            if (checked.length) params.set(paramKey, checked.join(','));
+        };
+
+        setParam('craftFilter', 'craft');
+        setParam('recipientFilter', 'category');
+        setParam('timeFilter', 'time');
         
         const newRelativePathQuery = window.location.pathname + '?' + params.toString();
         window.history.replaceState(null, '', newRelativePathQuery);
@@ -58,7 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Populate Dynamic Dropdowns (Material & Recipient)
     function populateDropdowns(data) {
         const craftSelect = document.getElementById('craftFilter');
-        const materialSelect = document.getElementById('materialFilter');
         const timeSelect = document.getElementById('timeFilter');
         const recipientSelect = document.getElementById('recipientFilter');
 
@@ -75,10 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Get unique crafts
         const crafts = [...new Set(data.flatMap(item => item.craft))].sort();
         crafts.forEach(craft => createCheckbox(craftSelect, craft, craft));
-
-        // Get unique materials
-        const materials = [...new Set(data.flatMap(item => item.materials.map(m => m.type)))].sort();
-        materials.forEach(mat => createCheckbox(materialSelect, mat, mat));
 
         // Get unique categories (formerly recipients)
         const categories = [...new Set(data.flatMap(item => item.category))].sort();
@@ -111,6 +116,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         setCheckboxes('craft', 'craftFilter');
         setCheckboxes('category', 'recipientFilter');
+        setCheckboxes('time', 'timeFilter');
+    }
+
+    function createCategoryTagsHtml(categories) {
+        return (Array.isArray(categories) ? categories : [categories])
+            .map(cat => `<span class="badge badge--teal">${getCategoryEmoji(cat)} ${cat}</span>`)
+            .join('');
+    }
+
+    function createCraftTagsHtml(crafts) {
+        return (Array.isArray(crafts) ? crafts : [crafts])
+            .map(c => {
+                return `<span class="badge badge--teal">${c}</span>`;
+            })
+            .join('');
     }
 
     function getCategoryEmoji(category) {
@@ -131,35 +151,38 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (data.length === 0) {
             noResultsMsg.classList.remove('hidden');
+            grid.classList.add('hidden');
             return;
         } else {
             noResultsMsg.classList.add('hidden');
+            grid.classList.remove('hidden');
         }
 
         data.forEach((project, index) => {
             const card = document.createElement('div');
-            card.className = 'card';
-            card.onclick = () => window.location.href = `project.html?id=${project.id}`;
-            
-            const categoryTags = (Array.isArray(project.category) ? project.category : [project.category])
-                .map(cat => `<span class="tag">${getCategoryEmoji(cat)} ${cat}</span>`)
-                .join('');
-
-            const craftTags = (Array.isArray(project.craft) ? project.craft : [project.craft])
-                .map(craft => `<span class="tag">${craft}</span>`)
-                .join('');
+            card.className = 'ui-card ui-card--interactive card';
+            card.onclick = () => {
+                localStorage.setItem('searchParams', window.location.search);
+                location.href = `project.html?id=${project.id}`;
+            };
 
             card.innerHTML = `
-                <img src="${project.image || 'https://via.placeholder.com/400x400?text=Project+Image'}" alt="${project.title}" class="card-image">
+                <div class="card-image-wrapper">
+                    <img src="${project.image || 'https://via.placeholder.com/400x400?text=Project+Image'}" alt="${project.title}">
+                </div>
                 <div class="card-body">
+                    <div class="org-row">
+                        <span class="org-name">${project.organiser.name}</span>
+                    </div>
                     <h3>${project.title}</h3>
-                    <p class="organiser">${project.organiser.name}</p>
-                    <div class="card-meta">
-                        ${craftTags}
-                        ${categoryTags}
+                    <div class="tag-row">
+                        ${createCraftTagsHtml(project.craft)}
+                    </div>
+                    <div class="tag-row">
+                        ${createCategoryTagsHtml(project.category)}
                     </div>
                     <div class="card-footer-time">
-                        <span>⏱️ ${project.approximateTime}</span>
+                        <i class="ti ti-clock"></i> ${project.approximateTime}
                     </div>
                 </div>
             `;
@@ -174,41 +197,111 @@ document.addEventListener('DOMContentLoaded', () => {
         const project = projects.find(p => p.id === id);
         if (!project) return;
 
+        let materialsHtml = project.materials.map(m => `${m.amount} ${m.type}`).join(', ') || 'PLACEHOLDER - TBD';
+        if (project.materialNote) {
+            materialsHtml += ` <span class="material-note">Note: ${project.materialNote}</span>`;
+        }
+
         detailsContent.innerHTML = `
-            <div class="detail-grid">
-                <div class="detail-main">
-                    <h1>${project.title}</h1>
-                    <p class="organiser">Organised by <a href="${project.organiser.url}" target="_blank">${project.organiser.name}</a></p>
-                    
-                    <div class="description" style="padding: 0; margin-top: 20px;">
-                        <h3>About this project</h3>
-                        <p>${project.description || 'No description provided.'}</p>
+            <div class="project-detail-container">
+                <header class="detail-header-section">
+                    <div class="header-top">
+                        <h1 class="detail-title">${project.title}</h1>
+                        <span class="muted-badge">Verified active - ${project.lastVerified}</span>
                     </div>
-
-                    <div class="detail-gallery">
-                        <img src="${project.image || 'https://via.placeholder.com/400x400?text=Image+1'}" alt="Gallery 1">
-                        <img src="https://via.placeholder.com/400x400?text=Image+2" alt="Gallery 2">
-                        <img src="https://via.placeholder.com/400x400?text=Image+3" alt="Gallery 3">
-                        <img src="https://via.placeholder.com/400x400?text=Image+4" alt="Gallery 4">
+                    <div class="tag-row">
+                        ${createCraftTagsHtml(project.craft)}
+                        ${createCategoryTagsHtml(project.category)}
                     </div>
-                </div>
+                </header>
 
-                <div class="detail-sidebar">
-                    <h4>Project Details</h4>
-                    <div class="card-meta" style="display:flex; flex-direction:column; gap:15px; padding:0;">
-                        <span><strong>Craft:</strong> ${project.craft.join(', ')}</span>
-                        <span><strong>Category:</strong> ${project.category.join(', ')}</span>
-                        <span><strong>Time:</strong> ${project.approximateTime}</span>
-                    </div>
+                <div class="detail-card-stack">
+                    <!-- About the cause -->
+                    <section class="ui-card details-card split-card">
+                        <div class="card-info">
+                            <span class="card-label">About the cause</span>
+                            <div class="row-item"><i class="ti ti-building"></i><span class="label">Organisation:</span><span class="value">${project.organiser.name}</span></div>
+                            <div class="row-item"><i class="ti ti-users"></i><span class="label">Who they help:</span><span class="value">${project.whoTheyHelp || 'PLACEHOLDER - TBD'}</span></div>
+                        </div>
+                        ${project.organiser.image ? `<img src="${project.organiser.image}" alt="${project.organiser.name} logo" class="card-side-image organisation-logo">` : ''}
+                    </section>
 
-                    <h4 style="margin-top:25px;">Materials Required</h4>
-                    <ul style="list-style: none; font-size: 0.9rem;">
-                        ${project.materials.map(m => `<li>• ${m.amount} ${m.type}</li>`).join('')}
-                    </ul>
+                    <!-- About the project -->
+                    <section class="ui-card details-card split-card">
+                        <div class="card-info">
+                            <span class="card-label">About the project</span>
+                            <div class="row-item"><i class="ti ti-package"></i><span class="label">What you make:</span><span class="value">${project.whatYouMake || 'PLACEHOLDER - TBD'}</span></div>
+                            <div class="row-item"><i class="ti ti-chart-bar"></i><span class="label">Skill level:</span><span class="value">${project.skillLevel || 'PLACEHOLDER - TBD'}</span></div>
+                            <div class="row-item"><i class="ti ti-clock"></i><span class="label">Time estimate:</span><span class="value">${project.approximateTime}</span></div>
+                            <div class="row-item"><i class="ti ti-needle"></i><span class="label">Materials:</span><span class="value">${materialsHtml}</span></div>
+                            <div class="row-item"><i class="ti ti-file-text"></i><span class="label">Patterns:</span><span class="value"><a href="${project.pattern.url}" target="_blank">${project.pattern.text}</a></span></div>
+                        </div>
+                        ${project.image ? `<img src="${project.image}" alt="${project.title}" class="card-side-image project-image">` : ''}
+                    </section>
 
-                    <div style="margin-top:30px;">
-                        <a href="${project.pattern.url}" target="_blank" class="pattern-link" style="display:block; text-align:center;">Download Pattern</a>
-                    </div>
+                    ${project.andieStory ? `
+                    <!-- Andie's story -->
+                    <section class="story-section">
+                        <blockquote class="story-quote">${project.andieStory}</blockquote>
+                        <cite class="story-attribution"> - Andie, Founder of Make It Matter</cite>
+                    </section>
+                    ` : ''}
+
+                    <!-- How to contribute -->
+                    <section class="ui-card details-card">
+                        <span class="card-label">How to contribute</span>
+                        ${project.contribution.mail ? `<div class="row-item"><i class="ti ti-mail"></i><span class="label">By post:</span><span class="value">${project.contribution.mail}</span></div>` : ''}
+                        ${project.contribution.inPerson ? `<div class="row-item"><i class="ti ti-building-store"></i><span class="label">In person:</span><span class="value">${project.contribution.inPerson}</span></div>` : ''}
+                        ${project.contribution.other1Text ? `<div class="row-item"><i class="ti ti-info-circle"></i><span class="label">${project.contribution.other1Text}:</span><span class="value">${project.contribution.other1Value}</span></div>` : ''}
+                        ${project.contribution.other2Text ? `<div class="row-item"><i class="ti ti-info-circle"></i><span class="label">${project.contribution.other2Text}:</span><span class="value">${project.contribution.other2Value}</span></div>` : ''}
+                    </section>
+
+                    <!-- Join the community -->
+                    <section class="ui-card details-card">
+                        <span class="card-label">Join the community</span>
+                        <div class="community-list">
+                            ${project.community.facebookUrl ? `
+                            <a href="${project.community.facebookUrl}" target="_blank" class="row-item community-link">
+                                <i class="ti ti-brand-facebook"></i>
+                                <div class="community-info">
+                                    <span class="value">Facebook group</span>
+                                    <span class="muted-text">${project.community.facebookText || 'share progress and ask questions.'}</span>
+                                </div>
+                                <span class="badge badge--blue"><i class="ti ti-world"></i> online</span>
+                            </a>` : ''}
+                            ${project.community.instagramUrl ? `
+                            <a href="${project.community.instagramUrl}" target="_blank" class="row-item community-link">
+                                <i class="ti ti-brand-instagram"></i>
+                                <div class="community-info">
+                                    <span class="value">Instagram</span>
+                                    <span class="muted-text">${project.community.instagramText || 'see finished projects.'}</span>
+                                </div>
+                                <span class="badge badge--blue"><i class="ti ti-world"></i> online</span>
+                            </a>` : ''}
+                            ${project.community.other1Url ? `
+                            <a href="${project.community.other1Url}" target="_blank" class="row-item community-link">
+                                <i class="ti ti-users"></i>
+                                <div class="community-info">
+                                    <span class="value">${project.community.other1Text}</span>
+                                </div>
+                                <span class="badge ${project.community.other1Format === 'online' ? 'badge--blue' : 'badge--green'}"><i class="ti ti-${project.community.other1Format === 'online' ? 'world' : 'map-pin'}"></i> ${project.community.other1Format || 'In person'}</span>
+                            </a>` : ''}
+                        </div>
+                    </section>
+
+                    <!-- Get in touch -->
+                    <section class="ui-card details-card contact-section">
+                        <span class="card-label">Get in touch</span>
+                        <p class="muted-text">Got questions about this project or organisation? Check their website or reach out to them directly.</p>
+                        <div class="button-row">
+                            <a href="${project.organiser.url}" target="_blank" class="ui-button ui-button--secondary">
+                                <i class="ti ti-world"></i> Visit website
+                            </a>
+                            <a href="${project.contactUrl}" target="_blank" class="ui-button ui-button--secondary">
+                                <i class="ti ti-mail"></i> Contact form
+                            </a>
+                        </div>
+                    </section>
                 </div>
             </div>
         `;
@@ -223,17 +316,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const getCheckedValues = (id) => Array.from(document.querySelectorAll(`#${id} input:checked`)).map(i => i.value);
         
         const selectedCrafts = getCheckedValues('craftFilter');
-        const selectedMaterials = getCheckedValues('materialFilter');
         const selectedTimes = getCheckedValues('timeFilter');
         const selectedCategories = getCheckedValues('recipientFilter');
 
         const filtered = projects.filter(project => {
-            const matchesSearch = project.title.toLowerCase().includes(searchTerm);
+            const matchesSearch = project.title.toLowerCase().includes(searchTerm) ||
+                                  (project.whatYouMake && project.whatYouMake.toLowerCase().includes(searchTerm)) ||
+                                  (project.whoTheyHelp && project.whoTheyHelp.toLowerCase().includes(searchTerm)) ||
+                                  (project.equipment && project.equipment.toLowerCase().includes(searchTerm)) ||
+                                  (project.organiser?.name && project.organiser.name.toLowerCase().includes(searchTerm)) ||
+                                  (project.materials && project.materials.some(m => m.type && m.type.toLowerCase().includes(searchTerm)));
+
             const matchesCraft = selectedCrafts.length === 0 || project.craft.some(c => selectedCrafts.includes(c));
-            const matchesMaterial = selectedMaterials.length === 0 || project.materials.some(m => selectedMaterials.includes(m.type));
             const matchesCategory = selectedCategories.length === 0 || project.category.some(c => selectedCategories.includes(c));
             const matchesTime = selectedTimes.length === 0 || selectedTimes.includes(project.approximateTime);
-            return matchesSearch && matchesCraft && matchesMaterial && matchesCategory && matchesTime;
+            return matchesSearch && matchesCraft && matchesCategory && matchesTime;
         });
         renderProjects(filtered);
     }
