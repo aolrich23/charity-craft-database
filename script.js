@@ -236,7 +236,12 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div class="row-item"><i class="ti ti-needle"></i><span class="label">Materials:</span><span class="value">${materialsHtml}</span></div>
                             <div class="row-item"><i class="ti ti-file-text"></i><span class="label">Patterns:</span><span class="value"><a href="${project.pattern.url}" target="_blank">${project.pattern.text}</a></span></div>
                         </div>
-                        ${project.image ? `<img src="${project.image}" alt="${project.title}" class="card-side-image project-image">` : ''}
+                        ${project.image ? `
+                            <div class="project-image-container">
+                                <img src="${project.image}" alt="${project.title}" class="card-side-image project-image">
+                                ${project.imageAttribution ? `<p class="image-attribution">Image: ${project.imageAttribution}</p>` : ''}
+                            </div>
+                        ` : ''}
                     </section>
 
                     ${project.andieStory ? `
