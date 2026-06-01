@@ -869,6 +869,7 @@ input[type="text"] {
     align-items: flex-end;
     margin-top: 38px;
     flex-shrink: 0;
+    max-width: min-content;
 }
 
 .project-image {
