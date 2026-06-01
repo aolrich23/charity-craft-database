@@ -32,6 +32,18 @@ document.addEventListener('DOMContentLoaded', () => {
             updateURL();
             filterProjects();
         });
+
+        // Collapsible sidebar logic
+        const sidebar = document.querySelector('.sidebar');
+        const filterToggle = document.getElementById('filterToggle');
+        if (sidebar && filterToggle) {
+            if (window.innerWidth <= 992) {
+                sidebar.classList.add('collapsed');
+            }
+            filterToggle.addEventListener('click', () => {
+                sidebar.classList.toggle('collapsed');
+            });
+        }
     }
 
     function initProjectPage() {

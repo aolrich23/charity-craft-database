@@ -30,7 +30,11 @@
             </div>
             <div class="content-wrapper">
                 <aside class="sidebar">
-                    <h3>Filters</h3>
+                    <div class="filter-header" id="filterToggle">
+                        <h3>Filters</h3>
+                        <i class="ti ti-chevron-down chevron"></i>
+                    </div>
+                    <div class="sidebar-content" id="sidebarContent">
                     <div class="filter-group">
                         <label for="craftFilter">Craft Type</label>
                         <div id="craftFilter" class="checkbox-list"></div>
@@ -42,6 +46,7 @@
                     <div class="filter-group">
                         <label for="timeFilter">Time Estimate</label>
                         <div id="timeFilter" class="checkbox-list"></div>
+                    </div>
                     </div>
                 </aside>
                 <div class="results-main">
