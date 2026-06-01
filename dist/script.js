@@ -32,6 +32,18 @@ document.addEventListener('DOMContentLoaded', () => {
             updateURL();
             filterProjects();
         });
+
+        // Collapsible sidebar logic
+        const sidebar = document.querySelector('.sidebar');
+        const filterToggle = document.getElementById('filterToggle');
+        if (sidebar && filterToggle) {
+            if (window.innerWidth <= 992) {
+                sidebar.classList.add('collapsed');
+            }
+            filterToggle.addEventListener('click', () => {
+                sidebar.classList.toggle('collapsed');
+            });
+        }
     }
 
     function initProjectPage() {
@@ -145,6 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderProjects(data) {
         const grid = document.getElementById('projectGrid');
         const noResultsMsg = document.getElementById('noResults');
+        const resultsCount = document.getElementById('resultsCount');
         if (!grid) return;
         
         grid.innerHTML = '';
@@ -152,10 +165,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (data.length === 0) {
             noResultsMsg.classList.remove('hidden');
             grid.classList.add('hidden');
+            if (resultsCount) resultsCount.classList.add('hidden');
             return;
         } else {
             noResultsMsg.classList.add('hidden');
             grid.classList.remove('hidden');
+            if (resultsCount) {
+                resultsCount.classList.remove('hidden');
+                resultsCount.textContent = `${data.length} ${data.length === 1 ? 'project' : 'projects'} found`;
+            }
         }
 
         data.forEach((project, index) => {
@@ -206,8 +224,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="project-detail-container">
                 <header class="detail-header-section">
                     <div class="header-top">
-                        <h1 class="detail-title">${project.title}</h1>
                         <span class="muted-badge"><i class="ti ti-circle-check"></i> Verified active - ${project.lastVerified}</span>
+                        <h1 class="detail-title">${project.title}</h1>
                     </div>
                     <div class="tag-row">
                         ${createCraftTagsHtml(project.craft)}
