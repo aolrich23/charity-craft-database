@@ -339,6 +339,7 @@ main {
 .about-photo {
     width: 200px;
     height: 200px;
+    margin-top: 25px;
     border-radius: 24px;
     flex-shrink: 0;      /* Prevents the image from being squished into an oval */
     object-fit: cover;
@@ -560,6 +561,7 @@ input[type="text"] {
 .results-main {
     flex: 1;
     min-width: 0;
+    width: 100%;
 }
 
 .results-count {
@@ -574,6 +576,7 @@ input[type="text"] {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 12px;
+    width: 100%;
 }
 
 /* Card Styling */
@@ -600,7 +603,7 @@ input[type="text"] {
 }
 
 .card-body {
-    padding: 10px 12px 12px;
+    padding: 20px;
 }
 
 .org-row {
@@ -669,10 +672,6 @@ input[type="text"] {
     color: var(--accent-color);
     font-size: 0.75rem;
     width: fit-content;
-}
-
-.card-body {
-    padding: 20px;
 }
 
 .card-footer-time {
