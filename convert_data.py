@@ -62,6 +62,7 @@ def transform_csv_to_json():
                 "approximateTime": row.get('approximateTime', ''),
                 "pattern": pattern,
                 "image": row.get('image') if row.get('image') else None,
+                "imageAttribution": row.get('image_attribution', ''),
                 "contribution": {
                     "mail": row.get('contribution_mail', ''),
                     "inPerson": row.get('contribution_in_person', ''),

@@ -159,12 +159,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         data.forEach((project, index) => {
-            const card = document.createElement('div');
+            const card = document.createElement('a');
             card.className = 'ui-card ui-card--interactive card';
-            card.onclick = () => {
+            card.href = `project.html?id=${project.id}`;
+            card.addEventListener('click', (e) => {
                 localStorage.setItem('searchParams', window.location.search);
-                location.href = `project.html?id=${project.id}`;
-            };
+            });
 
             card.innerHTML = `
                 <div class="card-image-wrapper">
@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <header class="detail-header-section">
                     <div class="header-top">
                         <h1 class="detail-title">${project.title}</h1>
-                        <span class="muted-badge">Verified active - ${project.lastVerified}</span>
+                        <span class="muted-badge"><i class="ti ti-circle-check"></i> Verified active - ${project.lastVerified}</span>
                     </div>
                     <div class="tag-row">
                         ${createCraftTagsHtml(project.craft)}
@@ -236,7 +236,12 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div class="row-item"><i class="ti ti-needle"></i><span class="label">Materials:</span><span class="value">${materialsHtml}</span></div>
                             <div class="row-item"><i class="ti ti-file-text"></i><span class="label">Patterns:</span><span class="value"><a href="${project.pattern.url}" target="_blank">${project.pattern.text}</a></span></div>
                         </div>
-                        ${project.image ? `<img src="${project.image}" alt="${project.title}" class="card-side-image project-image">` : ''}
+                        ${project.image ? `
+                            <div class="project-image-container">
+                                <img src="${project.image}" alt="${project.title}" class="card-side-image project-image">
+                                ${project.imageAttribution ? `<p class="image-attribution">Image: ${project.imageAttribution}</p>` : ''}
+                            </div>
+                        ` : ''}
                     </section>
 
                     ${project.andieStory ? `

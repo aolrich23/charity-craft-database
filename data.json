@@ -32,6 +32,7 @@
       "url": "https://wrapwithlove.org/patterns/"
     },
     "image": "https://wrapwithlove.org/wp-content/uploads/2024/08/crocheted-granny-square-wrap-with-love-750.jpg",
+    "imageAttribution": "Wrap With Love",
     "contribution": {
       "mail": "Mail to Post Office Box 10, Roseberry NSW 1445.",
       "inPerson": "Drop off at the warehouse at Unit 4, 4 Huntley St, Alexandria on Wednesday or Friday between 9:30am to 2:30pm",
@@ -87,6 +88,7 @@
       "url": "https://wrapwithlove.org/patterns/"
     },
     "image": "https://wrapwithlove.org/wp-content/uploads/2024/08/wrap-with-love-wrap1.jpg",
+    "imageAttribution": "Wrap With Love",
     "contribution": {
       "mail": "Mail to Post Office Box 10, Roseberry NSW 1445.",
       "inPerson": "Drop off at the warehouse at Unit 4, 4 Huntley St, Alexandria on Wednesday or Friday between 9:30am to 2:30pm",
@@ -112,14 +114,14 @@
   {
     "id": 3,
     "title": "3D hanging bag",
-    "whatYouMake": "A fabric bag with a structured, box-shaped base that hangs from a hook or branch in a wildlife carer's enclosure. It is designed for older, more active animals who are starting to explore but still need a safe den to retreat to. They give growing joeys the freedom to come and go as they please, and can be used day or night.",
+    "whatYouMake": "A fabric bag with a structured, box-shaped base that hangs from a hook or branch. It is designed for older, more active animals who are starting to explore but still need a safe place to retreat to. It gives growing joeys the freedom to come and go as they please, and can be used day or night.",
     "organiser": {
       "name": "Animal Rescue Cooperative",
       "url": "https://arcsupport.org.au/",
       "location": "Across Australia",
       "image": "https://craftguild.org.au/wp-content/uploads/2020/04/craftguild-web-logo.png"
     },
-    "whoTheyHelp": "The  Animal Rescue Cooperative (ARC) Craft Guild is one of the world's largest volunteer craft movements, supporting wildlife, companion animals, and the rescuers who care for them every day. Items go directly to rescue groups and vet clinics across Australia, helping injured and orphaned animals recover \u2014 from joeys and possums through to microbats, dogs, cats, and lambs. The guild became especially well known during the 2019\u201320 bushfires, when makers around the world sent pouches and nests for displaced wildlife.",
+    "whoTheyHelp": "The Animal Rescue Cooperative (ARC) receives donations of food, medical supplies, crafted items and more and distributes them to WIRES and other local wildlife rescue groups across Australia. The Craft Guild supporting ARC is one of the world's largest volunteer craft movements, supporting wildlife, companion animals, and the rescuers who care for them every day. The guild became especially well known during the 2019\u201320 bushfires, when makers around the world sent pouches and nests for displaced wildlife.",
     "category": [
       "Animal Welfare"
     ],
@@ -144,11 +146,12 @@
       "url": "https://craftguild.org.au/wp-content/uploads/2020/05/Sew-ARCCG-3D-Hanging-Bag.pdf"
     },
     "image": "https://craftguild.org.au/wp-content/uploads/2020/05/IMG_1623.jpeg",
+    "imageAttribution": "Animal Rescue Cooperative Craft Guild",
     "contribution": {
       "mail": "",
       "inPerson": "",
       "other1Text": "Register online",
-      "other1Value": "Complete a short online form with your location and they'll send you the nearest drop-off or postage details.",
+      "other1Value": "Complete a short <a href=\"https://arcsupport.org.au/donateproduct/\" target=\"_blank\">online form</a> with your location and they'll send you the nearest drop-off or postage details.",
       "other2Text": "",
       "other2Value": ""
     },
@@ -156,14 +159,14 @@
     "skillLevel": "Beginner to intermediate (straight stitch, top stitch, slightly tricky construction)",
     "community": {
       "facebookUrl": "https://www.facebook.com/groups/arfsncrafts/",
-      "facebookText": "",
-      "instagramUrl": "https://www.instagram.com/animalrescuecraftguild/",
+      "facebookText": "Ask questions, find the latest info on what's needed, and see when your donations reach the hub",
+      "instagramUrl": "",
       "instagramText": "",
       "other1Text": "",
       "other1Url": "",
       "other1Format": ""
     },
-    "andieStory": "",
+    "andieStory": "The Animal Rescue Cooperative has a pattern for every skill level. While bat wraps and joey pouches are pretty straight forward, I made the 3D hanging bag to test myself. While at first the odd shape can be a brain bender, the detailed pattern walks you through the construction and makes it feel like simple sewing.\n\nAlthough some parts of the website may have broken links or outdated information, don't let that put you off. This is an incredibly active and responsive group and nothing feels better than a shout out on their Facebook page when your donated items reach the donation hub!",
     "contactUrl": "https://arcsupport.org.au/feedback/"
   },
   {
@@ -176,7 +179,7 @@
       "location": "Across Australia",
       "image": "https://craftguild.org.au/wp-content/uploads/2020/04/craftguild-web-logo.png"
     },
-    "whoTheyHelp": "The  Animal Rescue Cooperative (ARC) Craft Guild is one of the world's largest volunteer craft movements, supporting wildlife, companion animals, and the rescuers who care for them every day. Items go directly to rescue groups and vet clinics across Australia, helping injured and orphaned animals recover \u2014 from joeys and possums through to microbats, dogs, cats, and lambs. The guild became especially well known during the 2019\u201320 bushfires, when makers around the world sent pouches and nests for displaced wildlife.",
+    "whoTheyHelp": "The Animal Rescue Cooperative (ARC) receives donations of food, medical supplies, crafted items and more and distributes them to WIRES and other local wildlife rescue groups across Australia. The Craft Guild supporting ARC is one of the world's largest volunteer craft movements, supporting wildlife, companion animals, and the rescuers who care for them every day. The guild became especially well known during the 2019\u201320 bushfires, when makers around the world sent pouches and nests for displaced wildlife.",
     "category": [
       "Animal Welfare"
     ],
@@ -200,12 +203,13 @@
       "text": "Read tutorial",
       "url": "https://craftguild.org.au/2020/05/04/joey-pouches/"
     },
-    "image": "https://craftguild.org.au/wp-content/uploads/2020/05/83401059_2725680794191373_1820492587866259456_n.jpg",
+    "image": "https://nre.tas.gov.au/ContentImages/_w/Pademelon%20Joeys%20By%20Bonorong%20Wildlife%20Sanctuary_jpg.jpg",
+    "imageAttribution": "Tasmanian Animal Rescue, Rehabilitation, & Education Services",
     "contribution": {
       "mail": "",
       "inPerson": "",
       "other1Text": "Register online",
-      "other1Value": "Complete a short online form with your location and they'll send you the nearest drop-off or postage details.",
+      "other1Value": "Complete a short <a href=\"https://arcsupport.org.au/donateproduct/\" target=\"_blank\">online form</a> with your location and they'll send you the nearest drop-off or postage details.",
       "other2Text": "",
       "other2Value": ""
     },
@@ -213,14 +217,14 @@
     "skillLevel": "Beginner to intermediate (straight stitch, french seams, top stitch)",
     "community": {
       "facebookUrl": "https://www.facebook.com/groups/arfsncrafts/",
-      "facebookText": "",
-      "instagramUrl": "https://www.instagram.com/animalrescuecraftguild/",
+      "facebookText": "Ask questions, find the latest info on what's needed, and see when your donations reach the hub",
+      "instagramUrl": "",
       "instagramText": "",
       "other1Text": "",
       "other1Url": "",
       "other1Format": ""
     },
-    "andieStory": "",
+    "andieStory": "The Animal Rescue Cooperative patterns are full of practical details. Using French seams on the joey pouches to hide the raw edges and avoid little claws getting stuck shows the depth of their carer knowledge (and who doesn't love a chance to practice their French seams?).\n\nAlthough some parts of the website may have broken links or outdated information, don't let that put you off. This is an incredibly active and responsive group and nothing feels better than a shout out on their Facebook page when your donated items reach the donation hub!",
     "contactUrl": "https://arcsupport.org.au/feedback/"
   },
   {
@@ -233,7 +237,7 @@
       "location": "Across Australia",
       "image": "https://craftguild.org.au/wp-content/uploads/2020/04/craftguild-web-logo.png"
     },
-    "whoTheyHelp": "The Animal Rescue Cooperative (ARC) Craft Guild is one of the world's largest volunteer craft movements, supporting wildlife, companion animals, and the rescuers who care for them every day. Items go directly to rescue groups and vet clinics across Australia, helping injured and orphaned animals recover \u2014 from joeys and possums through to microbats, dogs, cats, and lambs. The guild became especially well known during the 2019\u201320 bushfires, when makers around the world sent pouches and nests for displaced wildlife.",
+    "whoTheyHelp": "The Animal Rescue Cooperative (ARC) receives donations of food, medical supplies, crafted items and more and distributes them to WIRES and other local wildlife rescue groups across Australia. The Craft Guild supporting ARC is one of the world's largest volunteer craft movements, supporting wildlife, companion animals, and the rescuers who care for them every day. The guild became especially well known during the 2019\u201320 bushfires, when makers around the world sent pouches and nests for displaced wildlife.",
     "category": [
       "Animal Welfare"
     ],
@@ -258,11 +262,12 @@
       "url": "https://www.facebook.com/download/549295092331678/Sew-ARCCG%20Bat%20Wraps%20Sewing%20Pattern%20-%20Revision%201.pdf"
     },
     "image": "https://www.sewmucheasier.com/assets/images/blog/stories/f0c0710a-050c-4874-b1a5-a9abad38e69d.jpg",
+    "imageAttribution": "Animal Rescue Cooperative Craft Guild",
     "contribution": {
       "mail": "",
       "inPerson": "",
       "other1Text": "Register online",
-      "other1Value": "Complete a short online form with your location and they'll send you the nearest drop-off or postage details.",
+      "other1Value": "Complete a short <a href=\"https://arcsupport.org.au/donateproduct/\" target=\"_blank\">online form</a> with your location and they'll send you the nearest drop-off or postage details.",
       "other2Text": "",
       "other2Value": ""
     },
@@ -270,14 +275,14 @@
     "skillLevel": "Beginner (straight stitch, turning corners, top stitch)",
     "community": {
       "facebookUrl": "https://www.facebook.com/groups/arfsncrafts/",
-      "facebookText": "",
-      "instagramUrl": "https://www.instagram.com/animalrescuecraftguild/",
+      "facebookText": "Ask questions, find the latest info on what's needed, and see when your donations reach the hub",
+      "instagramUrl": "",
       "instagramText": "",
       "other1Text": "",
       "other1Url": "",
       "other1Format": ""
     },
-    "andieStory": "",
+    "andieStory": "Making items for the Animal Rescue Cooperative is as educational as it is rewarding. Who knew that some flannelette and stuffing can make a cozy pillow and wrap to help a baby bat feel at home?\n\nAlthough some parts of the website may have broken links or outdated information, don't let that put you off. This is an incredibly active and responsive group and nothing feels better than a shout out on their Facebook page when your donated items reach the donation hub!",
     "contactUrl": "https://arcsupport.org.au/feedback/"
   },
   {
@@ -316,11 +321,12 @@
       "url": "https://www.redcross.org.au/act/knitting-for-charity-trauma-teddies/trauma-teddy-questions/#patterns"
     },
     "image": "https://www.redcross.org.au/contentassets/8a9d8d5351d141d097be9e0360acfece/trauma-teddy-2.jpg",
+    "imageAttribution": "Australian Red Cross",
     "contribution": {
       "mail": "",
       "inPerson": "",
       "other1Text": "Register online",
-      "other1Value": "Complete a short online form with your location and they'll send you the nearest drop-off or postage details.",
+      "other1Value": "Complete a short <a href=\"https://www.redcross.org.au/act/knitting-for-charity-trauma-teddies/trauma-teddy-questions/#contact\" target=\"_blank\">online form</a> with your location and they'll send you the nearest drop-off or postage details.",
       "other2Text": "",
       "other2Value": ""
     },
@@ -328,14 +334,14 @@
     "skillLevel": "Beginner (casting on, casting off, garter stitch)",
     "community": {
       "facebookUrl": "https://www.facebook.com/australianredcross/",
-      "facebookText": "",
+      "facebookText": "Follow for updates on the Red Cross' work in Australia",
       "instagramUrl": "https://www.instagram.com/redcrossau/",
-      "instagramText": "",
-      "other1Text": "",
-      "other1Url": "",
-      "other1Format": ""
+      "instagramText": "Follow for updates and stories from the Red Cross",
+      "other1Text": "Find a knitting group near you",
+      "other1Url": "https://www.redcross.org.au/act/knitting-for-charity-trauma-teddies/trauma-teddy-questions/#contact",
+      "other1Format": "in-person"
     },
-    "andieStory": "",
+    "andieStory": "When I was young, I was given a trauma teddy in hospital to comfort me through a lot of blood tests, so it just feels right to pay it forward and be part of such a proud, ongoing Aussie craft movement.\n\nThis simple bear pattern is a great one to learn the basics of knitted or crochet toy-making, all while supporting a great cause. As a paramedic friend told me: these teddies mean so much to the kids she works with, and there are never enough of them.",
     "contactUrl": "https://www.redcross.org.au/teddy/"
   },
   {
@@ -348,7 +354,7 @@
       "location": "NSW",
       "image": "https://www.knit4charities.org.au/wp-content/uploads/2021/10/512x512.png"
     },
-    "whoTheyHelp": "Knit4Charities (K4C) was started in 2004 and since then has donated over 1.1 million items since it began, with more than 152,000 donated in 2025 alone.Rather than supporting one cause, they run year-long and monthly donation drives for various causes. Members are encouraged to donate locally where possible to save on postage, and can nominate charities themselves, with no cause considered too big or too small. The Cat Protection Society of NSW has been a regular recipient, but you could just as easily contact your local vet to see if they accept donations and record these as a private donation with K4C.",
+    "whoTheyHelp": "Knit4Charities (K4C) was started in 2004 and since then has donated over 1.1 million items since it began, with more than 152,000 donated in 2025 alone. Rather than supporting one cause, they run year-long and monthly donation drives for various causes. Members are encouraged to donate locally where possible to save on postage, and can nominate charities themselves, with no cause considered too big or too small. The Cat Protection Society of NSW has been a regular recipient, but you could just as easily contact your local vet to see if they accept donations and record these as a private donation with K4C.",
     "category": [
       "Animal Welfare"
     ],
@@ -358,8 +364,12 @@
     "equipment": "Crochet hook",
     "materials": [
       {
-        "type": "Any yarn",
+        "type": "any yarn",
         "amount": "<30g"
+      },
+      {
+        "type": "polyfill stuffing",
+        "amount": ""
       }
     ],
     "materialNote": "",
@@ -369,11 +379,12 @@
       "url": "patterns/cat_toys.pdf"
     },
     "image": "https://catprotection.org.au/wp-content/uploads/2017/06/ViolaKnittedtoy.jpg",
+    "imageAttribution": "Cat Protection Society of NSW",
     "contribution": {
       "mail": "",
       "inPerson": "Drop to the Cat Protection Society Welfare and Education Centre at 214 Marrickville Road\nMarrickville NSW 2204",
       "other1Text": "Register online",
-      "other1Value": "Complete a short online form to join the Knit4Charities forum and find postage details for the organiser",
+      "other1Value": "Complete a short <a href=\"https://knit4charities.groups.io/g/knit4charities\" target=\"_blank\">online form</a> to join the Knit4Charities forum and find postage details for the organiser",
       "other2Text": "",
       "other2Value": ""
     },
@@ -381,14 +392,14 @@
     "skillLevel": "Beginner to intermediate (magic circle, chain stitch, single crochet, double crochet, increase, decrease)",
     "community": {
       "facebookUrl": "https://www.facebook.com/groups/6952226533",
-      "facebookText": "",
+      "facebookText": "Share progress, ask questions, and learn about charities of the month",
       "instagramUrl": "https://www.instagram.com/knit4charities/",
-      "instagramText": "",
+      "instagramText": "See projects from across the K4C community",
       "other1Text": "Join the online forum",
       "other1Url": "https://knit4charities.groups.io/g/knit4charities",
       "other1Format": "online"
     },
-    "andieStory": "",
+    "andieStory": "Cat toys are my easy, rewarding project when I need a quick win. I wanted to make sure before I donated that the toys were cat-friendly, so I tested many patterns on my sister's cats (they enjoyed them all). Her favourites were the ball with tail and spirals, perfect for dragging around for cats to chase and swat. She also says they've lasted better than any toys she's bought from the pet shop.\nIf you've been wanting to learn amigurumi, these toys are a great introduction to making shapes with crochet.\"",
     "contactUrl": "https://www.knit4charities.org.au/contact-us/"
   }
 ]

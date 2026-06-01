@@ -1,7 +1,7 @@
 :root {
     --primary-color: #1e293b; /* Slate 800 */
     --secondary-color: #64748b; /* Slate 500 */
-    --accent-color: #13a89e; /* Sea Green / Teal */
+    --accent-color: #0d837a; /* Darkened for accessibility contrast (4.5:1) */
     --bg-color: #f8fafc; /* Slate 50 */
     --card-bg: #ffffff;
     --text-color: #334155; /* Slate 700 */
@@ -13,7 +13,7 @@
     --radius-lg: 24px;
 
     /* Typography Scale (based on 16px root) */
-    --font-size-xxs: 0.625rem;  /* 10px */
+    --font-size-xxs: 0.75rem;   /* 12px - minimum for accessibility */
     --font-size-xs: 0.75rem;   /* 12px */
     --font-size-sm: 0.875rem;  /* 14px */
     --font-size-base: 1rem;    /* 16px */
@@ -29,28 +29,51 @@
     display: none !important;
 }
 
+/* Visually hide an element while keeping it available for Screen Readers */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
     padding: 0;
+    margin: 0;
 }
 
 header {
-    background: linear-gradient(135deg, #13a89e 0%, #0d9488 100%);
-    color: white;
-    padding: 60px 20px;
+    background-color: var(--card-bg);
+    padding: 20px;
     text-align: center;
     margin-bottom: 40px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* Consider using a token for shadows */
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+header.detail-header-section {
+    border-bottom: none;
 }
 
 header h1 {
-    color: white;
     font-weight: 700;
     font-size: var(--font-size-4xl);
     margin-bottom: 10px;
+}
+
+.banner-logo {
+    max-height: 100px;
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 header p {
@@ -105,6 +128,7 @@ header p {
     gap: 8px;
     font-weight: 700;
     cursor: pointer;
+    text-align: center;
     transition: all 0.2s ease;
     text-decoration: none;
     border: none;
@@ -179,11 +203,73 @@ main {
 }
 
 .home-hero {
+    position: relative;
     padding: 80px 20px;
     text-align: center;
     background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
     border-radius: var(--radius-lg);
     margin-bottom: 60px;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-image {
+    position: absolute;
+    z-index: 1;
+    border-radius: var(--radius-md);
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    opacity: 0.8;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hero-image:hover {
+    transform: scale(1.1) rotate(0deg) !important;
+    opacity: 1;
+    z-index: 3;
+}
+
+/* Scrapbook positioning and varied sizes */
+.hero-image-1 {
+    width: 120px;
+    height: 120px;
+    top: calc(10% - 10px);
+    left: calc(5% - 10px);
+    transform: rotate(-15deg);
+}
+
+.hero-image-2 {
+    width: 150px;
+    height: 150px;
+    bottom: calc(10% - 10px);
+    left: calc(10% - 10px);
+    transform: rotate(10deg);
+}
+
+.hero-image-3 {
+    width: 130px;
+    height: 130px;
+    top: calc(15% - 20px);
+    right: calc(5% - 10px);
+    transform: rotate(12deg);
+}
+
+.hero-image-4 {
+    width: 140px;
+    height: 140px;
+    bottom: calc(15% - 10px);
+    right: calc(8% - 10px);
+    transform: rotate(-8deg);
+}
+
+@media (max-width: 992px) {
+    .hero-image {
+        display: none;
+    }
 }
 
 .home-hero h1 {
@@ -316,6 +402,7 @@ main {
     text-align: center;
     border: 1px solid var(--border-color);
     transition: all 0.3s ease;
+    text-decoration: none;
     cursor: pointer;
 }
 
@@ -352,10 +439,6 @@ main {
     outline: none;
     border-color: var(--accent-color);
     box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
-}
-
-.search-section label {
-    display: none; /* Hide label visually for cleaner look, keep for a11y if needed, or remove */
 }
 
 .content-wrapper {
@@ -445,6 +528,7 @@ input[type="text"] {
 .card {
     display: flex;
     flex-direction: column;
+    text-decoration: none;
 }
 
 .card-image-wrapper {
@@ -721,10 +805,26 @@ input[type="text"] {
     flex-shrink: 0;
 }
 
+.project-image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 38px;
+    flex-shrink: 0;
+}
+
 .project-image {
     width: 300px;
     height: 300px;
-    margin-top: 38px;
+    margin-top: 0;
+}
+
+.image-attribution {
+    font-size: var(--font-size-xxs);
+    color: var(--secondary-color);
+    font-style: italic;
+    margin-top: 4px;
+    text-align: right;
 }
 
 .material-note {
@@ -781,6 +881,11 @@ input[type="text"] {
 
     .split-card {
         flex-direction: column;
+    }
+
+    .project-image-container {
+        margin-top: 0;
+        width: 100%;
     }
 
     .card-side-image {
