@@ -1,7 +1,7 @@
 :root {
     --primary-color: #1e293b; /* Slate 800 */
     --secondary-color: #64748b; /* Slate 500 */
-    --accent-color: #13a89e; /* Sea Green / Teal */
+    --accent-color: #0d837a; /* Darkened for accessibility contrast (4.5:1) */
     --bg-color: #f8fafc; /* Slate 50 */
     --card-bg: #ffffff;
     --text-color: #334155; /* Slate 700 */
@@ -13,7 +13,7 @@
     --radius-lg: 24px;
 
     /* Typography Scale (based on 16px root) */
-    --font-size-xxs: 0.625rem;  /* 10px */
+    --font-size-xxs: 0.75rem;   /* 12px - minimum for accessibility */
     --font-size-xs: 0.75rem;   /* 12px */
     --font-size-sm: 0.875rem;  /* 14px */
     --font-size-base: 1rem;    /* 16px */
@@ -27,6 +27,18 @@
 
 .hidden {
     display: none !important;
+}
+
+/* Visually hide an element while keeping it available for Screen Readers */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }
 
 body {
@@ -45,6 +57,10 @@ header {
     margin-bottom: 40px;
     border-bottom: 1px solid var(--border-color);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+header.detail-header-section {
+    border-bottom: none;
 }
 
 header h1 {
@@ -112,6 +128,7 @@ header p {
     gap: 8px;
     font-weight: 700;
     cursor: pointer;
+    text-align: center;
     transition: all 0.2s ease;
     text-decoration: none;
     border: none;
@@ -236,7 +253,7 @@ main {
 .hero-image-3 {
     width: 130px;
     height: 130px;
-    top: calc(15% - 10px);
+    top: calc(15% - 20px);
     right: calc(5% - 10px);
     transform: rotate(12deg);
 }
@@ -385,6 +402,7 @@ main {
     text-align: center;
     border: 1px solid var(--border-color);
     transition: all 0.3s ease;
+    text-decoration: none;
     cursor: pointer;
 }
 
@@ -421,10 +439,6 @@ main {
     outline: none;
     border-color: var(--accent-color);
     box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
-}
-
-.search-section label {
-    display: none; /* Hide label visually for cleaner look, keep for a11y if needed, or remove */
 }
 
 .content-wrapper {
@@ -514,6 +528,7 @@ input[type="text"] {
 .card {
     display: flex;
     flex-direction: column;
+    text-decoration: none;
 }
 
 .card-image-wrapper {

@@ -159,12 +159,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         data.forEach((project, index) => {
-            const card = document.createElement('div');
+            const card = document.createElement('a');
             card.className = 'ui-card ui-card--interactive card';
-            card.onclick = () => {
+            card.href = `project.html?id=${project.id}`;
+            card.addEventListener('click', (e) => {
                 localStorage.setItem('searchParams', window.location.search);
-                location.href = `project.html?id=${project.id}`;
-            };
+            });
 
             card.innerHTML = `
                 <div class="card-image-wrapper">
