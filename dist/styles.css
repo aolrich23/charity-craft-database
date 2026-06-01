@@ -1,3 +1,7 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 :root {
     --primary-color: #1e293b; /* Slate 800 */
     --secondary-color: #64748b; /* Slate 500 */
@@ -846,7 +850,7 @@ input[type="text"] {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .content-wrapper {
         display: flex;
         flex-direction: column;
@@ -879,19 +883,32 @@ input[type="text"] {
     }
 
     .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
         text-align: center;
     }
 
     .footer-brand p {
         margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .footer-acknowledgement {
+        margin: 0 auto 40px;
+        text-align: center;
     }
 
     .footer-nav ul {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
     }
 
     .detail-content {
