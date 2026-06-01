@@ -535,10 +535,21 @@ input[type="text"] {
     cursor: pointer;
 }
 
-/* Grid Layout */
-.grid-container {
+/* Results Column Layout */
+.results-main {
     flex: 1;
     min-width: 0;
+}
+
+.results-count {
+    font-size: var(--font-size-sm);
+    color: var(--secondary-color);
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+/* Grid Layout */
+.grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 12px;
