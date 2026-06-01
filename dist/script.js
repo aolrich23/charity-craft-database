@@ -224,8 +224,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="project-detail-container">
                 <header class="detail-header-section">
                     <div class="header-top">
-                        <h1 class="detail-title">${project.title}</h1>
                         <span class="muted-badge"><i class="ti ti-circle-check"></i> Verified active - ${project.lastVerified}</span>
+                        <h1 class="detail-title">${project.title}</h1>
                     </div>
                     <div class="tag-row">
                         ${createCraftTagsHtml(project.craft)}
