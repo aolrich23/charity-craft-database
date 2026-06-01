@@ -428,10 +428,26 @@ main {
     display: block;
 }
 
-#search {
+.search-wrapper {
+    position: relative;
     max-width: 500px;
     width: 100%;
     padding: 15px 20px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    pointer-events: none;
+}
+
+#search {
+    width: 100%;
+    padding: 15px 20px 15px 50px;
     font-size: 1.1rem;
     border: 2px solid var(--border-color);
     border-radius: 50px;
