@@ -35,22 +35,29 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     padding: 0;
+    margin: 0;
 }
 
 header {
-    background: linear-gradient(135deg, #13a89e 0%, #0d9488 100%);
-    color: white;
-    padding: 60px 20px;
+    background-color: var(--card-bg);
+    padding: 20px;
     text-align: center;
     margin-bottom: 40px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* Consider using a token for shadows */
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 header h1 {
-    color: white;
     font-weight: 700;
     font-size: var(--font-size-4xl);
     margin-bottom: 10px;
+}
+
+.banner-logo {
+    max-height: 100px;
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 header p {
