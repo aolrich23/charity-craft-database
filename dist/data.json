@@ -37,7 +37,7 @@
       "mail": "Mail to Post Office Box 10, Roseberry NSW 1445.",
       "inPerson": "Drop off at the warehouse at Unit 4, 4 Huntley St, Alexandria on Wednesday or Friday between 9:30am to 2:30pm",
       "other1Text": "Via Spotlight stores",
-      "other1Value": "Drop finished squares or blankets to any Spotlight store around Australia to be posted for free",
+      "other1Value": "Drop finished squares or wraps to any Spotlight store around Australia to be posted for free",
       "other2Text": "Personal note",
       "other2Value": "If mailing or sending via Spotlight, include your name and email with your donation and a volunteer will notify you when it arrives at the warehouse"
     },
@@ -47,7 +47,7 @@
       "facebookUrl": "https://www.facebook.com/groups/WWL.Virtual.Knitting.Club",
       "facebookText": "Share progress, ask questions, and connect with other wrap-makers",
       "instagramUrl": "https://www.instagram.com/wrapwithloveinc/",
-      "instagramText": "See finished blankets and behind-the-scenes at the warehouse",
+      "instagramText": "See finished wraps and behind-the-scenes at the warehouse",
       "other1Text": "Find a knitting group near you",
       "other1Url": "https://wrapwithlove.org/knitting-groups/",
       "other1Format": "in-person"
@@ -58,7 +58,7 @@
   {
     "id": 2,
     "title": "Completed wrap",
-    "whatYouMake": "A complete blanket measuring 100cm \u00d7 175cm, equivalent to 28 squares of 25cm x 25cm, arranged in 4 rows of 7. Any stitch or pattern is welcome as long as the finished dimensions are met.",
+    "whatYouMake": "A complete wrap measuring 100cm \u00d7 175cm, equivalent to 28 squares of 25cm x 25cm, arranged in 4 rows of 7. Any stitch or pattern is welcome as long as the finished dimensions are met.",
     "organiser": {
       "name": "Wrap With Love",
       "url": "https://wrapwithlove.org/",
@@ -93,7 +93,7 @@
       "mail": "Mail to Post Office Box 10, Roseberry NSW 1445.",
       "inPerson": "Drop off at the warehouse at Unit 4, 4 Huntley St, Alexandria on Wednesday or Friday between 9:30am to 2:30pm",
       "other1Text": "Via Spotlight stores",
-      "other1Value": "Drop finished squares or blankets to any Spotlight store around Australia to be posted for free",
+      "other1Value": "Drop finished squares or wraps to any Spotlight store around Australia to be posted for free",
       "other2Text": "Personal note",
       "other2Value": "If mailing or sending via Spotlight, include your name and email with your donation and a volunteer will notify you when it arrives at the warehouse"
     },
@@ -103,7 +103,7 @@
       "facebookUrl": "https://www.facebook.com/groups/WWL.Virtual.Knitting.Club",
       "facebookText": "Share progress, ask questions, and connect with other wrap-makers",
       "instagramUrl": "https://www.instagram.com/wrapwithloveinc/",
-      "instagramText": "See finished blankets and behind-the-scenes at the warehouse",
+      "instagramText": "See finished wraps and behind-the-scenes at the warehouse",
       "other1Text": "Find a knitting group near you",
       "other1Url": "https://wrapwithlove.org/knitting-groups/",
       "other1Format": "in-person"
