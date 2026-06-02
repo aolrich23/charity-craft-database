@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <!-- Andie's story -->
                     <section class="story-section">
                         <blockquote class="story-quote">${project.andieStory}</blockquote>
-                        <cite class="story-attribution"> - Andie, Founder of Make It Matter</cite>
+                        <cite class="story-attribution"> - Andie</cite>
                     </section>
                     ` : ''}
 
