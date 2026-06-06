@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Wrap square",
-    "whatYouMake": "A 25cm \u00d7 25cm knitted or crocheted square in any colour or pattern, using 8ply yarn. Squares are matched with others at the warehouse and joined into full wraps by volunteers.",
+    "whatYouMake": "A 25cm \u00d7 25cm knitted or crocheted square in any colour or pattern, using 8ply yarn. Squares are matched with others at the warehouse and joined into complete wraps by volunteers.",
     "organiser": {
       "name": "Wrap With Love",
       "url": "https://wrapwithlove.org/",
@@ -41,7 +41,7 @@
       "other2Text": "Personal note",
       "other2Value": "If mailing or sending via Spotlight, include your name and email with your donation and a volunteer will notify you when it arrives at the warehouse"
     },
-    "lastVerified": "May 2026",
+    "lastVerified": "June 2026",
     "skillLevel": "Beginner to advanced (make any pattern you like!)",
     "community": {
       "facebookUrl": "https://www.facebook.com/groups/WWL.Virtual.Knitting.Club",
@@ -97,7 +97,7 @@
       "other2Text": "Personal note",
       "other2Value": "If mailing or sending via Spotlight, include your name and email with your donation and a volunteer will notify you when it arrives at the warehouse"
     },
-    "lastVerified": "May 2026",
+    "lastVerified": "June 2026",
     "skillLevel": "Beginner to advanced (make any pattern you like!)",
     "community": {
       "facebookUrl": "https://www.facebook.com/groups/WWL.Virtual.Knitting.Club",
@@ -388,7 +388,7 @@
       "other2Text": "",
       "other2Value": ""
     },
-    "lastVerified": "May 2026",
+    "lastVerified": "April 2026",
     "skillLevel": "Beginner to intermediate (magic circle, chain stitch, single crochet, double crochet, increase, decrease)",
     "community": {
       "facebookUrl": "https://www.facebook.com/groups/6952226533",
@@ -401,5 +401,59 @@
     },
     "andieStory": "Cat toys are my easy, rewarding project when I need a quick win. I wanted to make sure before I donated that the toys were cat-friendly, so I tested many patterns on my sister's cats (they enjoyed them all). Her favourites were the ball with tail and spirals, perfect for dragging around for cats to chase and swat. She also says they've lasted better than any toys she's bought from the pet shop.\nIf you've been wanting to learn amigurumi, these toys are a great introduction to making shapes with crochet.\"",
     "contactUrl": "https://www.knit4charities.org.au/contact-us/"
+  },
+  {
+    "id": 8,
+    "title": "Reusable shopping bag (aka Boomerang Bag)",
+    "whatYouMake": "A simple fabric tote bag, designed to replace single-use plastic bags. The bag follows a pattern provided by Boomerang Bags and is easily made from donated and recycled fabrics.",
+    "organiser": {
+      "name": "Boomerang Bags",
+      "url": "https://boomerangbags.org/",
+      "location": "Global",
+      "image": "https://boomerangbags.org/wp-content/uploads/Boomerang_Bags_Logo.png"
+    },
+    "whoTheyHelp": "Boomerang Bags is a grassroots community initiative tackling plastic pollution one stitch at a time. Volunteers sew reusable bags from donated and recycled fabrics, tackling two sustainability challenges at once (diverting materials from landfill and replacing plastic bags in the process). With over 260 communities underway and nearly 80,000 bags made, it's a beautifully simple idea: get people together, pick up a needle and thread, and make something that keeps coming back.",
+    "category": [
+      "Environment & Conservation"
+    ],
+    "craft": [
+      "Sewing"
+    ],
+    "equipment": "Sewing machine, Scissors, Iron",
+    "materials": [
+      {
+        "type": "any fabric (cotton, calico, hessian, upholstery material)",
+        "amount": "about 0.5m x 1m"
+      }
+    ],
+    "materialNote": "",
+    "approximateTime": "1-2 hours",
+    "pattern": {
+      "text": "Get the toolkit (inlcuding the pattern)",
+      "url": "https://boomerangbags.org/start-a-community/"
+    },
+    "image": "https://boomerangbags.org/wp-content/uploads/job-manager-uploads/main_image/DSC05848-1200x800.jpg",
+    "imageAttribution": "Boomerang Bags Bundeena Community Page",
+    "contribution": {
+      "mail": "",
+      "inPerson": "",
+      "other1Text": "Find a community group (in-person)",
+      "other1Value": "<a href=\"https://boomerangbags.org/bb-communities/\" target=\"_blank\">Search for a local Boomerang Bag group</a> or <a href=\"https://boomerangbags.org/start-a-community/\" target=\"_blank\">make your own</a> and donate locally.",
+      "other2Text": "",
+      "other2Value": ""
+    },
+    "lastVerified": "June 2026",
+    "skillLevel": "Beginner (straight stitch, top stitch)",
+    "community": {
+      "facebookUrl": "https://www.facebook.com/search/groups/?q=boomerang%20bags&sde=Abo6mQGTwumSH8ghiQqAvvjPX7NFviMO4wSBhxr6grIQwUayjg5k0ye5FNdIS2HCiLkkJOB-TfP5YV29lVJ9zt3H",
+      "facebookText": "Look for a local Facebook group to share updates on meetups, ask questions, and see photos",
+      "instagramUrl": "https://www.instagram.com/boomerangbags/",
+      "instagramText": "Not active recently, but has some great stories of the impact the organisation has had over time",
+      "other1Text": "Find a local group",
+      "other1Url": "https://boomerangbags.org/bb-communities/",
+      "other1Format": "in-person"
+    },
+    "andieStory": "I went along to the Sutherland Shire group that meets Saturday mornings for the first time in June and they were an incredibly welcoming group. They don't just make Boomerang Bags, they like to branch out and sew new things for all different charitable needs so you're constantly learning.",
+    "contactUrl": "https://boomerangbags.org/contact/"
   }
 ]

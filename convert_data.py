@@ -4,7 +4,7 @@ import os
 
 # Define absolute paths based on context
 CSV_PATH = '/Users/andreaolrich/Source/charity-craft-database/data.csv'
-JSON_PATH = '/Users/andreaolrich/Source/charity-craft-database/data.json'
+JSON_PATH = '/Users/andreaolrich/Source/charity-craft-database/dist/data.json'
 
 def transform_csv_to_json():
     projects = []
