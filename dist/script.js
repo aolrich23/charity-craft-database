@@ -150,6 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (cat.includes('animal')) return '🐾';
         if (cat.includes('disaster') || cat.includes('emergency')) return '🆘';
         if (cat.includes('community')) return '🤝';
+        if (cat.includes('environment') || cat.includes('conservation')) return '♻️';
         return '❤️';
     }
 
