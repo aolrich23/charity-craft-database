@@ -50,6 +50,7 @@ def transform_csv_to_json():
             # 5. Map remaining fields to a clean schema
             project = {
                 "id": index,
+                "slug": row.get('slug_url', ''),
                 "title": row.get('title', ''),
                 "whatYouMake": row.get('what_you_make', ''),
                 "organiser": organiser,
