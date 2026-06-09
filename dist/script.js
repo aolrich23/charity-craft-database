@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const homeView = document.getElementById('homeView');
 
     // 1. Fetch Data
-    fetch('./data.json')
+    fetch('/data.json')
         .then(response => response.json())
         .then(data => {
             projects = data;
@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function initHomePage() {
         const heroBrowseBtn = document.getElementById('heroBrowseBtn');
         const bottomBrowseBtn = document.getElementById('bottomBrowseBtn');
-        if (heroBrowseBtn) heroBrowseBtn.addEventListener('click', () => window.location.href = 'search.html');
-        if (bottomBrowseBtn) bottomBrowseBtn.addEventListener('click', () => window.location.href = 'search.html');
+        if (heroBrowseBtn) heroBrowseBtn.addEventListener('click', () => window.location.href = 'search');
+        if (bottomBrowseBtn) bottomBrowseBtn.addEventListener('click', () => window.location.href = 'search');
     }
 
     function initSearchPage() {
@@ -47,14 +47,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function initProjectPage() {
-        const id = parseInt(urlParams.get('id'));
-        if (id) showProjectDetails(id);
+        const slug = window.location.pathname.split('/').filter(Boolean).pop();
+        if (slug && slug !== 'project') showProjectDetails(slug);
 
         const backBtn = document.querySelector('.back-button');
         if (backBtn) {
             backBtn.addEventListener('click', () => {
                 const savedParams = localStorage.getItem('searchParams') || '';
-                window.location.href = 'search.html' + savedParams;
+                window.location.href = '/search' + savedParams;
             });
         }
     }
@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
         data.forEach((project, index) => {
             const card = document.createElement('a');
             card.className = 'ui-card ui-card--interactive card';
-            card.href = `project.html?id=${project.id}`;
+            card.href = `project/${project.slug}`;
             card.addEventListener('click', (e) => {
                 localStorage.setItem('searchParams', window.location.search);
             });
@@ -209,11 +209,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function showProjectDetails(id) {
+    function showProjectDetails(slug) {
         const detailsContent = document.getElementById('detailsContent');
         if (!detailsContent) return;
         
-        const project = projects.find(p => p.id === id);
+        const project = projects.find(p => p.slug === slug);
         if (!project) return;
 
         let materialsHtml = project.materials.map(m => `${m.amount} ${m.type}`).join(', ') || 'PLACEHOLDER - TBD';

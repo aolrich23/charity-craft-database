@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "slug": "wrap-with-love-square",
     "title": "Wrap square",
     "whatYouMake": "A 25cm \u00d7 25cm knitted or crocheted square in any colour or pattern, using 8ply yarn. Squares are matched with others at the warehouse and joined into complete wraps by volunteers.",
     "organiser": {
@@ -57,6 +58,7 @@
   },
   {
     "id": 2,
+    "slug": "wrap-with-love-wrap",
     "title": "Completed wrap",
     "whatYouMake": "A complete wrap measuring 100cm \u00d7 175cm, equivalent to 28 squares of 25cm x 25cm, arranged in 4 rows of 7. Any stitch or pattern is welcome as long as the finished dimensions are met.",
     "organiser": {
@@ -113,6 +115,7 @@
   },
   {
     "id": 3,
+    "slug": "arc-3d-hanging-bag",
     "title": "3D hanging bag",
     "whatYouMake": "A fabric bag with a structured, box-shaped base that hangs from a hook or branch. It is designed for older, more active animals who are starting to explore but still need a safe place to retreat to. It gives growing joeys the freedom to come and go as they please, and can be used day or night.",
     "organiser": {
@@ -171,6 +174,7 @@
   },
   {
     "id": 4,
+    "slug": "arc-joey-pouch-set",
     "title": "Joey pouch set",
     "whatYouMake": "Joey pouches keep orphaned and injured marsupial young safe, warm, and secure. In Australia, any marsupial youngster is called a joey, including baby kangaroos, wallabies, wombats, possums, and bilbies. Each pouch set consists of a fabric outer and two to three cotton or flannelette liners, which are swapped out and washed frequently by carers. Sizes range from XXS right up to XXL, with free patterns and printable templates available for all sizes.",
     "organiser": {
@@ -229,6 +233,7 @@
   },
   {
     "id": 5,
+    "slug": "arc-bat-wrap",
     "title": "Bat wrap",
     "whatYouMake": "A bat wrap is essentially a rectangle of cotton flannelette fabric, with a \"pillow\" sewn and stuffed at one end. Bat wraps simulate a mothers\u2019 wings and are used by carers to wrap injured and orphaned bats so they feel safe.",
     "organiser": {
@@ -287,6 +292,7 @@
   },
   {
     "id": 6,
+    "slug": "red-cross-trauma-teddy",
     "title": "Trauma teddy",
     "whatYouMake": "A knitted (or crocheted) teddy bear, stuffed with clean stuffing, and a friendly face sewn on with yarn. All teddies follow the Red Cross pattern, available in both a standard (20cm) and large (28cm) size.",
     "organiser": {
@@ -346,6 +352,7 @@
   },
   {
     "id": 7,
+    "slug": "k4c-cat-toys",
     "title": "Cat toys",
     "whatYouMake": "Any kind of small toy that a cat or kitten will enjoy batting around to indulge their hunter instincts. There are any number of patterns out there so let your im-meow-gination run wild.",
     "organiser": {
@@ -404,6 +411,7 @@
   },
   {
     "id": 8,
+    "slug": "boomerang-bags",
     "title": "Reusable shopping bag (aka Boomerang Bag)",
     "whatYouMake": "A simple fabric tote bag, designed to replace single-use plastic bags. The bag follows a pattern provided by Boomerang Bags and is easily made from donated and recycled fabrics.",
     "organiser": {
@@ -423,7 +431,7 @@
     "materials": [
       {
         "type": "any fabric (cotton, calico, hessian, upholstery material)",
-        "amount": "about 0.5m x 1m"
+        "amount": "about 0.5m x 1m (join scraps or make it smaller if needed)"
       }
     ],
     "materialNote": "",
