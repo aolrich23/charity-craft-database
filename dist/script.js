@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (backBtn) {
             backBtn.addEventListener('click', () => {
                 const savedParams = localStorage.getItem('searchParams') || '';
-                window.location.href = 'search' + savedParams;
+                window.location.href = '/search' + savedParams;
             });
         }
     }
