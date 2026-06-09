@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function initHomePage() {
         const heroBrowseBtn = document.getElementById('heroBrowseBtn');
         const bottomBrowseBtn = document.getElementById('bottomBrowseBtn');
-        if (heroBrowseBtn) heroBrowseBtn.addEventListener('click', () => window.location.href = 'search.html');
-        if (bottomBrowseBtn) bottomBrowseBtn.addEventListener('click', () => window.location.href = 'search.html');
+        if (heroBrowseBtn) heroBrowseBtn.addEventListener('click', () => window.location.href = 'search');
+        if (bottomBrowseBtn) bottomBrowseBtn.addEventListener('click', () => window.location.href = 'search');
     }
 
     function initSearchPage() {
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (backBtn) {
             backBtn.addEventListener('click', () => {
                 const savedParams = localStorage.getItem('searchParams') || '';
-                window.location.href = 'search.html' + savedParams;
+                window.location.href = 'search' + savedParams;
             });
         }
     }
@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
         data.forEach((project, index) => {
             const card = document.createElement('a');
             card.className = 'ui-card ui-card--interactive card';
-            card.href = `project.html?id=${project.id}`;
+            card.href = `project?id=${project.id}`;
             card.addEventListener('click', (e) => {
                 localStorage.setItem('searchParams', window.location.search);
             });
