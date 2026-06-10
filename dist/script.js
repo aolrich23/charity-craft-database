@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (response.ok) {
                     contactForm.style.display = 'none';
-                    successMessage.classList.add('visible');
+                    successMessage.classList.remove('hidden');
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 } else {
                     alert('Something went wrong — please try again or email us directly.');
