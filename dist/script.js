@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchView = document.getElementById('searchView');
     const projectDetails = document.getElementById('projectDetails');
     const homeView = document.getElementById('homeView');
+    const contactForm = document.getElementById('contactForm');
 
     // 1. Fetch Data
     fetch('/data.json')
@@ -13,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (homeView) initHomePage();
             if (searchView) initSearchPage();
             if (projectDetails) initProjectPage();
+            if (contactForm) initContactPage();
         })
         .catch(error => console.error('Error loading data:', error));
 
@@ -57,6 +59,46 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.location.href = '/search' + savedParams;
             });
         }
+    }
+
+    function initContactPage() {
+        const requestType = document.getElementById('requestType');
+        const instagramNudge = document.getElementById('instagramNudge');
+        const photoField = document.getElementById('photoField');
+        const successMessage = document.getElementById('successMessage');
+
+        if (!requestType || !contactForm) return;
+
+        // Show/hide conditional elements based on dropdown
+        requestType.addEventListener('change', () => {
+            const isMake = requestType.value === 'look-what-i-made';
+            instagramNudge.classList.toggle('hidden', !isMake);
+            photoField.classList.toggle('hidden', !isMake);
+        });
+
+        // Handle form submission via fetch
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(contactForm);
+
+            try {
+                const response = await fetch("/", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: new URLSearchParams(formData).toString(),
+                });
+
+                if (response.ok) {
+                    contactForm.style.display = 'none';
+                    successMessage.classList.add('visible');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    alert('Something went wrong — please try again or email us directly.');
+                }
+            } catch (error) {
+                contactForm.submit();
+            }
+        });
     }
 
     function updateURL() {

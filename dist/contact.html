@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get in touch – Make It Matter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="nav-container">
+            <a href="/" id="logo" style="text-decoration: none;">
+                <img src="/logo.svg" alt="Make It Matter" class="banner-logo">
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contact-page-container">
+            <header class="detail-header-section">
+                <div class="header-top">
+                    <h1 class="detail-title">Say hello 👋</h1>
+                </div>
+                <p class="muted-text" id="contactHeader">Whether you've got feedback, found a project you love, or just made something wonderful, I'd love to hear from you.</p>
+            </header>
+
+            <div class="ui-card details-card">
+                <!-- Success message (shown after submission) -->
+                <div id="successMessage" class="success-message hidden">
+                    <div class="shortcut-emoji">🧶</div>
+                    <h2 style="color: var(--primary-color); margin-bottom: 8px;">Thanks for reaching out!</h2>
+                    <p class="muted-text">I'll get back to you soon so we can keep making things that matter.</p>
+                </div>
+
+                <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" enctype="multipart/form-data" id="contactForm">
+                    <input type="hidden" name="form-name" value="contact" />
+                    <!-- Honeypot -->
+                    <p class="honeypot" style="display: none;">
+                        <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+                    </p>
+
+                    <div class="field">
+                        <label for="requestType" class="form-label">What's on your mind?</label>
+                        <select name="request_type" id="requestType" required>
+                            <option value="" disabled selected>Choose one…</option>
+                            <option value="feedback">Give feedback</option>
+                            <option value="project-help">Get help with a project</option>
+                            <option value="request-project">Request a project be added</option>
+                            <option value="look-what-i-made">Look what I made! 🎉</option>
+                            <option value="get-in-touch">Just getting in touch</option>
+                        </select>
+                    </div>
+
+                    <!-- Instagram nudge (conditional) -->
+                    <div class="alert-nudge hidden" id="instagramNudge">
+                        <strong>I love seeing your makes!</strong>
+                        Share your finished project on Instagram and tag it with
+                        <a class="badge badge--teal" href="https://www.instagram.com/explore/tags/madeitmatterau/" target="_blank" rel="noopener">#madeitmatterau</a>
+                        or upload a photo below. It would make my day. 🫶
+                    </div>
+
+                    <div class="field">
+                        <label for="email" class="form-label">Your email</label>
+                        <input type="email" id="email" name="email" placeholder="you@craftychook.com" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="message" class="form-label">Your message</label>
+                        <textarea id="message" name="message" placeholder="Tell me what's on your mind..." required></textarea>
+                    </div>
+
+                    <!-- Photo upload (conditional) -->
+                    <div class="field file-field hidden" id="photoField">
+                        <label for="photo" class="form-label">Share a photo <span class="muted-text" style="font-weight: 400;">(optional)</span></label>
+                        <input type="file" id="photo" name="photo" accept="image/*">
+                        <p class="muted-text" style="font-size: 0.75rem; margin-top: 4px;">JPG, PNG or WEBP · Max 5MB</p>
+                    </div>
+
+                    <hr class="divider" style="margin: 0; border: 0; border-top: 1px solid var(--border-color);">
+
+                    <button type="submit" class="ui-button ui-button--primary" style="width: 100%;">Send it ✨</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2 class="footer-logo">Make It Matter</h2>
+                    <p>A searchable directory of Australian charity craft projects.</p>
+                </div>
+                <div class="footer-nav">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/search">Browse Projects</a></li>
+                        <li><a href="https://www.instagram.com/andiecrafted/" target="_blank">Instagram</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <a href="/contact" class="footer-email">Say hello 👋</a>
+                </div>
+            </div>
+            <div class="footer-acknowledgement">
+                <p>Make It Matter acknowledges the Dharawal people as the Traditional Custodians of the land on which we live and work, and pays respect to their Elders past, present and emerging. We also acknowledge the many First Nations peoples across Australia whose deep and continuing care for Country has shaped the communities and traditions that inspire the ways we craft and share with others.</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Make It Matter. Built with ❤️ by Andie.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>
