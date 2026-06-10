@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchView = document.getElementById('searchView');
     const projectDetails = document.getElementById('projectDetails');
     const homeView = document.getElementById('homeView');
+    const contactForm = document.getElementById('contactForm');
 
     // 1. Fetch Data
     fetch('/data.json')
@@ -13,14 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (homeView) initHomePage();
             if (searchView) initSearchPage();
             if (projectDetails) initProjectPage();
+            if (contactForm) initContactPage();
         })
         .catch(error => console.error('Error loading data:', error));
 
     function initHomePage() {
-        const heroBrowseBtn = document.getElementById('heroBrowseBtn');
-        const bottomBrowseBtn = document.getElementById('bottomBrowseBtn');
-        if (heroBrowseBtn) heroBrowseBtn.addEventListener('click', () => window.location.href = 'search');
-        if (bottomBrowseBtn) bottomBrowseBtn.addEventListener('click', () => window.location.href = 'search');
     }
 
     function initSearchPage() {
@@ -59,6 +57,46 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function initContactPage() {
+        const requestType = document.getElementById('requestType');
+        const instagramNudge = document.getElementById('instagramNudge');
+        const photoField = document.getElementById('photoField');
+        const successMessage = document.getElementById('successMessage');
+
+        if (!requestType || !contactForm) return;
+
+        // Show/hide conditional elements based on dropdown
+        requestType.addEventListener('change', () => {
+            const isMake = requestType.value === 'look-what-i-made';
+            instagramNudge.classList.toggle('hidden', !isMake);
+            photoField.classList.toggle('hidden', !isMake);
+        });
+
+        // Handle form submission via fetch
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(contactForm);
+
+            try {
+                const response = await fetch("/", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: new URLSearchParams(formData).toString(),
+                });
+
+                if (response.ok) {
+                    contactForm.style.display = 'none';
+                    successMessage.classList.remove('hidden');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    alert('Something went wrong — please try again or email us directly.');
+                }
+            } catch (error) {
+                contactForm.submit();
+            }
+        });
+    }
+
     function updateURL() {
         const searchInput = document.getElementById('search');
         const params = new URLSearchParams();
@@ -95,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Get unique crafts
         const crafts = [...new Set(data.flatMap(item => item.craft))].sort();
-        crafts.forEach(craft => createCheckbox(craftSelect, craft, craft));
+        crafts.forEach(craft => createCheckbox(craftSelect, craft, `${getCraftEmoji(craft)} ${craft}`));
 
         // Get unique categories (formerly recipients)
         const categories = [...new Set(data.flatMap(item => item.category))].sort();
@@ -140,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function createCraftTagsHtml(crafts) {
         return (Array.isArray(crafts) ? crafts : [crafts])
             .map(c => {
-                return `<span class="badge badge--teal">${c}</span>`;
+                return `<span class="badge badge--teal">${getCraftEmoji(c)} ${c}</span>`;
             })
             .join('');
     }
@@ -152,6 +190,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (cat.includes('community')) return '🤝';
         if (cat.includes('environment') || cat.includes('conservation')) return '♻️';
         return '❤️';
+    }
+
+    function getCraftEmoji(craft) {
+        const c = (craft || "").toLowerCase();
+        if (c.includes('sewing')) return '🧵';
+        if (c.includes('knitting')) return '🥢';
+        if (c.includes('crochet')) return '🪝';
+        return '🎨';
     }
 
     // 3. Render Cards
