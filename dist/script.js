@@ -19,10 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => console.error('Error loading data:', error));
 
     function initHomePage() {
-        const heroBrowseBtn = document.getElementById('heroBrowseBtn');
-        const bottomBrowseBtn = document.getElementById('bottomBrowseBtn');
-        if (heroBrowseBtn) heroBrowseBtn.addEventListener('click', () => window.location.href = 'search');
-        if (bottomBrowseBtn) bottomBrowseBtn.addEventListener('click', () => window.location.href = 'search');
     }
 
     function initSearchPage() {
