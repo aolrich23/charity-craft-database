@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Get unique crafts
         const crafts = [...new Set(data.flatMap(item => item.craft))].sort();
-        crafts.forEach(craft => createCheckbox(craftSelect, craft, craft));
+        crafts.forEach(craft => createCheckbox(craftSelect, craft, `${getCraftEmoji(craft)} ${craft}`));
 
         // Get unique categories (formerly recipients)
         const categories = [...new Set(data.flatMap(item => item.category))].sort();
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function createCraftTagsHtml(crafts) {
         return (Array.isArray(crafts) ? crafts : [crafts])
             .map(c => {
-                return `<span class="badge badge--teal">${c}</span>`;
+                return `<span class="badge badge--teal">${getCraftEmoji(c)} ${c}</span>`;
             })
             .join('');
     }
@@ -152,6 +152,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (cat.includes('community')) return '🤝';
         if (cat.includes('environment') || cat.includes('conservation')) return '♻️';
         return '❤️';
+    }
+
+    function getCraftEmoji(craft) {
+        const c = (craft || "").toLowerCase();
+        if (c.includes('sewing')) return '🧵';
+        if (c.includes('knitting')) return '🥢';
+        if (c.includes('crochet')) return '🪝';
+        return '🎨';
     }
 
     // 3. Render Cards
