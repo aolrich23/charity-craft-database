@@ -383,7 +383,7 @@
     "approximateTime": "Less than one hour",
     "pattern": {
       "text": "Download PDF",
-      "url": "project/patterns/cat_toys.pdf"
+      "url": "https://makeitmatter.au/patterns/cat_toys.pdf"
     },
     "image": "https://catprotection.org.au/wp-content/uploads/2017/06/ViolaKnittedtoy.jpg",
     "imageAttribution": "Cat Protection Society of NSW",
