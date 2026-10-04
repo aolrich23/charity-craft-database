@@ -253,7 +253,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div class="row-item"><i class="ti ti-chart-bar"></i><span class="label">Skill level:</span><span class="value">${project.skillLevel || 'PLACEHOLDER - TBD'}</span></div>
                             <div class="row-item"><i class="ti ti-clock"></i><span class="label">Time estimate:</span><span class="value">${project.approximateTime}</span></div>
                             <div class="row-item"><i class="ti ti-needle"></i><span class="label">Materials:</span><span class="value">${materialsHtml}</span></div>
-                            <div class="row-item"><i class="ti ti-file-text"></i><span class="label">Patterns:</span><span class="value"><a href="${project.pattern.url}" target="_blank">${project.pattern.text}</a></span></div>
+                            <div class="row-item"><i class="ti ti-file-text"></i><span class="label">Patterns:</span><span class="value"><a href="${window.location.origin}/${project.pattern.url}" target="_blank">${project.pattern.text}</a></span></div>
                         </div>
                         ${project.image ? `
                             <div class="project-image-container">
